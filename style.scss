@@ -1,0 +1,444 @@
+/* Variables */
+$contentWidth: 90%;
+$btnColor: black;
+$btnColorHover: #FFFF00;
+$primaryColor: #000500;
+$secondaryColor: #F0F0F0;
+$tertiaryColor: #2196F3;
+$shadowBox: 1px 1px 5px 0 rgba(255, 255, 255, 0.3);
+$shadowBoxHover: 1px 4px 5px 0 rgba(255, 255, 255, 0.2);
+
+
+@mixin hoverBtn($btnColor){
+  //background-color: $primaryColor;
+  box-shadow: 1px 1px 10px 0 rgba($btnColor,0.5);
+  transform: translateY(-5px);
+}
+@mixin transition ($property) {
+  -webkit-transition: $property;
+  -moz-transition: $property;
+  -ms-transition: $property;
+  -o-transition: $property;
+  transition: $property;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  letter-spacing: 0.1em;
+  font-family: ('Noto Serif', serif);
+  &::-webkit-scrollbar {
+    //background: transparent;
+    width: 1em;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $primaryColor;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $secondaryColor;
+    border-radius: 10px;
+    &:hover{
+      background: $tertiaryColor;
+    }
+  }
+  nav{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 8%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    color: $secondaryColor;
+    width: 10em;
+    z-index: 100;
+    ul{
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      a{
+        position: relative;
+        text-decoration: none;
+        color: $secondaryColor;
+        display: flex;
+        align-items: center;
+        width: 2em;
+        height: 2em;
+        margin: 0.5em 0;
+        overflow: hidden;
+        border-radius: 10px;
+        @include transition((width 300ms, background-color 300ms,box-shadow 300ms));
+        svg{
+          position: absolute;
+          height: 2em;
+          width: 2em;
+          color: $secondaryColor;
+          left: 0;
+          @include transition(color 200ms);
+        }
+        li{
+          list-style: none;
+          margin-left: 3em;
+          color: $primaryColor;
+          display: none;
+        }
+        &:hover{
+          width: 8em;
+          background-color: $secondaryColor;
+          box-shadow: $shadowBox;
+          svg{
+            color: $tertiaryColor;
+          }
+          li{
+            display: list-item;
+            position: relative;
+          }
+        }
+      }
+    }
+    img{
+      background-color: $secondaryColor;
+      border-radius: 8px;
+      color: $secondaryColor;
+      height: 2em;
+      width: 2em;
+      svg{
+        color: $secondaryColor;
+        background-color: $secondaryColor;
+
+      }
+    }
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow-x: hidden;
+    #home{
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: $primaryColor;
+      //scroll-snap-align: center;
+      header{
+        display: flex;
+        justify-content: space-between;
+        width: $contentWidth;
+        height: 20vh;
+        align-items: center;
+        div{
+          color: $secondaryColor;
+        }
+        a{
+          text-decoration: none;
+          padding: 1em;
+          background-color: $primaryColor;
+          color: $secondaryColor;
+          border-radius: 10px;
+          box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+          border: 1px solid $secondaryColor;
+          @include transition(200ms);
+          &:hover{
+            color: $primaryColor;
+            background-color: $tertiaryColor;
+            @include hoverBtn($tertiaryColor);
+            border: 1px solid $tertiaryColor;
+          }
+        }
+      }
+      main {
+        width: $contentWidth;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        div.left{
+          width: 60%;
+          padding: 5% 0;
+          span {
+            font-size: 1em;
+            letter-spacing: 0.5em;
+            color: $secondaryColor;
+          }
+          h1 {
+            word-break: break-word;
+            font-size: 5em;
+            margin-top: 0;
+            color: $secondaryColor;
+          }
+          > div {
+            display: flex;
+            justify-content: space-between;
+            width: 10em;
+            a {
+              height: 2em;
+              width: 2em;
+              border-radius: 10px;
+              svg {
+                height: 2em;
+                width: 2em;
+                color: $secondaryColor;
+              }
+              &:hover {
+                color: $tertiaryColor;
+                @include hoverBtn($tertiaryColor);
+                @include transition(transform 300ms);
+                svg {
+                  color: $tertiaryColor;
+                }
+              }
+            }
+          }
+        }
+        div.right{
+          width: 40%;
+        }
+      }
+    }
+    #about{
+      background-color: #F0F0F0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      .left{
+        height: 100vh;
+        width: $contentWidth;
+        background-color: #F0F0F0;
+        border: 0;
+        display: flex;
+        flex-direction: column;
+        .about-me{
+          height: 30%;
+          margin: 3% 0;
+          width: 60%;
+          h1{
+            font-size: 3em;
+          }
+          p{
+            font-size: 1.1em;
+          }
+        }
+        .my-skills{
+          height: 40%;
+          width: 50%;
+          margin: 3% 0;
+          display: flex;
+          flex-direction: column;
+          h2 {
+            font-size: 2em;
+            margin-bottom: 2em;
+          }
+          > div {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            svg {
+              margin: 0 3em 3em 0;
+              height: 5em;
+              width: 5em;
+            }
+          }
+        }
+      }
+      .right{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        height: 100.1%;
+        width: 50%;
+        background-image: url("img/icons/about-bg.svg");
+        background-position: right center;
+        background-repeat: no-repeat;
+        //background-color: #F0F0F0;
+      }
+    }
+    #contact{
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $primaryColor;
+      header{
+        height: 30vh;
+        width: $contentWidth;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h2{
+          color: $secondaryColor;
+          font-size: 2em;
+        }
+      }
+      main{
+        display: flex;
+        justify-content: flex-start;
+        width: $contentWidth;
+        height: 65vh;
+        padding-bottom:5vh;
+        > div{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+          width: 50%;
+          a{
+            text-decoration: none;
+            @include transition(transform 200ms);
+            &.made-by{
+              display: flex;
+              align-items: flex-end;
+              height: 3em;
+            }
+            &:hover{
+              transform: translateY(-15px);
+            }
+            > div {
+              display: flex;
+              align-items: center;
+              > div{
+                width: 5em;
+                height: 5em;
+                border-radius: 10px;
+                background-position: center center;
+                background-color: $secondaryColor;
+                background-repeat: no-repeat;
+                background-size: 3em 3em;
+                margin-right: 1em;
+                &:hover{
+                  background-color: $tertiaryColor;
+                }
+              }
+              span{
+                color: $secondaryColor;
+                font-size: 1em;
+                vertical-align: center;
+              }
+            }
+          }
+        }
+        form{
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          width: 40%;
+          justify-content: space-between;
+          div{
+            height: 3em;
+            width: 100%;
+            position: relative;
+            border-radius: 10px;
+            background-color: $secondaryColor;
+            margin-bottom: 1em;
+            box-sizing: border-box;
+            &#messageBox{
+              height: 12em;
+              margin-top: 1.5em;
+            }
+            textarea, input{
+              position: absolute;
+              top: 55%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              height: 2em;
+              width: 95%;
+              border: 0;
+              text-indent: 5px;
+              background-color: $secondaryColor;
+              &:hover,&:focus{
+                outline: none;
+              }
+              &:focus + label, &:not(:placeholder-shown) + label {
+                left: 3%;
+                top: 10%;
+                transform: translate(0,-5%);
+                font-size: 0.4em;
+                opacity: 1;
+              }
+              & + label{
+                position: absolute;
+                @include transition((left 500ms ,top 500ms,font-size 500ms, transform 500ms));
+                pointer-events: none;
+                cursor: text;
+                top: 50%;
+                left: 1.5em;
+                transform: translate(0, -50%);
+                opacity: 0.5;
+                font-size: 0.7em;
+                color: $primaryColor;
+              }
+              &:not(:empty) + label{
+                color: red;
+              }
+            }
+            textarea{
+              height: 12em !important;
+              width: 95%;
+              text-indent: 5px;
+
+              & + label{
+                position: absolute;
+                @include transition((left 500ms ,top 500ms,font-size 500ms, transform 500ms));
+                pointer-events: none;
+                cursor: text;
+                top: 15%;
+                left: 1.5em;
+                transform: translate(0, -50%);
+                opacity: 0.5;
+                color: $primaryColor;
+              }
+              &:focus + label, &:not(:placeholder-shown) + label{
+                left: 3%;
+                top: 5%;
+                transform: translate(0,-5%);
+                font-size: 0.6em;
+                opacity: 1;
+              }
+            }
+          }
+          button{
+            height: 3.5em;
+            width: 10em;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+            border: 0;
+            background-color: $secondaryColor;
+            &:hover{
+              box-shadow: 0 5px 10px 0 rgba(255,255,255,0.5);
+              transform: translateY(-5px);
+            }
+            &:focus{
+              border-radius: 10px;
+              border: 2px solid $tertiaryColor;
+              outline: none;
+            }
+            &:active{
+              border-radius: 10px;
+              outline: none;
+              box-shadow: inset 0 0 5px 0 rgba(0,0,0,0.1),
+              0 1px 5px 0 rgba(255,255,255,0.5);
+              transform: translateY(0);
+              border: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

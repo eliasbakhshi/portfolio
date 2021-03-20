@@ -1,0 +1,197 @@
+/* Style for the mobile view */
+@media screen and (max-width: $mobileWidth)  {
+  body{
+    > header.tablet {
+      padding: 0 5%;
+      height: 4em;
+      &.bg{
+      }
+      nav{
+        &.opened {
+        }
+        ul{
+          a{
+            svg{
+            }
+            li{
+            }
+            &:hover{
+              svg{
+              }
+              li{
+              }
+            }
+          }
+        }
+        img{
+          svg{
+          }
+        }
+      }
+      div{
+      }
+      > a{
+        font-size: .8em;
+        right: 15%;
+        padding: .7em;
+
+
+        &:hover{
+          color: $secondaryColor;
+          background-color: unset;
+        }
+      }
+      div.hamburger-icon {
+        height: 1.6em;
+        width: 2em;
+        .first, .second, .third {
+        }
+        .second {
+          transform: translateY(-.1em);
+        }
+        .third {
+        }
+        &.opened > .first {
+        }
+        &.opened > .second {
+        }
+        &.opened > .third {
+        }
+      }
+    }
+    .container{
+      #home{
+        header.desktop {
+          div, a{
+          }
+        }
+        main {
+          max-height: 85vh;
+          div.left{
+            padding: 12.5% 0;
+            width: 100%;
+            span {
+            }
+            h1 {
+              font-size: 4em;
+              margin-top: .3em;
+            }
+            > div {
+              display: none;
+              a {
+                svg {
+                }
+                &:hover {
+                  svg {
+                  }
+                }
+              }
+            }
+          }
+          div.right{
+            display: none;
+          }
+        }
+      }
+      #about{
+        .left{
+          .about-me{
+            h1{
+            }
+            p{
+            }
+          }
+          .my-skills{
+            width: 100%;
+            h2 {
+              margin-bottom: 1.2em;
+            }
+            > div {
+              svg {
+                margin: 0 2.5em 2em 0;
+                height: 2.5em;
+                width: 2.5em;
+              }
+            }
+          }
+        }
+        .right{
+          height: 50%;
+          min-height: 30em;
+        }
+      }
+      #contact{
+        height: 100% !important;
+        header{
+          height: 10% !important;
+          h2{
+          }
+        }
+        main{
+          height: 90% !important;
+          > div{
+            margin-top: 5em;
+            flex-direction: column;
+            height: 23em;
+            a{
+              width: 100%;
+              &.made-by{
+              }
+              &:hover{
+              }
+              > div {
+                > div{
+                  &:hover{
+                  }
+                }
+                span{
+                }
+              }
+            }
+          }
+          form{
+            margin-top: 2em;
+            width: 100%;
+            flex-direction: column;
+            > div.top {
+              width: 100%;
+              min-height: 13em;
+              > div {
+                height: 3em;
+                input {
+                  font-size: .8em;
+                  &:hover, &:focus {
+                  }
+                  &:focus + label, &:not(:placeholder-shown) + label {
+                  }
+                  & + label {
+                  }
+                  &:not(:empty) + label {
+                  }
+                }
+              }
+            }
+            div.bottom{
+              margin-top: 2em;
+              width: 100%;
+              > div {
+
+                textarea {
+                  font-size: 1em;
+                  &:hover, &:focus {
+                  }
+                  &:focus + label, &:not(:placeholder-shown) + label {
+                  }
+                  & + label {
+                  }
+                  &:not(:empty) + label {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,310 @@
+/* Style for the tablet view */
+@media screen and (max-width: $tabletWidth)  {
+  body{
+    > header.tablet {
+      position: fixed;
+      top: 0;
+      padding: 0 5%;
+      height: 6em;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      width: $contentWidth;
+      align-items: center;
+      > div.nav-bg{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateY(-100%);
+        background-color: $primaryColor;
+        @include transition(200ms);
+        &.active{
+          transform: translateY(0);
+        }
+
+      }
+      nav{
+        flex-direction: row;
+        bottom: 0;
+        top: 0;
+        right: -20em;
+        width: 20em;
+        transform: unset;
+        background-color: $tertiaryColor;
+        @include transition(right 200ms ease-in 200ms);
+        &.opened {
+          right: 0;
+        }
+        ul{
+          width: 100%;
+          justify-content: flex-start;
+          padding: 5em 2em;
+          a{
+            width: 100%;
+            border-radius: 0;
+            svg{
+              position: relative;
+              color: $primaryColor;
+              height: 2em;
+              width: 2em;
+            }
+            li{
+              display: inline-block;
+              margin-left: 1em;
+              font-width: 1.1em;
+              color: white;
+            }
+            &:hover{
+              background-color: unset;
+              box-shadow: unset;
+              width: 100%;
+              svg{
+                color: $primaryColor;
+              }
+              li{
+              }
+            }
+          }
+        }
+        img{
+          svg{
+          }
+        }
+      }
+      div{
+        display: block;
+        color: $secondaryColor;
+        z-index: 1;
+      }
+      > a{
+        display: block;
+        position: relative;
+        margin-left: auto;
+        text-decoration: none;
+        padding: 1em;
+        background-color: $primaryColor;
+        color: $secondaryColor;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+        border: 1px solid $secondaryColor;
+        @include transition(200ms);
+        right: 10%;
+        z-index: 2;
+        &:hover{
+          color: $secondaryColor;
+          background-color: unset;
+        }
+      }
+      div.hamburger-icon {
+        position: absolute;
+        display: block;
+        height: 2em;
+        width: 2.5em;
+        z-index: 200;
+        right: 5%;
+        .first, .second, .third {
+          height: 0.26em;
+          border-radius: 10px;
+          width: 100%;
+          background-color: $secondaryColor;
+          transform-origin: left;
+          @include transition((right 200ms ease-in 200ms, transform 200ms ease-in 200ms));
+        }
+        .second {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-.13em);
+        }
+        .third {
+          position: absolute;
+          bottom: 0;
+        }
+        &.opened > .first {
+          transform: rotate(45deg);
+          @include transition(transform 200ms);
+
+        }
+        &.opened > .second {
+          @include transition(right 200ms);
+          right: -200%;
+        }
+        &.opened > .third {
+          transform: rotate(-45deg);
+          @include transition(transform 200ms);
+        }
+      }
+    }
+    .container{
+      #home{
+        header.desktop {
+          display: none;
+          div, a{
+            display: none;
+          }
+        }
+        main {
+          height: 85vh;
+          div.left{
+            padding: 12.5% 0;
+            span {
+            }
+            h1 {
+              font-size: 4em;
+              margin-top: .3em;
+            }
+            > div {
+              margin-top: 5em;
+              a {
+                svg {
+                }
+                &:hover {
+                  svg {
+                  }
+                }
+              }
+            }
+          }
+          div.right{
+            width: 40%;
+          }
+        }
+      }
+      #about{
+        flex-direction: column-reverse;
+        height: 100% !important;
+        .left{
+          width: $contentWidth;
+          height: 50%;
+          .about-me{
+            width: 100%;
+            h1{
+            }
+            p{
+            }
+          }
+          .my-skills{
+            width: 100%;
+            h2 {
+            }
+            > div {
+              svg {
+              }
+            }
+          }
+        }
+        .right{
+          width: $contentWidth;
+          position: relative;
+          height: calc(45% - 10em);
+          min-height: 50em;
+          background: url("img/icons/about-bg.svg") center center/cover no-repeat;
+          margin: 8em 0 2em 0;
+          //margin-top: 5%;
+
+        }
+      }
+      #contact{
+        header{
+          height: 30%;
+          h2{
+            margin-top: 3em;
+            height: 20%;
+          }
+        }
+        main{
+          height: 63%;
+          padding-top: 2%;
+          display: flex;
+          flex-direction: column-reverse;
+          justify-content: space-between;
+          > div{
+            display: flex;
+            height: 40%;
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-top: 10%;
+            a{
+              width: 48%;
+              &.made-by{
+              }
+              &:hover{
+              }
+              > div {
+                > div{
+                  min-height: 3.5em;
+                  min-width: 3.5em;
+                  background-size: 2em 2em;
+                  &:hover{
+                  }
+                }
+                span{
+                }
+              }
+            }
+          }
+          form{
+            height: 50%;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            flex-direction: row-reverse;
+            > div.top {
+              width: 48%;
+              height: 12em;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              > div {
+                //height: 25%;
+                margin-bottom: 0;
+                input {
+                  &:hover, &:focus {
+                  }
+                  &:focus + label, &:not(:placeholder-shown) + label {
+                    left: 3%;
+                  }
+                  & + label {
+                  }
+                  &:not(:empty) + label {
+                  }
+                }
+              }
+            }
+            > div.bottom{
+              height: 90%;
+              margin-top: 0;
+              width: 48%;
+              > div {
+                height: 12em;
+                textarea {
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  &:hover, &:focus {
+                  }
+
+                  &:focus + label, &:not(:placeholder-shown) + label {
+                    left: 3%;
+                  }
+
+                  & + label {
+                    top: 12%;
+                  }
+
+                  &:not(:empty) + label {
+                  }
+                }
+              }
+
+
+
+            }
+          }
+        }
+      }
+    }
+  }
+}

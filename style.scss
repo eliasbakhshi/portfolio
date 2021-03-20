@@ -7,7 +7,8 @@ $secondaryColor: #F0F0F0;
 $tertiaryColor: #2196F3;
 $shadowBox: 1px 1px 5px 0 rgba(255, 255, 255, 0.3);
 $shadowBoxHover: 1px 4px 5px 0 rgba(255, 255, 255, 0.2);
-
+$tabletWidth: 1023px;
+$mobileWidth: 767px;
 
 @mixin hoverBtn($btnColor){
   //background-color: $primaryColor;
@@ -21,7 +22,7 @@ $shadowBoxHover: 1px 4px 5px 0 rgba(255, 255, 255, 0.2);
   -o-transition: $property;
   transition: $property;
 }
-
+/* Style for the desktop view */
 body{
   margin: 0;
   padding: 0;
@@ -44,73 +45,81 @@ body{
       background: $tertiaryColor;
     }
   }
-  nav{
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    right: 8%;
-    top: 50%;
-    transform: translate(50%, -50%);
-    color: $secondaryColor;
-    width: 10em;
-    z-index: 100;
-    ul{
-      text-decoration: none;
+  > header.tablet {
+    height: 0;
+    nav{
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      a{
-        position: relative;
+      position: fixed;
+      right: 8%;
+      top: 50%;
+      transform: translate(50%, -50%);
+      color: $secondaryColor;
+      width: 10em;
+      z-index: 100;
+      ul{
         text-decoration: none;
-        color: $secondaryColor;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        width: 2em;
-        height: 2em;
-        margin: 0.5em 0;
-        overflow: hidden;
-        border-radius: 10px;
-        @include transition((width 300ms, background-color 300ms,box-shadow 300ms));
-        svg{
-          position: absolute;
-          height: 2em;
-          width: 2em;
+        justify-content: space-between;
+        a{
+          position: relative;
+          text-decoration: none;
           color: $secondaryColor;
-          left: 0;
-          @include transition(color 200ms);
-        }
-        li{
-          list-style: none;
-          margin-left: 3em;
-          color: $primaryColor;
-          display: none;
-        }
-        &:hover{
-          width: 8em;
-          background-color: $secondaryColor;
-          box-shadow: $shadowBox;
+          display: flex;
+          align-items: center;
+          width: 2em;
+          height: 2em;
+          margin: 0.5em 0;
+          overflow: hidden;
+          border-radius: 10px;
+          @include transition((width 300ms, background-color 300ms,box-shadow 300ms));
           svg{
-            color: $tertiaryColor;
+            position: absolute;
+            height: 1em;
+            width: 1em;
+            color: $secondaryColor;
+            left: 0;
+            @include transition((color 200ms, width 200ms, height 200ms));
           }
           li{
-            display: list-item;
-            position: relative;
+            list-style: none;
+            margin-left: 3em;
+            color: $primaryColor;
+            display: none;
           }
+          &:hover{
+            width: 8em;
+            background-color: $secondaryColor;
+            box-shadow: $shadowBox;
+            svg{
+              height: 2em;
+              width: 2em;
+              color: $tertiaryColor;
+            }
+            li{
+              display: list-item;
+              position: relative;
+            }
+          }
+        }
+      }
+      img{
+        background-color: $secondaryColor;
+        border-radius: 8px;
+        color: $secondaryColor;
+        height: 2em;
+        width: 2em;
+        svg{
+          color: $secondaryColor;
+          background-color: $secondaryColor;
         }
       }
     }
-    img{
-      background-color: $secondaryColor;
-      border-radius: 8px;
-      color: $secondaryColor;
-      height: 2em;
-      width: 2em;
-      svg{
-        color: $secondaryColor;
-        background-color: $secondaryColor;
 
-      }
+    div, a {
+      display: none;
     }
   }
   .container{
@@ -127,7 +136,7 @@ body{
       align-items: center;
       background-color: $primaryColor;
       //scroll-snap-align: center;
-      header{
+      header.desktop{
         display: flex;
         justify-content: space-between;
         width: $contentWidth;
@@ -158,9 +167,13 @@ body{
         height: 80vh;
         display: flex;
         justify-content: center;
+        margin-top: auto;
         div.left{
           width: 60%;
           padding: 5% 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
           span {
             font-size: 1em;
             letter-spacing: 0.5em;
@@ -312,8 +325,8 @@ body{
               display: flex;
               align-items: center;
               > div{
-                width: 5em;
-                height: 5em;
+                min-width: 5em;
+                min-height: 5em;
                 border-radius: 10px;
                 background-position: center center;
                 background-color: $secondaryColor;
@@ -328,6 +341,7 @@ body{
                 color: $secondaryColor;
                 font-size: 1em;
                 vertical-align: center;
+                flex-wrap: wrap;
               }
             }
           }
@@ -338,107 +352,151 @@ body{
           flex-direction: column;
           width: 40%;
           justify-content: space-between;
-          div{
-            height: 3em;
-            width: 100%;
-            position: relative;
-            border-radius: 10px;
-            background-color: $secondaryColor;
-            margin-bottom: 1em;
-            box-sizing: border-box;
-            &#messageBox{
-              height: 12em;
-              margin-top: 1.5em;
-            }
-            textarea, input{
-              position: absolute;
-              top: 55%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              height: 2em;
-              width: 95%;
-              border: 0;
-              text-indent: 5px;
+          > div.top {
+            height: 30%;
+            > div {
+              height: 3.5em;
+              width: 100%;
+              position: relative;
+              border-radius: 10px;
               background-color: $secondaryColor;
-              &:hover,&:focus{
-                outline: none;
-              }
-              &:focus + label, &:not(:placeholder-shown) + label {
-                left: 3%;
-                top: 10%;
-                transform: translate(0,-5%);
-                font-size: 0.4em;
-                opacity: 1;
-              }
-              & + label{
+              margin-bottom: 3%;
+              box-sizing: border-box;
+              input {
                 position: absolute;
-                @include transition((left 500ms ,top 500ms,font-size 500ms, transform 500ms));
-                pointer-events: none;
-                cursor: text;
-                top: 50%;
-                left: 1.5em;
-                transform: translate(0, -50%);
-                opacity: 0.5;
-                font-size: 0.7em;
-                color: $primaryColor;
-              }
-              &:not(:empty) + label{
-                color: red;
-              }
-            }
-            textarea{
-              height: 12em !important;
-              width: 95%;
-              text-indent: 5px;
+                top: 55%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 2em;
+                width: 95%;
+                border: 0;
+                text-indent: 5px;
+                background-color: $secondaryColor;
+                font-size: 1.2em;
 
-              & + label{
-                position: absolute;
-                @include transition((left 500ms ,top 500ms,font-size 500ms, transform 500ms));
-                pointer-events: none;
-                cursor: text;
-                top: 15%;
-                left: 1.5em;
-                transform: translate(0, -50%);
-                opacity: 0.5;
-                color: $primaryColor;
-              }
-              &:focus + label, &:not(:placeholder-shown) + label{
-                left: 3%;
-                top: 5%;
-                transform: translate(0,-5%);
-                font-size: 0.6em;
-                opacity: 1;
+                &:hover, &:focus {
+                  outline: none;
+                }
+
+                &:focus + label, &:not(:placeholder-shown) + label {
+                  left: 1%;
+                  top: 10%;
+                  transform: translate(0, -5%);
+                  font-size: 0.4em;
+                  opacity: 1;
+                }
+
+                & + label {
+                  position: absolute;
+                  @include transition((left 500ms, top 500ms, font-size 500ms, transform 500ms));
+                  pointer-events: none;
+                  cursor: text;
+                  top: 50%;
+                  left: 1.5em;
+                  transform: translate(0, -50%);
+                  opacity: 0.5;
+                  font-size: 0.7em;
+                  color: $primaryColor;
+                }
+
+                &:not(:empty) + label {
+                  color: red;
+                }
               }
             }
           }
-          button{
-            height: 3.5em;
-            width: 10em;
-            border-radius: 10px;
-            box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
-            border: 0;
-            background-color: $secondaryColor;
-            &:hover{
-              box-shadow: 0 5px 10px 0 rgba(255,255,255,0.5);
-              transform: translateY(-5px);
-            }
-            &:focus{
+          div.bottom{
+            height: 65%;
+            margin-top: 1.5em;
+            background-color: transparent;
+            > div {
+              height: 12em;
+              width: 100%;
+              position: relative;
               border-radius: 10px;
-              border: 2px solid $tertiaryColor;
-              outline: none;
+              background-color: $secondaryColor;
+              margin-bottom: 1em;
+              box-sizing: border-box;
+
+              textarea {
+                height: 75% !important;
+                width: 95%;
+                text-indent: 5px;
+                position: absolute;
+                top: 55%;
+                left: 50%;
+                transform: translate(-50%, -55%);
+                border: 0;
+                background-color: $secondaryColor;
+                font-size: 1.2em;
+                &:hover, &:focus {
+                  outline: none;
+                }
+
+                &:focus + label, &:not(:placeholder-shown) + label {
+                  left: 1.5%;
+                  top: 5%;
+                  transform: translate(0, -5%);
+                  font-size: 0.4em;
+                  opacity: 1;
+                }
+
+                & + label {
+                  position: absolute;
+                  @include transition((left 500ms, top 500ms, font-size 500ms, transform 500ms));
+                  pointer-events: none;
+                  cursor: text;
+                  top: 15%;
+                  left: 1.5em;
+                  transform: translate(0, -50%);
+                  opacity: 0.5;
+                  font-size: 0.7em;
+                  color: $primaryColor;
+                }
+
+                &:not(:empty) + label {
+                  color: red;
+                }
+              }
             }
-            &:active{
+
+            button {
+              height: 3.5em;
+              width: 10em;
               border-radius: 10px;
-              outline: none;
-              box-shadow: inset 0 0 5px 0 rgba(0,0,0,0.1),
-              0 1px 5px 0 rgba(255,255,255,0.5);
-              transform: translateY(0);
+              box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
               border: 0;
+              background-color: $secondaryColor;
+              @include transition(transform 200ms);
+
+              &:hover {
+                box-shadow: 0 5px 10px 0 rgba(255, 255, 255, 0.5);
+                transform: translateY(-5px);
+              }
+
+              &:focus {
+                border-radius: 10px;
+                border: 2px solid $tertiaryColor;
+                outline: none;
+              }
+
+              &:active {
+                border-radius: 10px;
+                outline: none;
+                box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.1),
+                0 1px 5px 0 rgba(255, 255, 255, 0.5);
+                transform: translateY(0);
+                border: 0;
+              }
             }
+
           }
         }
       }
     }
   }
-
 }
+
+
+@import "tablet_style";
+@import "mobile_style";

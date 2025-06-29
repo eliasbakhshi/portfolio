@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/app/globals.css";
 import Nav from "@/components/Nav";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+
 
 
 const geistSans = Geist({
@@ -32,8 +34,9 @@ export default function RootLayout({
                     <div id='left' className='bg-green-200 col-span-12 md:col-span-6 md:sticky md:top-0 md:left-0 md:h-screen flex flex-col'>
                         <Nav />
                         <h2 className='p-4 font-bold'>Elias Bakhshi</h2>
-                        <div id='social' className='bg-yellow-200 h-20 mt-auto'>
-                            Footer Content
+                        <div id='social' className='flex gap-6 items-center px-8 mt-auto h-20 bg-gray-200'>
+                            <FaLinkedin size="2em" />
+                            <FaGithub size="2em" />
                         </div>
                     </div>
                     <div id='right' className='bg-blue-200 col-span-12 md:col-span-6'>

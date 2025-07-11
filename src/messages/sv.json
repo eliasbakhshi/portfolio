@@ -1,0 +1,17 @@
+{
+    "nav": {
+        "home": "Hem",
+        "experience": "Erfarenhet",
+        "projects": "Projekt",
+        "contact": "Kontakt",
+        "about": "Om",
+        "english": "EN",
+        "swedish": "SV"
+    },
+    "tabsInfo": {
+        "home": "Elias Bakhshi",
+        "homeDescription": "Elias Bakhshis personliga webbplats",
+        "projects": "Projekt",
+        "projectsDescription": "En presentation av mina projekt"
+    }
+}

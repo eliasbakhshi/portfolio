@@ -1,0 +1,17 @@
+{
+    "nav": {
+        "home": "Home",
+        "experience": "Experience",
+        "projects": "Projects",
+        "contact": "Contact",
+        "about": "About",
+        "english": "EN",
+        "swedish": "SV"
+    },
+    "tabsInfo": {
+        "home": "Elias Bakhshi",
+        "homeDescription": "Elias Bakhshi's personal website",
+        "projects": "Projects",
+        "projectsDescription": "A showcase of my projects"
+    }
+}

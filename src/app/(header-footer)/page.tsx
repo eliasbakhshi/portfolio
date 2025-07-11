@@ -1,7 +1,22 @@
 import Link from "next/link";
 import Job from "@/components/Job";
 import { JobProps, JobsProps } from '@/types';
+import { getMessages } from "next-intl/server";
+import { AbstractIntlMessages } from "next-intl";
 
+export async function generateMetadata({
+    params: { locale },
+}: {
+    params: { locale: string };
+}) {
+    const messages: AbstractIntlMessages = await getMessages({ locale });
+    const title = messages.tabsInfo?.home;
+    const description = messages.tabsInfo?.homeDescription;
+    return {
+        title,
+        description,
+    };
+}
 
 export default function Home() {
     const defaultJob: JobProps | JobsProps = [

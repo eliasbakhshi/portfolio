@@ -1,0 +1,24 @@
+$icons-width: 60px;
+$sub-icons-width: 1rem;
+$primary-color: #020b4aff;
+$secondary-color: #f0f0f0ff;
+$secondary-color-hovered: #9194aeff;
+$tertiary-color: #e09f3eff;
+$tertiary-color-hovered: #503f46ff;
+$primary-font: Poppins;
+$radius: 5px;
+$headers-h1: 42px;
+$headers-h2: 36px;
+$headers-h3: 30px;
+$headers-h4: 24px;
+$headers-h5: 20px;
+$headers-h6: 18px;
+$headers-paragraph: 16px;
+$headers-small-paragraph: 14px;
+
+:global(*) {
+    box-sizing: border-box;
+}
+body {
+    font-family: $primary-font, sans-serif;
+}

@@ -1,15 +1,15 @@
-import styles from "./components.module.scss";
-import { JobProps } from '@/types';
-
+import styles from "@/styles/components.module.scss";
+import { JobProps } from "@/types";
 
 export default function Job({ company, iconPath, location, title, period, description, skills }: JobProps) {
     return (
         <div className={styles.wrapper}>
             <h1>Erfarenheter</h1>
             <ul className={styles.sessions}>
-
                 <li style={{ "--bullet-image": `url(${iconPath})` } as React.CSSProperties}>
-                    <h6>{title} | {company}</h6>
+                    <h6>
+                        {title} | {company}
+                    </h6>
                     <p className={styles.subtitle}>{period}</p>
                     <p className={styles.description}>{description}</p>
                 </li>

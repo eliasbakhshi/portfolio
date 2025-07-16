@@ -1,4 +1,5 @@
-import styles from "@/styles/components.module.scss";
+// import styles from "@/styles/_components.module.scss";
+import styles from "@/styles/components/_job.module.scss";
 import { JobProps } from "@/types";
 
 export default function Job({ company, iconPath, location, title, period, description, skills }: JobProps) {

@@ -1,0 +1,53 @@
+// Base styles and resets
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $primary-font, sans-serif;
+    line-height: 1.6;
+    color: $primary-color;
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-weight: 600;
+}
+
+p {
+    margin: 0 0 1rem 0;
+}
+
+a {
+    color: $tertiary-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $tertiary-color-hovered;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

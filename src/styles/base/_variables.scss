@@ -15,10 +15,3 @@ $headers-h5: 20px;
 $headers-h6: 18px;
 $headers-paragraph: 16px;
 $headers-small-paragraph: 14px;
-
-:global(*) {
-    box-sizing: border-box;
-}
-body {
-    font-family: $primary-font, sans-serif;
-}

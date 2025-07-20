@@ -7,8 +7,7 @@
     flex-direction: column;
     justify-content: center;
     li {
-        padding-bottom: $icons-width;
-
+        padding-bottom: 1rem;
         border-left: 1px solid $secondary-color;
         position: relative;
         padding-left: calc($icons-width * 0.5 + 1rem);
@@ -34,7 +33,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            border: 1px solid #4e5ed3;
+            border: 1px solid $secondary-color;
             // box-shadow: 3px 3px 0px #bab5f8;
             border-radius: 10%;
             position: absolute;
@@ -43,22 +42,44 @@
         }
 
         h6 {
-            color: #4f4f4f;
+            color: $secondary-color;
             font-family: sans-serif;
             line-height: 1.5;
             margin-top: 0.4rem;
             font-weight: bold;
             text-transform: capitalize;
         }
-        .subtitle {
-            color: #2a2839;
+        p {
+            margin-bottom: 0.4rem;
+        }
+        .duration {
+            color: $secondary-color;
             font-family: "Poppins", sans-serif;
             font-weight: 500;
         }
+        .description {
+            color: $secondary-color;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            margin-top: 0.5rem;
+        }
+        .skills {
+            margin-top: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            span {
+                background-color: $secondary-color;
+                color: white;
+                padding: 0.2rem 0.5rem;
+                border-radius: 4px;
+                font-size: 0.9rem;
+            }
+        }
         .subSessions {
-            padding-top: calc($icons-width * 0.5);
+            padding-top: 1rem;
             li {
-                padding-bottom: 1.5rem;
+                padding-bottom: 1rem;
                 border-left: 1px solid $secondary-color;
                 position: relative;
                 padding-left: 1rem;
@@ -73,11 +94,11 @@
                     content: "";
                     width: $sub-icons-width;
                     height: $sub-icons-width;
-                    background: white;
+                    background: $secondary-color;
                     background-size: cover;
                     background-position: center;
                     background-repeat: no-repeat;
-                    border: 1px solid #4e5ed3;
+                    border: 1px solid $secondary-color;
                     // box-shadow: 3px 3px 0px #bab5f8;
                     border-radius: 50%;
                     position: absolute;

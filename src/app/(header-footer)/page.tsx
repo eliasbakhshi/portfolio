@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Job from "@/components/Job";
-import { JobProps, JobsProps } from '@/types';
+import Experience from "@/components/Experience";
+import { ExperienceProps, ExperiencesProps } from '@/types';
 import { getMessages } from "next-intl/server";
 import { AbstractIntlMessages } from "next-intl";
 
@@ -19,34 +19,62 @@ export async function generateMetadata({
 }
 
 export default function Home() {
-    const defaultJob: JobProps | JobsProps = [
+    const experiences: (ExperienceProps | ExperiencesProps)[] = [
         {
-            company: "BeeByte",
-            iconPath: "/images/beebyte.jpeg",
-            location: "Karlskrona, Sweden",
+            company: "Inter-Data",
+            iconPath: "/images/inter-data.jpeg",
+            location: "Sweden",
             title: "Fullstack Developer",
-            period: "Aug 2019 - Apr 2022",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            skills: ["JavaScript", "React", "Node.js"],
+            duration: "Aug 2019 - Apr 2022",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            skills: [],
         },
         {
-            company: "TechCorp",
-            iconPath: "/images/techcorp.jpeg",
-            location: "Stockholm, Sweden",
-            title: "Software Engineer Intern",
-            period: "May 2022 - Present",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            skills: ["JavaScript", "React", "Node.js"],
+            company: "KIP",
+            iconPath: "/images/kip.jpg",
+            location: "Sweden",
+            title: "Fullstack Developer",
+            duration: "Aug 2019 - Apr 2022",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            skills: [],
         },
         {
-            company: "WebSolutions",
-            iconPath: "/images/websolutions.jpeg",
-            location: "Gothenburg, Sweden",
-            title: ["Web Developer", "Frontend Developer"],
-            period: ["Jan 2020 - Jul 2021", "Jun 2021 - Dec 2021"],
-            description: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit."],
-            skills: [["HTML", "CSS", "JavaScript"], ["React", "Vue.js", "Angular"]],
+            company: "Valentin Experience",
+            iconPath: "/images/vx.jpeg",
+            location: "Sweden",
+            title: "Fullstack Developer",
+            duration: "Aug 2019 - Apr 2022",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            skills: [],
         },
+        {
+            company: "Tromb",
+            iconPath: "/images/tromb.png",
+            location: "Sweden",
+            title: "Fullstack Developer",
+            duration: "Aug 2019 - Apr 2022",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            skills: [],
+        },
+        {
+            company: "WebsiteService",
+            iconPath: "/images/websiteservice.png",
+            location: "Sweden",
+            title: "Fullstack Developer",
+            duration: "Aug 2019 - Apr 2022",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            skills: [],
+        },
+        {
+            company: "Blekinge Tekniska Högskola",
+            iconPath: "/images/bth.jpg",
+            location: "Sweden",
+            title: ["Fullstack Developer", "Frontend Developer"],
+            totalDuration: "Deltid | 10 mån",
+            duration: ["Jan 2020 - Jul 2021", "Jun 2021 - Dec 2021"],
+            description: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit."],
+            skills: [],
+        }
     ];
     return (
         <>
@@ -56,7 +84,8 @@ export default function Home() {
                 </p>
             </div>
             <div id='experience' className='mt-5'>
-                <Job title='Full Stack Developer' company='Inter-Data' location='Hagfors' description='I developed multiple portals in a team, connecting them to an automation system (n8n.io) and focusing on UX/UI design.' />
+
+                <Experience experiences={experiences} />
             </div>
             <div id='projects' className='mt-5'>
                 <Link href='/projects'>Projects</Link>

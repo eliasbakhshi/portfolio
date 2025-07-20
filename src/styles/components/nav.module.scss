@@ -1,0 +1,11 @@
+@use "@/styles/base/_variables" as *;
+
+.nav {
+    a {
+        color : $secondary-color;
+        &:hover {
+            color: $secondary-color;
+            text-decoration: underline;
+        }
+    }
+}

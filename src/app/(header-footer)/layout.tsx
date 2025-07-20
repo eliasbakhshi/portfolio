@@ -1,19 +1,19 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "@/styles/globals.scss";
+// import { Geist, Geist_Mono } from "next/font/google";
+import "@/styles/main.scss";
 import Nav from "@/components/Nav";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
+// const geistSans = Geist({
+//     variable: "--font-geist-sans",
+//     subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//     variable: "--font-geist-mono",
+//     subsets: ["latin"],
+// });
 
 export default async function RootLayout({
     children,
@@ -26,17 +26,17 @@ export default async function RootLayout({
         // <html lang='en' style={{ scrollBehavior: "smooth" }}>
         <html lang={locale}>
             <NextIntlClientProvider messages={messages}>
-                <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex justify-center`}>
-                    <main className='container grid grid-cols-1 md:grid-cols-12 min-h-screen'>
-                        <div id='left' className='bg-green-200 col-span-12 md:col-span-6 md:sticky md:top-0 md:left-0 md:h-screen flex flex-col'>
+                <body className={`antialiased flex justify-center`}>
+                    <main className='container grid grid-cols-1 md:grid-cols-12 min-h-screen main'>
+                        <div id='left' className='col-span-12 md:col-span-6 md:sticky md:top-0 md:left-0 md:h-screen flex flex-col'>
                             <Nav />
-                            <h2 className='p-4 font-bold'>Elias Bakhshi</h2>
-                            <div id='social' className='flex gap-6 items-center px-8 mt-auto h-20 bg-gray-200'>
-                                <FaLinkedin size='2em' />
-                                <FaGithub size='2em' />
+                            <h2 className='p-4 font-bold text-white'>Elias Bakhshi</h2>
+                            <div id='social' className='flex gap-6 items-center px-8 mt-auto h-20'>
+                                <FaLinkedin size='2em' color="white" />
+                                <FaGithub size='2em' color="white" />
                             </div>
                         </div>
-                        <div id='right' className='bg-blue-200 col-span-12 md:col-span-6'>
+                        <div id='right' className='col-span-12 md:col-span-6'>
                             {children}
                         </div>
                     </main>

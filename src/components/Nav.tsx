@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import styles from "@/styles/components/nav.module.scss";
 
 export const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
     const handleClick = (e: React.MouseEvent) => {
@@ -56,13 +57,20 @@ export default function Nav() {
     const t = useTranslations("nav");
 
     return (
-        <nav className='w-full justify-center gap-6 mt-4 hidden lg:flex'>
+        <nav className={`w-full justify-center gap-6 mt-4 hidden lg:flex ${styles.nav}`}>
             <NavLink href='#about'>{t("about")}</NavLink>
             <NavLink href='#experience'>{t("experience")}</NavLink>
             <NavLink href='#projects'>{t("projects")}</NavLink>
             <NavLink href='#contact'>{t("contact")}</NavLink>
-            <button className={`language-switcher ${locale === "en" ? "active bg-red-100" : ""} text-lg font-semibold`} onClick={() => handleLocaleChange("en")}>{t("english")}</button>
-            <button className={`language-switcher ${locale === "sv" ? "active bg-red-100" : ""} text-lg font-semibold`} onClick={() => handleLocaleChange("sv")}>{t("swedish")}</button>
+            {locale === "en" ? (
+                <button className='' onClick={() => handleLocaleChange("sv")} aria-label={t("swedish")}>
+                    🇸🇪
+                </button>
+            ) : (
+                <button className='' onClick={() => handleLocaleChange("en")} aria-label={t("english")}>
+                    🇬🇧
+                </button>
+            )}
         </nav>
     );
 }

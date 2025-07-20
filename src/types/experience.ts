@@ -1,18 +1,19 @@
-export type JobProps = {
+export type ExperienceProps = {
     company: string;
     iconPath: string;
     location: string;
     title: string;
-    period: string;
+    duration: string;
     description: string;
     skills: string[];
 };
-export type JobsProps = {
+export type ExperiencesProps = {
     company: string;
     iconPath: string;
     location: string;
+    totalDuration: string;
     title: string[];
-    period: string[];
+    duration: string[];
     description: string[];
     skills: string[][];
 };

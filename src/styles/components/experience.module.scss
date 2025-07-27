@@ -1,114 +1,151 @@
 @use "@/styles/base/_variables" as *;
 
-.sessions {
-    margin-top: 2rem;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    li {
-        padding-bottom: 1rem;
-        border-left: 1px solid $secondary-color;
+.experience {
+    padding-top: 4rem;
+    ul {
         position: relative;
-        padding-left: calc($icons-width * 0.5 + 1rem);
-        margin-left: calc($icons-width * 0.5);
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
         justify-content: center;
-        height: 100%;
-
-        &:last-child {
-            border: 0px;
-            padding-bottom: 0;
-        }
-
-        &:before {
-            content: "";
-            width: $icons-width;
-            height: $icons-width;
-            background: white;
-            background-image: var(--bullet-image);
-
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border: 1px solid $secondary-color;
-            // box-shadow: 3px 3px 0px #bab5f8;
-            border-radius: 10%;
-            position: absolute;
-            left: calc($icons-width * -0.5);
-            top: 0px;
-        }
-
-        h6 {
-            color: $secondary-color;
-            font-family: sans-serif;
-            line-height: 1.5;
-            margin-top: 0.4rem;
-            font-weight: bold;
-            text-transform: capitalize;
-        }
-        p {
-            margin-bottom: 0.4rem;
-        }
-        .duration {
-            color: $secondary-color;
-            font-family: "Poppins", sans-serif;
-            font-weight: 500;
-        }
-        .description {
-            color: $secondary-color;
-            font-family: "Poppins", sans-serif;
-            font-weight: 400;
-            margin-top: 0.5rem;
-        }
-        .skills {
-            margin-top: 0.5rem;
+        li {
+            padding-bottom: 1rem;
+            border-left: 1px solid $secondary-color;
+            position: relative;
+            padding-left: calc($icons-width * 0.5 + 1rem);
+            margin-left: calc($icons-width * 0.5);
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            span {
-                background-color: $secondary-color;
-                color: white;
-                padding: 0.2rem 0.5rem;
-                border-radius: 4px;
-                font-size: 0.9rem;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            height: 100%;
+            color: $secondary-color-faded;
+            cursor: pointer;
+            &:hover {
+                color: $secondary-color;
+                a {
+                    .icon {
+                        transform: translate(0.3rem, -0.3rem);
+                    }
+                    > h6 {
+                        color: $tertiary-color;
+                    }
+                }
             }
-        }
-        .subSessions {
-            padding-top: 1rem;
-            li {
-                padding-bottom: 1rem;
-                border-left: 1px solid $secondary-color;
-                position: relative;
-                padding-left: 1rem;
-                margin-left: calc($sub-icons-width * 0.5);
 
-                &:last-child {
-                    border: 0px;
-                    padding-bottom: 0;
-                }
-
-                &:before {
-                    content: "";
-                    width: $sub-icons-width;
-                    height: $sub-icons-width;
-                    background: $secondary-color;
-                    background-size: cover;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    border: 1px solid $secondary-color;
-                    // box-shadow: 3px 3px 0px #bab5f8;
-                    border-radius: 50%;
-                    position: absolute;
-                    left: calc($sub-icons-width * -0.5);
-                    top: 0;
-                }
+            &:before {
+                content: "";
+                width: $icons-width;
+                height: $icons-width;
+                background: $secondary-color;
+                background-image: var(--bullet-image);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                border: 1px solid $secondary-color;
+                border-radius: 10%;
+                position: absolute;
+                left: calc($icons-width * -0.5);
+                top: 0px;
+            }
+            &:last-child {
+                border: 0px;
+                padding-bottom: 0;
             }
             h6 {
-                margin-top: -0.1rem;
+                display: flex;
+                align-items: center;
+                color: $secondary-color;
+                font-family: sans-serif;
+                line-height: 1.5;
+                margin-top: 0.4rem;
+                font-weight: bold;
+                text-transform: capitalize;
             }
+            .icon {
+                transition: transform 0.2s;
+                margin-left: 0.5rem;
+            }
+            p {
+                margin-bottom: 0.4rem;
+            }
+            .duration {
+                font-family: "Poppins", sans-serif;
+                font-weight: 500;
+            }
+            .description {
+                font-family: "Poppins", sans-serif;
+                font-weight: 400;
+                margin-top: 0.5rem;
+            }
+            .skills {
+                margin-top: 0.4rem;
+                margin-bottom: 1rem;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                span {
+                    background-color: $tertiary-color-faded;
+                    color: $tertiary-color;
+                    padding: 0.1rem 0.4rem;
+                    border-radius: 4px;
+                    font-size: 0.9rem;
+                }
+            }
+            .subSessions {
+                li {
+                    border-left: 1px solid $secondary-color;
+                    position: relative;
+                    padding-left: 1rem;
+                    margin-left: calc($sub-icons-width * 0.5);
+
+                    &:last-child {
+                        border: 0px;
+                        padding-bottom: 0;
+                    }
+                    &:hover {
+                        h6 {
+                            color: $tertiary-color;
+                        }
+                    }
+
+                    &:before {
+                        content: "";
+                        width: $sub-icons-width;
+                        height: $sub-icons-width;
+                        background: $secondary-color;
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        border: 1px solid $secondary-color;
+                        border-radius: 50%;
+                        position: absolute;
+                        left: calc($sub-icons-width * -0.5);
+                        top: 0;
+                    }
+                }
+                h6 {
+                    margin-top: -0.1rem;
+                }
+            }
+        }
+    }
+    .readmore {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        color: $secondary-color;
+        cursor: pointer;
+        &:hover {
+            color: $tertiary-color;
+            .icon {
+                transform: translate(0.3rem, -0.3rem);
+            }
+        }
+        .icon {
+            margin-left: 0.5rem;
+            width: 1.2rem;
+            height: 1.2rem;
+            transition: transform 0.2s;
         }
     }
 }

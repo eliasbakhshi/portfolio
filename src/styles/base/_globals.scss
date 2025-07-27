@@ -1,6 +1,21 @@
 // =============================================================================
 // Home Page
 // =============================================================================
+
 body {
-    background-color: $primary-color; // Use a variable for background color
+    background-color: $primary-color;
+}
+
+#about {
+    color: $secondary-color-faded;
+    padding-top: 4rem;
+    strong {
+        color: $secondary-color;
+    }
+}
+
+#left {
+    p {
+        color: $secondary-color-faded;
+    }
 }

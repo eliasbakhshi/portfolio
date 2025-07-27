@@ -5,15 +5,6 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 
-// const geistSans = Geist({
-//     variable: "--font-geist-sans",
-//     subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//     variable: "--font-geist-mono",
-//     subsets: ["latin"],
-// });
 
 export default async function RootLayout({
     children,
@@ -27,16 +18,18 @@ export default async function RootLayout({
         <html lang={locale}>
             <NextIntlClientProvider messages={messages}>
                 <body className={`antialiased flex justify-center`}>
-                    <main className='container grid grid-cols-1 md:grid-cols-12 min-h-screen main'>
-                        <div id='left' className='col-span-12 md:col-span-6 md:sticky md:top-0 md:left-0 md:h-screen flex flex-col'>
+                    <main className='container grid grid-cols-1 lg:grid-cols-12 min-h-screen px-4 xl:px-0 main'>
+                        <div id='left' className='col-span-12 pe-0 lg:pe-5 lg:col-span-6 lg:sticky lg:top-0 lg:left-0 lg:h-screen flex flex-col'>
                             <Nav />
-                            <h2 className='p-4 font-bold text-white'>Elias Bakhshi</h2>
-                            <div id='social' className='flex gap-6 items-center px-8 mt-auto h-20'>
-                                <FaLinkedin size='2em' color="white" />
-                                <FaGithub size='2em' color="white" />
+                            <h1 className='py-1'>Elias Bakhshi</h1>
+                            <h5>Full Stack Engineer</h5>
+                            <p className='w-[70%] py-5'>Creative, target orgented and passionate developer with a knack for building dynamic web applications.</p>
+                            <div id='social' className='flex gap-6 items-center mt-auto h-20'>
+                                <FaLinkedin size='2em' color='white' />
+                                <FaGithub size='2em' color='white' />
                             </div>
                         </div>
-                        <div id='right' className='col-span-12 md:col-span-6'>
+                        <div id='right' className='col-span-12 lg:col-span-6'>
                             {children}
                         </div>
                     </main>
@@ -45,27 +38,3 @@ export default async function RootLayout({
         </html>
     );
 }
-
-//     <div className="container grid min-h-screen grid-cols-1 lg:grid-cols-12 p-4 [grid-template-rows:auto_auto_100px]
-//   [grid-template-areas:'aside'_'main'_'footer']
-//   lg:[grid-template-areas:'aside_main'_'aside_main'_'footer_main']">
-
-//   <aside className="[grid-area:aside] flex flex-col h-full lg:col-span-6 bg-card p-6 rounded-lg border ">
-//     <h1 className="text-3xl font-bold">Welcome to Our Platform</h1>
-//     <h1 className="text-3xl font-bold">Welcome to Our Platform</h1>
-//     <p className="mt-2 text-muted-foreground">Discover our features</p>
-//   </aside>
-
-//   <main className="[grid-area:main] bg-card p-6 rounded-lg border lg:col-span-6">
-//     <section>
-//       <h2 className="text-2xl font-semibold h-screen">Featured Content</h2>
-//       <h2 className="text-2xl font-semibold h-screen">Featured Content</h2>
-//       <h2 className="text-2xl font-semibold h-screen">Featured Content</h2>
-//       {/* Dynamic content */}
-//     </section>
-//   </main>
-
-//   <footer className="[grid-area:footer] bg-card p-4 rounded-lg border h-[100px] sticky top-4 lg:col-span-6">
-//     <h2 className="text-xl font-semibold">Quick Links</h2>
-//   </footer>
-// </div>

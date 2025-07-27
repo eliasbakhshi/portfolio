@@ -1,12 +1,12 @@
 // =============================================================================
 // MAIN STYLESHEET
 // =============================================================================
+@import "base/reset";
 
 // Tailwind CSS
 @import "tailwindcss";
 
 // Base styles and variables
 @import "base/variables";
-@import "base/reset";
 @import "base/typography";
 @import "base/globals.scss";

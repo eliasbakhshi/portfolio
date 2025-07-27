@@ -1,11 +1,15 @@
 @use "@/styles/base/_variables" as *;
 
 .nav {
+    margin: 4rem 0;
     a {
-        color : $secondary-color;
+        color: $secondary-color;
         &:hover {
             color: $secondary-color;
             text-decoration: underline;
         }
+    }
+    button {
+        cursor: pointer;
     }
 }

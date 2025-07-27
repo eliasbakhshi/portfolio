@@ -1,75 +1,55 @@
-
+import "@/styles/main.scss";
 import BackButton from "@/components/BackButton";
+import { ProjectProps } from "@/types/project";
+import { getMessages } from "next-intl/server";
+import Link from "next/link";
+import { FiArrowUpRight } from "react-icons/fi";
 
-export default function ProjectsPage() {
-    const projects = [
-        {
-            year: "2023",
-            title: "Portfolio Website",
-            madeAt: "Personal Project",
-            builtWith: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
-            link: "https://yourdomain.com",
-        },
-        {
-            year: "2022",
-            title: "E-Commerce Platform",
-            madeAt: "TechCorp",
-            builtWith: ["React", "Node.js", "MongoDB", "Express"],
-            link: "https://example.com",
-        },
-        {
-            year: "2021",
-            title: "Health Tracking App",
-            madeAt: "Wellness Inc",
-            builtWith: ["React Native", "Firebase", "TypeScript"],
-            link: "https://healthapp.com",
-        },
-    ];
+export default async function ProjectsPage() {
+    const messages = await getMessages();
+    const projects = messages.projects.projectsList as ProjectProps[];
+    const tableColumns = messages.projects.tableColumns as ProjectProps;
+    const t = messages.projects;
 
     return (
-        <div className='w-full py-10'>
-            <BackButton />
-            <h1 className='text-4xl font-bold mb-8'>All Projects</h1>
-
-            <div className='overflow-x-auto'>
-                <table className='min-w-full divide-y divide-gray-700'>
-                    <thead>
-                        <tr>
-                            <th className='py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-300 sm:pl-0'>Year</th>
-                            <th className='px-3 py-3.5 text-left text-sm font-semibold text-gray-300'>Project</th>
-                            <th className='px-3 py-3.5 text-left text-sm font-semibold text-gray-300'>Made at</th>
-                            <th className='px-3 py-3.5 text-left text-sm font-semibold text-gray-300'>Built with</th>
-                            <th className='px-3 py-3.5 text-left text-sm font-semibold text-gray-300'>Link</th>
+        <div className='container w-full py-10 px-4 xl:px-0 mx-auto'>
+            <BackButton className='ps-0' />
+            <h2 className='pb-5'>{t?.title || "All Projects"}</h2>
+            <table className='min-w-full pt-5'>
+                <thead>
+                    <tr className='text-left'>
+                        <th className='p-2'>{tableColumns["year"]}</th>
+                        <th className='p-2'>{tableColumns["title"]}</th>
+                        <th className='p-2'>{tableColumns["madeAt"]}</th>
+                        <th className='p-2'>{tableColumns["technologies"]}</th>
+                        <th className='p-2'>{tableColumns["link"]?.toString()}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {projects.map((project, index) => (
+                        <tr key={index} className='hover:bg-gray-800/30 border-t border-gray-700/50'>
+                            <td className='p-2'>{project.year}</td>
+                            <td className='p-2'>{project.title}</td>
+                            <td className='p-2'>{project.madeAt}</td>
+                            <td className='p-2'>
+                                <div className='flex flex-wrap gap-2'>
+                                    {project.technologies.map((tech, techIndex) => (
+                                        <span key={techIndex} className='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-teal-900/30 text-teal-300 border border-teal-700/30'>
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                            </td>
+                            <td className='p-2 group/link'>
+                                <div className='flex items-center gap-2'>
+                                    <Link href={project.link || "#"}>{project.link ? new URL(project.link).hostname : ""}</Link>
+                                    <FiArrowUpRight className="transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1" />
+                                </div>
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody className='divide-y divide-gray-700'>
-                        {projects.map((project, index) => (
-                            <tr key={index} className='hover:bg-gray-800/30'>
-                                <td className='whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-300 sm:pl-0'>{project.year}</td>
-                                <td className='whitespace-nowrap px-3 py-4 text-sm text-gray-300 font-semibold'>{project.title}</td>
-                                <td className='whitespace-nowrap px-3 py-4 text-sm text-gray-400'>{project.madeAt}</td>
-                                <td className='whitespace-nowrap px-3 py-4 text-sm'>
-                                    <div className='flex flex-wrap gap-2'>
-                                        {project.builtWith.map((tech, techIndex) => (
-                                            <span key={techIndex} className='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-teal-900/30 text-teal-300 border border-teal-700/30'>
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </td>
-                                <td className='relative whitespace-nowrap px-3 py-4 text-sm font-medium'>
-                                    <a href={project.link} className='text-blue-400 hover:text-blue-300 flex items-center' target='_blank' rel='noopener noreferrer'>
-                                        {new URL(project.link).hostname}
-                                        <svg className='w-4 h-4 ml-1' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-                                            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'></path>
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
 }

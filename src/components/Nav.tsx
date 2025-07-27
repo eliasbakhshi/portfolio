@@ -57,7 +57,7 @@ export default function Nav() {
     const t = useTranslations("nav");
 
     return (
-        <nav className={`w-full justify-center gap-6 mt-4 hidden lg:flex ${styles.nav}`}>
+        <nav className={`w-full gap-6 mt-4 hidden lg:flex ${styles.nav}`}>
             <NavLink href='#about'>{t("about")}</NavLink>
             <NavLink href='#experience'>{t("experience")}</NavLink>
             <NavLink href='#projects'>{t("projects")}</NavLink>

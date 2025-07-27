@@ -1,5 +1,6 @@
 export type ExperienceProps = {
     company: string;
+    companyURL: string;
     iconPath: string;
     location: string;
     title: string;
@@ -9,6 +10,7 @@ export type ExperienceProps = {
 };
 export type ExperiencesProps = {
     company: string;
+    companyURL: string;
     iconPath: string;
     location: string;
     totalDuration: string;

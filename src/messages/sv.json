@@ -8,10 +8,78 @@
         "english": "EN",
         "swedish": "SV"
     },
-    "tabsInfo": {
+    "pageInfo": {
         "home": "Elias Bakhshi",
         "homeDescription": "Elias Bakhshis personliga webbplats",
         "projects": "Projekt",
         "projectsDescription": "En presentation av mina projekt"
+    },
+    "home": {
+        "experiences": [
+            {
+                "company": "Inter-Data",
+                "iconPath": "/images/inter-data.jpeg",
+                "location": "Sverige",
+                "title": "Fullstackutvecklare",
+                "duration": "Aug 2019 - Apr 2022",
+                "description": "Arbetade som fullstackutvecklare med ansvar för både frontend och backend. Utvecklade och underhöll webbapplikationer samt samarbetade med teamet för att leverera högkvalitativa lösningar.",
+                "skills": []
+            },
+            {
+                "company": "KIP",
+                "iconPath": "/images/kip.jpg",
+                "location": "Sverige",
+                "title": "Fullstackutvecklare",
+                "duration": "Aug 2019 - Apr 2022",
+                "description": "Ansvarade för utveckling av webbtjänster och applikationer. Arbetade med moderna tekniker och bidrog till förbättring av befintliga system.",
+                "skills": []
+            },
+            {
+                "company": "Valentin Experience",
+                "iconPath": "/images/vx.jpeg",
+                "location": "Sverige",
+                "title": "Fullstackutvecklare",
+                "duration": "Aug 2019 - Apr 2022",
+                "description": "Utvecklade digitala lösningar och samarbetade med designers och andra utvecklare för att skapa användarvänliga produkter.",
+                "skills": []
+            },
+            {
+                "company": "Tromb",
+                "iconPath": "/images/tromb.png",
+                "location": "Sverige",
+                "title": "Fullstackutvecklare",
+                "duration": "Aug 2019 - Apr 2022",
+                "description": "Deltog i hela utvecklingsprocessen från kravinsamling till leverans. Arbetade med både frontend och backend.",
+                "skills": []
+            },
+            {
+                "company": "WebsiteService",
+                "iconPath": "/images/websiteservice.png",
+                "location": "Sverige",
+                "title": "Fullstackutvecklare",
+                "duration": "Aug 2019 - Apr 2022",
+                "description": "Utvecklade och underhöll kunders webbplatser och applikationer. Arbetade med olika teknologier för att möta kundernas behov.",
+                "skills": []
+            },
+            {
+                "company": "Blekinge Tekniska Högskola",
+                "iconPath": "/images/bth.jpg",
+                "location": "Sverige",
+                "title": [
+                    "Fullstackutvecklare",
+                    "Frontendutvecklare"
+                ],
+                "totalDuration": "Deltid | 10 mån",
+                "duration": [
+                    "Jan 2020 - Jul 2021",
+                    "Jun 2021 - Dec 2021"
+                ],
+                "description": [
+                    "Arbetade som fullstackutvecklare med utveckling av interna system.",
+                    "Ansvarade för frontendutveckling och användargränssnitt."
+                ],
+                "skills": []
+            }
+        ]
     }
 }

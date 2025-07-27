@@ -1,0 +1,94 @@
+@use "@/styles/base/_variables" as *;
+
+.projects {
+    padding-top: 4rem;
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            display: flex;
+            gap: 0.5rem;
+            border-radius: $radius;
+            width: 100%;
+            color: $secondary-color-faded;
+            // &:hover {
+            //     color: $secondary-color;
+            // }
+            &:hover {
+                .title {
+                    color: $tertiary-color;
+                }
+                p {
+                    color: $secondary-color;
+                }
+                .icon {
+                    transform: translate(0.3rem, -0.3rem);
+                }
+
+            }
+            img {
+                width: calc($icons-width * 2.2);
+                height: calc($icons-width * 1.2);
+                border-radius: $radius;
+                margin-right: 1rem;
+                flex: 0 0 auto;
+            }
+            article {
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                color: $secondary-color;
+
+                .title {
+                    display: flex;
+                    align-items: center;
+                }
+                > p {
+                    color: $secondary-color-faded;
+                }
+                .icon {
+                    transition: transform 0.2s;
+                    margin-left: 0.5rem;
+                }
+            }
+            .technologies {
+                margin-bottom: 0.5rem;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                .technology {
+                    background-color: $tertiary-color-faded;
+                    font-size: $headers-small-paragraph;
+                    color: $tertiary-color;
+                    padding: 0.1rem 0.4rem;
+                    font-size: 0.9rem;
+                    border-radius: $radius;
+                }
+            }
+        }
+    }
+    .readmore {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        color: $secondary-color;
+        cursor: pointer;
+        &:hover {
+            color: $tertiary-color;
+            .icon {
+                transform: translate(0.3rem, -0.3rem);
+            }
+        }
+        .icon {
+            margin-left: 0.5rem;
+            width: 1.2rem;
+            height: 1.2rem;
+            transition: transform 0.2s;
+        }
+    }
+}

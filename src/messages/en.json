@@ -8,10 +8,148 @@
         "english": "EN",
         "swedish": "SV"
     },
-    "tabsInfo": {
-        "home": "Elias Bakhshi",
+    "pageInfo": {
+        "homeTitle": "Elias Bakhshi",
         "homeDescription": "Elias Bakhshi's personal website",
-        "projects": "Projects",
+        "projectsTitle": "Projects",
         "projectsDescription": "A showcase of my projects"
-    }
+    },
+    "home": {
+        "title": "Elias Bakhshi",
+        "description": "Elias Bakhshi's personal website",
+        "experiencesLink": "Full Resume",
+        "projectsLink": "Project Archive",
+        "experiencesList": [
+            {
+                "company": "Inter-Data",
+                "companyURL": "https://www.inter-data.eu",
+                "iconPath": "/images/inter-data.jpeg",
+                "location": "Sweden",
+                "title": "Fullstack Developer",
+                "duration": "Aug 2019 - Apr 2022",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "skills": [
+                    "React"
+                ]
+            },
+            {
+                "company": "KIP",
+                "companyURL": "https://www.kip.se",
+                "iconPath": "/images/kip.jpg",
+                "location": "Sweden",
+                "title": "Fullstack Developer",
+                "duration": "Aug 2019 - Apr 2022",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "skills": []
+            },
+            {
+                "company": "Valentin Experience",
+                "companyURL": "https://www.valentinexperience.se",
+                "iconPath": "/images/vx.jpeg",
+                "location": "Sweden",
+                "title": "Fullstack Developer",
+                "duration": "Aug 2019 - Apr 2022",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "skills": []
+            },
+            {
+                "company": "Tromb",
+                "companyURL": "https://www.tromb.se",
+                "iconPath": "/images/tromb.png",
+                "location": "Sweden",
+                "title": "Fullstack Developer",
+                "duration": "Aug 2019 - Apr 2022",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "skills": []
+            },
+            {
+                "company": "WebsiteService",
+                "companyURL": "https://www.websiteservice.se",
+                "iconPath": "/images/websiteservice.png",
+                "location": "Sweden",
+                "title": "Fullstack Developer",
+                "duration": "Aug 2019 - Apr 2022",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "skills": []
+            },
+            {
+                "company": "Blekinge Tekniska Högskola",
+                "companyURL": "https://www.bth.se",
+                "iconPath": "/images/bth.jpg",
+                "location": "Sweden",
+                "title": [
+                    "Fullstack Developer",
+                    "Frontend Developer"
+                ],
+                "totalDuration": "Deltid | 10 mån",
+                "duration": [
+                    "Jan 2020 - Jul 2021",
+                    "Jun 2021 - Dec 2021"
+                ],
+                "description": [
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                ],
+                "skills": []
+            }
+        ]
+    },
+    "projects": {
+        "title": "Projects",
+        "description": "A showcase of my projects",
+        "tableColumns": {
+            "year": "Year",
+            "title": "Project",
+            "madeAt": "Made At",
+            "icon": "Icon",
+            "link": "Link",
+            "description": "Description",
+            "technologies": "Technologies"
+        },
+        "projectsList": [
+            {
+                "link": "https://www.project.com",
+                "title": "Project",
+                "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
+                "technologies": ["React", "Node.js"],
+                "year": "2023",
+                "madeAt": "Made at Company"
+            },
+            {
+                "link": "https://www.project.com",
+                "iconPath": "/images/project.jpeg",
+                "title": "Project",
+                "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
+                "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
+                "year": "2022",
+                "madeAt": "Made at Company"
+            },
+            {
+                "link": "https://www.project.com",
+                "iconPath": "/images/project.jpeg",
+                "title": "Project",
+                "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
+                "technologies": ["React", "Node.js"],
+                "year": "2021",
+                "madeAt": "Made at Company"
+            },
+            {
+                "link": "https://www.project.com",
+                "iconPath": "/images/project.jpeg",
+                "title": "Project",
+                "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
+                "technologies": ["React", "Node.js"],
+                "year": "2020",
+                "madeAt": "Made at Company"
+            },
+            {
+                "link": "https://www.project.com",
+                "iconPath": "/images/project.jpeg",
+                "title": "Project",
+                "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
+                "technologies": ["React", "Node.js"],
+                "year": "2019",
+                "madeAt": "Made at Company"
+            }
+        ]}
 }

@@ -1,12 +1,19 @@
-$icons-width: 60px;
-$sub-icons-width: 1rem;
+// Light Mode
 $primary-color: #020b4aff;
 $secondary-color: #f0f0f0ff;
 $secondary-color-faded: #9194aeff;
 $tertiary-color: #e09f3eff;
 $tertiary-color-faded: #503f46ff;
+
+// Dark Mode - Update these for proper contrast
+$primary-color-dark: #0f172a;           // Dark slate background
+$secondary-color-dark: #f8fafc;         // Light text for dark mode
+$secondary-color-faded-dark: #94a3b8;   // Muted text for dark mode
+$tertiary-color-dark: #f59e0b;          // Bright accent for dark mode
+$tertiary-color-faded-dark: #d97706;    // Darker accent for dark mode
+
+// Typography
 $primary-font: Poppins;
-$radius: 5px;
 $headers-h1: 42px;
 $headers-h2: 36px;
 $headers-h3: 30px;
@@ -15,3 +22,8 @@ $headers-h5: 20px;
 $headers-h6: 18px;
 $headers-paragraph: 16px;
 $headers-small-paragraph: 14px;
+
+// Layout
+$icons-width: 60px;
+$sub-icons-width: 1rem;
+$radius: 5px;

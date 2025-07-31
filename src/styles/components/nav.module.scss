@@ -1,15 +1,65 @@
 @use "@/styles/base/_variables" as *;
 
 .nav {
-    margin: 4rem 0;
-    a {
-        color: $secondary-color;
-        &:hover {
-            color: $secondary-color;
-            text-decoration: underline;
-        }
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.link {
+    position: relative;
+    color: $secondary-color;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+
+    &:hover {
+        color: $tertiary-color;
     }
-    button {
-        cursor: pointer;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $tertiary-color;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+        transform-origin: left;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+    }
+}
+
+.active {
+    color: $tertiary-color;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $tertiary-color;
+        transform: scaleX(1);
+        transition: transform 0.3s ease;
+    }
+}
+
+.languageButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: $secondary-color;
+
+    &:hover {
+        opacity: 0.8;
     }
 }

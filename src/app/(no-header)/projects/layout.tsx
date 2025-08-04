@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 // import { Geist, Geist_Mono } from "next/font/google";
-
 
 export const metadata: Metadata = {
     title: "Elias Bakhshi - Projects",
@@ -14,10 +14,9 @@ export default function ProjectsLayout({
 }>) {
     return (
         <html lang='en'>
-
-        <body className='antialiased'>
-            {children}
-        </body>
+            <ThemeProvider>
+                <body className='antialiased'>{children}</body>
+            </ThemeProvider>
         </html>
     );
 }

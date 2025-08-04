@@ -3,19 +3,30 @@
 // =============================================================================
 
 body {
-    background-color: $primary-color;
+    background-color: var(--primary-color);
 }
 
 #about {
-    color: $secondary-color-faded;
+    color: var(--secondary-color-faded);
     padding-top: 4rem;
     strong {
-        color: $secondary-color;
+        color: var(--secondary-color);
     }
 }
 
 #left {
     p {
-        color: $secondary-color-faded;
+        color: var(--secondary-color-faded);
+    }
+}
+
+// Add this for social icons
+.social-icon {
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--tertiary-color);
     }
 }

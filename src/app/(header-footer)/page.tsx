@@ -29,7 +29,7 @@ export default async function Home() {
         <>
             <div id='about' className='nav-section'>
                 <p>
-                    A passionate software engineer currently studying Software Engineering at Blekinge Institute of Technology (BTH). My journey as a developer started when I was 12 years old, and I thrive in collaborative environments where I can contribute with my <strong>creativity</strong> and <strong>problem-solving</strong> skills. My goal is to use my knowledge to create innovative solutions that have a positive impact.
+                    A passionate software engineer currently studying Software Engineering and working at Blekinge Institute of Technology (BTH). My journey as a developer started when I was 12 years old, and I thrive in collaborative environments where I can contribute with my <strong>creativity</strong> and <strong>problem-solving</strong> skills. My goal is to use my knowledge to create innovative solutions that have a positive impact.
                 </p>
             </div>
             <div id='experience' className='nav-section'>

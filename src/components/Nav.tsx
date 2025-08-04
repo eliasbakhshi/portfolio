@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/components/nav.module.scss";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export const NavLink = ({ href, children, isActive }: { href: string; children: React.ReactNode; isActive: boolean }) => {
     const handleClick = (e: React.MouseEvent) => {
@@ -109,7 +110,7 @@ export default function Nav() {
         const observer = new IntersectionObserver(observerCallback, {
             root: null,
             rootMargin: "0px",
-            threshold: Array.from({ length: 101 }, (_, i) => i / 100), // Check every 1% visibility
+            threshold: Array.from({ length: 101 }, (_, i) => i / 100),
         });
 
         // Observe all dynamically found sections
@@ -153,12 +154,17 @@ export default function Nav() {
                     {item.label}
                 </NavLink>
             ))}
+
+            {/* Theme Toggle */}
+            <ThemeToggle />
+
+            {/* Language Toggle */}
             {locale === "en" ? (
-                <button className='text-lg' onClick={() => handleLocaleChange("sv")} aria-label={t("swedish")}>
+                <button className={`text-lg hover:text-tertiary transition-colors ${styles.languageButton}`} onClick={() => handleLocaleChange("sv")} aria-label={t("swedish")}>
                     🇸🇪
                 </button>
             ) : (
-                <button className='text-lg' onClick={() => handleLocaleChange("en")} aria-label={t("english")}>
+                <button className={`text-lg hover:text-tertiary transition-colors ${styles.languageButton}`} onClick={() => handleLocaleChange("en")} aria-label={t("english")}>
                     🇬🇧
                 </button>
             )}

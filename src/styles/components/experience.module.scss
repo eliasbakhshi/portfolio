@@ -9,74 +9,85 @@
         justify-content: center;
         li {
             padding-bottom: 1rem;
-            border-left: 1px solid $secondary-color;
+            border-left: 1px solid var(--secondary-color);
             position: relative;
-            padding-left: calc($icons-width * 0.5 + 1rem);
-            margin-left: calc($icons-width * 0.5);
+            padding-left: calc(var(--icons-width) * 0.5 + 1rem);
+            margin-left: calc(var(--icons-width) * 0.5);
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
             height: 100%;
-            color: $secondary-color-faded;
+            color: var(--secondary-color-faded);
             cursor: pointer;
+
             &:hover {
-                color: $secondary-color;
+                color: var(--secondary-color);
                 a {
                     .icon {
                         transform: translate(0.3rem, -0.3rem);
                     }
                     > h6 {
-                        color: $tertiary-color;
+                        color: var(--tertiary-color);
                     }
+                }
+                &::before {
+                    border: 1px solid var(--secondary-color);
                 }
             }
 
             &:before {
                 content: "";
-                width: $icons-width;
-                height: $icons-width;
-                background: $secondary-color;
+                width: var(--icons-width);
+                height: var(--icons-width);
+                background: var(--secondary-color);
                 background-image: var(--bullet-image);
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
-                border: 1px solid $secondary-color;
+                border: 1px solid var(--secondary-color-faded);
                 border-radius: 10%;
                 position: absolute;
-                left: calc($icons-width * -0.5);
+                left: calc(var(--icons-width) * -0.5);
                 top: 0px;
             }
+
             &:last-child {
                 border: 0px;
                 padding-bottom: 0;
             }
+
             h6 {
                 display: flex;
                 align-items: center;
-                color: $secondary-color;
+                color: var(--secondary-color);
                 font-family: sans-serif;
                 line-height: 1.5;
                 margin-top: 0.4rem;
                 font-weight: bold;
                 text-transform: capitalize;
             }
+
             .icon {
                 transition: transform 0.2s;
                 margin-left: 0.5rem;
             }
+
             p {
                 margin-bottom: 0.4rem;
             }
+
             .duration {
-                font-family: "Poppins", sans-serif;
+                font-family: var(--primary-font), sans-serif;
                 font-weight: 500;
             }
+
             .description {
-                font-family: "Poppins", sans-serif;
+                font-family: var(--primary-font), sans-serif;
                 font-weight: 400;
                 margin-top: 0.5rem;
             }
+
             .skills {
                 margin-top: 0.4rem;
                 margin-bottom: 1rem;
@@ -84,43 +95,59 @@
                 flex-wrap: wrap;
                 gap: 0.5rem;
                 span {
-                    background-color: $tertiary-color-faded;
-                    color: $tertiary-color;
+                    background-color: var(--tertiary-color-faded);
+                    color: var(--tertiary-color);
+                    border-radius: var(--radius);
                     padding: 0.1rem 0.4rem;
-                    border-radius: 4px;
-                    font-size: 0.9rem;
+                    font-size: 0.75rem;
                 }
             }
+
             .subSessions {
                 li {
-                    border-left: 1px solid $secondary-color;
+                    border-left: 1px solid var(--secondary-color);
                     position: relative;
                     padding-left: 1rem;
-                    margin-left: calc($sub-icons-width * 0.5);
+                    margin-left: calc(var(--sub-icons-width) * 0.5);
 
                     &:last-child {
                         border: 0px;
                         padding-bottom: 0;
                     }
+
                     &:hover {
                         h6 {
-                            color: $tertiary-color;
+                            color: var(--tertiary-color);
                         }
                     }
 
                     &:before {
                         content: "";
-                        width: $sub-icons-width;
-                        height: $sub-icons-width;
-                        background: $secondary-color;
+                        width: var(--sub-icons-width);
+                        height: var(--sub-icons-width);
+                        background: var(--secondary-color);
                         background-size: cover;
                         background-position: center;
                         background-repeat: no-repeat;
-                        border: 1px solid $secondary-color;
+                        border: 1px solid var(--secondary-color);
                         border-radius: 50%;
                         position: absolute;
-                        left: calc($sub-icons-width * -0.5);
+                        left: calc(var(--sub-icons-width) * -0.5);
                         top: 0;
+                    }
+                    .skills {
+                        margin-top: 0.4rem;
+                        margin-bottom: 1rem;
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 0.5rem;
+                        span {
+                            background-color: var(--tertiary-color-faded);
+                            color: var(--tertiary-color);
+                            border-radius: var(--radius);
+                            padding: 0.1rem 0.4rem;
+                            font-size: 0.75rem;
+                        }
                     }
                 }
                 h6 {
@@ -129,14 +156,15 @@
             }
         }
     }
+
     .readmore {
         margin-top: 1rem;
         display: flex;
         align-items: center;
-        color: $secondary-color;
+        color: var(--secondary-color);
         cursor: pointer;
         &:hover {
-            color: $tertiary-color;
+            color: var(--tertiary-color);
             .icon {
                 transform: translate(0.3rem, -0.3rem);
             }

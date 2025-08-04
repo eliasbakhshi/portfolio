@@ -9,13 +9,13 @@
 
 .link {
     position: relative;
-    color: $secondary-color;
+    color: var(--secondary-color);
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-block;
 
     &:hover {
-        color: $tertiary-color;
+        color: var(--tertiary-color);
     }
 
     &::after {
@@ -25,7 +25,7 @@
         left: 0;
         width: 100%;
         height: 2px;
-        background-color: $tertiary-color;
+        background-color: var(--tertiary-color);
         transform: scaleX(0);
         transition: transform 0.3s ease;
         transform-origin: left;
@@ -37,7 +37,7 @@
 }
 
 .active {
-    color: $tertiary-color;
+    color: var(--tertiary-color);
 
     &::after {
         content: "";
@@ -46,20 +46,18 @@
         left: 0;
         width: 100%;
         height: 2px;
-        background-color: $tertiary-color;
+        background-color: var(--tertiary-color);
         transform: scaleX(1);
         transition: transform 0.3s ease;
     }
 }
 
 .languageButton {
-    background: none;
-    border: none;
     cursor: pointer;
-    font-size: 1.2rem;
-    color: $secondary-color;
+    color: var(--secondary-color);
+    transition: transform 0.3s ease, opacity 0.2s ease;
 
     &:hover {
-        opacity: 0.8;
+        transform: translateY(-1px);
     }
 }

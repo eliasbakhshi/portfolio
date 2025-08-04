@@ -90,7 +90,7 @@
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                 ],
-                "skills": []
+                "skills": [["React", "Node.js"], ["React", "Node.js", "Next.js"], ["React", "Node.js"]]
             }
         ]
     },

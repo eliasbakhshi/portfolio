@@ -32,7 +32,7 @@ export default function Experience({ experiences, link, title }: { experiences: 
                                                 <h6>{title}</h6>
                                                 <p className={styles.duration}>{experience.duration[i]}</p>
                                                 <p className={styles.description}>{experience.description[i]}</p>
-                                                <div className={styles.skills}>{experience.skills[i] && experience.skills[i].map((skill, j) => <small key={`${i}-${j}`}>{skill}</small>)}</div>
+                                                <div className={styles.skills}>{experience.skills[i] && experience.skills[i].map((skill, j) => <span key={`${i}-${j}`}>{skill}</span>)}</div>
                                             </li>
                                         ))}
                                 </ul>

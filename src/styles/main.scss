@@ -1,49 +1,18 @@
 // =============================================================================
 // MAIN STYLESHEET
 // =============================================================================
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+
 @import "base/reset";
 
 // Tailwind CSS
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 // Base styles and variables
 @import "base/variables";
 @import "base/typography";
 @import "base/globals.scss";
-
-// Convert SCSS variables to CSS custom properties
-:root {
-    // Light mode colors
-    --primary-color: #{$primary-color};
-    --secondary-color: #{$secondary-color};
-    --secondary-color-faded: #{$secondary-color-faded};
-    --tertiary-color: #{$tertiary-color};
-    --tertiary-color-faded: #{$tertiary-color-faded};
-
-    // Typography
-    --headers-h1: #{$headers-h1};
-    --headers-h2: #{$headers-h2};
-    --headers-h3: #{$headers-h3};
-    --headers-h4: #{$headers-h4};
-    --headers-h5: #{$headers-h5};
-    --headers-h6: #{$headers-h6};
-    --headers-paragraph: #{$headers-paragraph};
-    --headers-small-paragraph: #{$headers-small-paragraph};
-
-    // Layout
-    --icons-width: #{$icons-width};
-    --sub-icons-width: #{$sub-icons-width};
-    --radius: #{$radius};
-
-    // Font
-    --primary-font: #{$primary-font};
-}
-
-// Dark theme using next-themes class
-.dark {
-    --primary-color: #{$primary-color-dark};
-    --secondary-color: #{$secondary-color-dark};
-    --secondary-color-faded: #{$secondary-color-faded-dark};
-    --tertiary-color: #{$tertiary-color-dark};
-    --tertiary-color-faded: #{$tertiary-color-faded-dark};
-}

@@ -19,31 +19,35 @@ export default async function ProjectsPage() {
                 <thead>
                     <tr className='text-left'>
                         <th className='p-2'>{tableColumns["year"]}</th>
-                        <th className='p-2'>{tableColumns["title"]}</th>
-                        <th className='p-2'>{tableColumns["madeAt"]}</th>
-                        <th className='p-2'>{tableColumns["technologies"]}</th>
+                        <th className='p-2 hidden lg:table-cell'>{tableColumns["madeAt"]}</th>
+                        <th className='p-2 hidden lg:table-cell'>{tableColumns["technologies"]}</th>
                         <th className='p-2'>{tableColumns["link"]?.toString()}</th>
                     </tr>
                 </thead>
                 <tbody>
                     {projects.map((project, index) => (
-                        <tr key={index} className='hover:bg-gray-800/30 border-t border-gray-700/50'>
+                        <tr key={index} className='hover:bg-gray-800/40 border-t border-gray-700/50'>
                             <td className='p-2'>{project.year}</td>
-                            <td className='p-2'>{project.title}</td>
-                            <td className='p-2'>{project.madeAt}</td>
-                            <td className='p-2'>
+                            <td className='p-2 hidden md:table-cell'>{project.title}</td>
+                            <td className='p-2 hidden lg:table-cell'>{project.madeAt}</td>
+                            <td className='p-2 hidden lg:table-cell'>
                                 <div className='flex flex-wrap gap-2'>
                                     {project.technologies.map((tech, techIndex) => (
-                                        <span key={techIndex} className='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-teal-900/30 text-teal-300 border border-teal-700/30'>
+                                        <span
+                                            key={techIndex}
+                                            className='bg-tertiary-faded text-tertiary rounded-sm px-[0.4rem] py-[0.1rem] text-xs'
+                                        >
                                             {tech}
                                         </span>
                                     ))}
                                 </div>
                             </td>
                             <td className='p-2 group/link'>
-                                <div className='flex items-center gap-2'>
-                                    <Link href={project.link || "#"}>{project.link ? new URL(project.link).hostname : ""}</Link>
+                                <div >
+                                    <Link href={project.link || "#"} className='flex items-center gap-2'>
+                                    {project.link ? new URL(project.link).hostname : ""}
                                     <FiArrowUpRight className="transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1" />
+                                    </Link>
                                 </div>
                             </td>
                         </tr>

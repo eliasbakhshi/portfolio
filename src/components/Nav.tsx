@@ -5,8 +5,9 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/components/nav.module.scss";
 import ThemeToggle from "@/components/ThemeToggle";
+import { FiMenu, FiX } from "react-icons/fi";
 
-export const NavLink = ({ href, children, isActive }: { href: string; children: React.ReactNode; isActive: boolean }) => {
+export const NavLink = ({ href, children, isActive, onClick }: { href: string; children: React.ReactNode; isActive: boolean; onClick?: () => void }) => {
     const handleClick = (e: React.MouseEvent) => {
         e.preventDefault();
         const targetId = href.replace("#", "");
@@ -17,9 +18,9 @@ export const NavLink = ({ href, children, isActive }: { href: string; children: 
                 behavior: "smooth",
                 block: "start",
             });
-
             window.history.pushState({}, "", href);
         }
+        if (onClick) onClick();
     };
 
     return (
@@ -29,11 +30,12 @@ export const NavLink = ({ href, children, isActive }: { href: string; children: 
     );
 };
 
-export default function Nav() {
+export default function Nav({ className = "" }: { className?: string }) {
     const [locale, setLocale] = useState("en");
     const [activeSection, setActiveSection] = useState("");
     const [sections, setSections] = useState<string[]>([]);
     const [sectionVisibility, setSectionVisibility] = useState<{ [key: string]: number }>({});
+    const [menuOpen, setMenuOpen] = useState(false);
     const router = useRouter();
 
     useEffect(() => {
@@ -147,27 +149,82 @@ export default function Nav() {
         { href: "#contact", label: t("contact"), sectionId: "contact" },
     ];
 
+    // Hamburger menu for mobile
     return (
-        <nav className={`w-full gap-6 mt-4 hidden lg:flex ${styles.nav}`}>
-            {navItems.map((item) => (
-                <NavLink key={item.sectionId} href={item.href} isActive={activeSection === item.sectionId}>
-                    {item.label}
-                </NavLink>
-            ))}
-
-            {/* Theme Toggle */}
-            <ThemeToggle />
-
-            {/* Language Toggle */}
-            {locale === "en" ? (
-                <button className={`text-lg hover:text-tertiary transition-colors ${styles.languageButton}`} onClick={() => handleLocaleChange("sv")} aria-label={t("swedish")}>
-                    🇸🇪
-                </button>
-            ) : (
-                <button className={`text-lg hover:text-tertiary transition-colors ${styles.languageButton}`} onClick={() => handleLocaleChange("en")} aria-label={t("english")}>
-                    🇬🇧
-                </button>
-            )}
-        </nav>
+        <>
+            {/* Hamburger for mobile */}
+            <div className='sticky top-0 z-50 flex md:hidden items-center justify-between py-4 bg-primary/95'>
+                <span className='font-bold text-secondary text-lg'>Elias Bakhshi</span>
+                <div className='flex items-center gap-2'>
+                    <ThemeToggle />
+                    <button aria-label='Open menu' onClick={() => setMenuOpen(true)} className='p-2'>
+                        <FiMenu size={24} />
+                    </button>
+                </div>
+            </div>
+            {/* Mobile menu */}
+            <div className='md:hidden'>
+                {/* Backdrop */}
+                <div className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`} onClick={() => setMenuOpen(false)} />
+                {/* Sliding menu */}
+                <div
+                    className={`fixed top-0 right-0 h-screen w-[75vw] max-w-xs z-50 bg-primary/95 flex flex-col items-center justify-center shadow-lg
+                        transition-transform duration-300 ease-in-out
+                        ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
+                >
+                    <button aria-label='Close menu' onClick={() => setMenuOpen(false)} className='absolute top-4 right-4 p-2'>
+                        <FiX size={32} />
+                    </button>
+                    <nav className='flex flex-col gap-6 mt-12'>
+                        {navItems.map((item) => (
+                            <NavLink key={item.sectionId} href={item.href} isActive={activeSection === item.sectionId} onClick={() => setMenuOpen(false)}>
+                                {item.label}
+                            </NavLink>
+                        ))}
+                    </nav>
+                    <div className='mt-8'>
+                        {locale === "en" ? (
+                            <button
+                                className='text-lg'
+                                onClick={() => {
+                                    handleLocaleChange("sv");
+                                    setMenuOpen(false);
+                                }}
+                            >
+                                🇸🇪 Svenska
+                            </button>
+                        ) : (
+                            <button
+                                className='text-lg'
+                                onClick={() => {
+                                    handleLocaleChange("en");
+                                    setMenuOpen(false);
+                                }}
+                            >
+                                🇬🇧 English
+                            </button>
+                        )}
+                    </div>
+                </div>
+            </div>
+            {/* Desktop/tablet nav */}
+            <nav className={`gap-6 mt-4 hidden md:flex ${styles.nav} ${className}`}>
+                {navItems.map((item) => (
+                    <NavLink key={item.sectionId} href={item.href} isActive={activeSection === item.sectionId}>
+                        {item.label}
+                    </NavLink>
+                ))}
+                <ThemeToggle />
+                {locale === "en" ? (
+                    <button className={`text-lg hover:text-tertiary transition-colors ${styles.languageButton}`} onClick={() => handleLocaleChange("sv")} aria-label={t("swedish")}>
+                        🇸🇪
+                    </button>
+                ) : (
+                    <button className={`text-lg hover:text-tertiary transition-colors ${styles.languageButton}`} onClick={() => handleLocaleChange("en")} aria-label={t("english")}>
+                        🇬🇧
+                    </button>
+                )}
+            </nav>
+        </>
     );
 }

@@ -30,3 +30,35 @@ body {
         color: var(--tertiary-color);
     }
 }
+
+
+// layout haeder and fotter
+.custom-grid {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    grid-template-areas:
+        "navigation right"
+        "left right";
+    min-height: 100vh;
+}
+
+.navigation-area { grid-area: navigation; position: fixed; top: 0; z-index: 50; background: var(--primary-color); }
+.left-area { grid-area: left; position: fixed; width: 50%;margin-top: 9rem;}
+.right-area { grid-area: right;}
+
+@media (max-width: 768px) {
+    .custom-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "header"
+        "sidebar"
+        "main";
+    }
+    .navigation-area { grid-area: header; width: 100%;}
+    .left-area { grid-area: sidebar; position:relative; margin-top: 4rem;}
+    .right-area { grid-area: main; overflow-x: auto; }
+}
+@media (max-width: 768px) {
+    .left-area { grid-area: sidebar; position:relative; margin-top: 8rem;  width:100%;}
+
+}

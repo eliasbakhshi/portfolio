@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import styles from "@/styles/components/nav.module.scss";
 import ThemeToggle from "@/components/ThemeToggle";
 import { FiMenu, FiX } from "react-icons/fi";
+import Image from "next/image";
 
 export const NavLink = ({ href, children, isActive, onClick }: { href: string; children: React.ReactNode; isActive: boolean; onClick?: () => void }) => {
     const handleClick = (e: React.MouseEvent) => {
@@ -30,7 +31,7 @@ export const NavLink = ({ href, children, isActive, onClick }: { href: string; c
     );
 };
 
-export default function Nav({ className = "" }: { className?: string }) {
+export default function Nav({ id = "" }: { id?: string }) {
     const [locale, setLocale] = useState("en");
     const [activeSection, setActiveSection] = useState("");
     const [sections, setSections] = useState<string[]>([]);
@@ -153,8 +154,13 @@ export default function Nav({ className = "" }: { className?: string }) {
     return (
         <>
             {/* Hamburger for mobile */}
-            <div className='sticky top-0 z-50 flex md:hidden items-center justify-between py-4 bg-primary/95'>
-                <span className='font-bold text-secondary text-lg'>Elias Bakhshi</span>
+            <div className='sticky top-0 z-50 flex md:hidden items-center justify-between py-4 bg-primary'>
+                <div className='dark:inline-block hidden'>
+                    <Image src='/images/test.png' alt='Elias Bakhshi' width={32} height={32} />
+                </div>
+                <div className='inline-block dark:hidden'>
+                    <Image src='/images/logo.jpg' alt='Elias Bakhshi' width={32} height={32} />
+                </div>
                 <div className='flex items-center gap-2'>
                     <ThemeToggle />
                     <button aria-label='Open menu' onClick={() => setMenuOpen(true)} className='p-2'>
@@ -165,11 +171,11 @@ export default function Nav({ className = "" }: { className?: string }) {
             {/* Mobile menu */}
             <div className='md:hidden'>
                 {/* Backdrop */}
-                <div className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`} onClick={() => setMenuOpen(false)} />
+                <div className={`fixed inset-0 z-40 transition-opacity duration-200 ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`} onClick={() => setMenuOpen(false)} />
                 {/* Sliding menu */}
                 <div
                     className={`fixed top-0 right-0 h-screen w-[75vw] max-w-xs z-50 bg-primary/95 flex flex-col items-center justify-center shadow-lg
-                        transition-transform duration-300 ease-in-out
+                        transition-transform duration-200 ease-in-out
                         ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
                 >
                     <button aria-label='Close menu' onClick={() => setMenuOpen(false)} className='absolute top-4 right-4 p-2'>
@@ -208,7 +214,7 @@ export default function Nav({ className = "" }: { className?: string }) {
                 </div>
             </div>
             {/* Desktop/tablet nav */}
-            <nav className={`gap-6 mt-4 hidden md:flex ${styles.nav} ${className}`}>
+            <nav id={id} className={`gap-5 hidden md:flex ${styles.nav}`}>
                 {navItems.map((item) => (
                     <NavLink key={item.sectionId} href={item.href} isActive={activeSection === item.sectionId}>
                         {item.label}

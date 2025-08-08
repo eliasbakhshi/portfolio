@@ -14,23 +14,15 @@ body {
     }
 }
 
-#left {
-    p {
-        color: var(--secondary-color-faded);
-    }
-}
-
 // Add this for social icons
 .social-icon {
     color: var(--secondary-color);
     transition: color 0.3s ease;
     cursor: pointer;
-
     &:hover {
         color: var(--tertiary-color);
     }
 }
-
 
 // layout haeder and fotter
 .custom-grid {
@@ -41,24 +33,55 @@ body {
         "left right";
     min-height: 100vh;
 }
-
-.navigation-area { grid-area: navigation; position: fixed; top: 0; z-index: 50; background: var(--primary-color); }
-.left-area { grid-area: left; position: fixed; width: 50%;margin-top: 9rem;}
-.right-area { grid-area: right;}
-
+#navigation {
+    padding-top: 4rem;
+    grid-area: navigation;
+    position: fixed;
+    top: 0;
+    z-index: 50;
+}
+#left {
+    grid-area: left;
+    position: fixed;
+    width: 50%;
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+#right {
+    grid-area: right;
+}
 @media (max-width: 768px) {
     .custom-grid {
         grid-template-columns: 1fr;
         grid-template-areas:
-        "header"
-        "sidebar"
-        "main";
+            "header"
+            "sidebar"
+            "main";
     }
-    .navigation-area { grid-area: header; width: 100%;}
-    .left-area { grid-area: sidebar; position:relative; margin-top: 4rem;}
-    .right-area { grid-area: main; overflow-x: auto; }
+    #navigation {
+        grid-area: header;
+        width: 100%;
+        padding-top: 2rem;
+        background: var(--primary-color);
+    }
+    #left {
+        grid-area: sidebar;
+        position: relative;
+        padding-top: 6rem;
+        width: 75%;
+    }
+    #right {
+        grid-area: main;
+        overflow-x: auto;
+    }
 }
-@media (max-width: 768px) {
-    .left-area { grid-area: sidebar; position:relative; margin-top: 8rem;  width:100%;}
-
+@media (max-width: 450px) {
+    #left {
+        grid-area: sidebar;
+        position: relative;
+        padding-top: 1rem;
+        width: 100%;
+    }
 }

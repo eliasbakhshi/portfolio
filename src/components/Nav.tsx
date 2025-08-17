@@ -7,6 +7,7 @@ import styles from "@/styles/components/nav.module.scss";
 import ThemeToggle from "@/components/ThemeToggle";
 import { FiMenu, FiX } from "react-icons/fi";
 import Image from "next/image";
+import Link from "next/link";
 
 export const NavLink = ({ href, children, isActive, onClick }: { href: string; children: React.ReactNode; isActive: boolean; onClick?: () => void }) => {
     const handleClick = (e: React.MouseEvent) => {
@@ -154,13 +155,16 @@ export default function Nav({ id = "" }: { id?: string }) {
     return (
         <>
             {/* Hamburger for mobile */}
-            <div className='sticky top-0 z-50 flex md:hidden items-center justify-between py-4 bg-primary'>
-                <div className='dark:inline-block hidden'>
-                    <Image src='/images/test.png' alt='Elias Bakhshi' width={32} height={32} />
-                </div>
-                <div className='inline-block dark:hidden'>
-                    <Image src='/images/logo.jpg' alt='Elias Bakhshi' width={32} height={32} />
-                </div>
+            <div
+                id="mobile-menu"
+                className='fixed top-0 z-50 flex md:hidden items-center justify-between py-4 w-[calc(100%-2rem)] bg-primary transition-colors duration-200 shadow-[0_10px_20px_-6px_rgba(255,255,255,0.1)]'
+            >
+                <Link className='dark:inline-block hidden' href="/">
+                    <Image src='/images/logo-white.png' alt='Elias Bakhshi' width={32} height={32} />
+                </Link>
+                <Link className='inline-block dark:hidden' href="/">
+                    <Image src='/images/logo-black.jpg' alt='Elias Bakhshi' width={32} height={32} />
+                </Link>
                 <div className='flex items-center gap-2'>
                     <ThemeToggle />
                     <button aria-label='Open menu' onClick={() => setMenuOpen(true)} className='p-2'>
@@ -214,7 +218,7 @@ export default function Nav({ id = "" }: { id?: string }) {
                 </div>
             </div>
             {/* Desktop/tablet nav */}
-            <nav id={id} className={`gap-5 hidden md:flex ${styles.nav}`}>
+            <nav id={id} className={`gap-5 shadow-[0_10px_20px_-6px_rgba(255,255,255,0.1)] lg:shadow-none`}>
                 {navItems.map((item) => (
                     <NavLink key={item.sectionId} href={item.href} isActive={activeSection === item.sectionId}>
                         {item.label}
@@ -222,11 +226,11 @@ export default function Nav({ id = "" }: { id?: string }) {
                 ))}
                 <ThemeToggle />
                 {locale === "en" ? (
-                    <button className={`text-lg hover:text-tertiary transition-colors ${styles.languageButton}`} onClick={() => handleLocaleChange("sv")} aria-label={t("swedish")}>
+                    <button className={`cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary ${styles.languageButton}`} onClick={() => handleLocaleChange("sv")} aria-label={t("swedish")}>
                         🇸🇪
                     </button>
                 ) : (
-                    <button className={`text-lg hover:text-tertiary transition-colors ${styles.languageButton}`} onClick={() => handleLocaleChange("en")} aria-label={t("english")}>
+                    <button className={`cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary ${styles.languageButton}`} onClick={() => handleLocaleChange("en")} aria-label={t("english")}>
                         🇬🇧
                     </button>
                 )}

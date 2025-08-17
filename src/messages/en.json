@@ -3,7 +3,7 @@
         "home": "Home",
         "experience": "Experience",
         "projects": "Projects",
-        "contact": "Contact",
+        "contact": "Coffee?",
         "about": "About",
         "english": "EN",
         "swedish": "SV"
@@ -15,10 +15,12 @@
         "projectsDescription": "A showcase of my projects"
     },
     "home": {
+        "name": "Elias Bakhshi",
         "title": "Elias Bakhshi",
-        "description": "Elias Bakhshi's personal website",
+        "description": "Creative, target oriented and passionate developer with a knack for building dynamic web applications.<",
         "experiencesLink": "Full Resume",
         "projectsLink": "Project Archive",
+        "about": "A passionate software engineer currently studying Software Engineering and working at Blekinge Institute of Technology (BTH). My journey as a developer started when I was 12 years old, and I thrive in collaborative environments where I can contribute with my <strong>creativity</strong> and <strong>problem-solving</strong> skills. My goal is to use my knowledge to create innovative solutions that have a positive impact.",
         "experiencesList": [
             {
                 "company": "Inter-Data",
@@ -92,7 +94,21 @@
                 ],
                 "skills": [["React", "Node.js"], ["React", "Node.js", "Next.js"], ["React", "Node.js"]]
             }
-        ]
+        ],
+        "contactSection": {
+            "title": "Take a Coffee",
+            "description": "If you want to discuss a project, have a question, or just want to say hi, feel free to contact me. I would love to hear from you!",
+            "form": {
+                "name": "Name",
+                "email": "Email",
+                "message": "Message",
+                "submit": "Send Message",
+                "statusMessages": {
+                    "success": "Thank you! I will get back to you soon.",
+                    "error": "Oops! Something went wrong. Please try again."
+                }
+            }
+        }
     },
     "projects": {
         "title": "Projects",

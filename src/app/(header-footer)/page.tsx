@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Experience from "@/components/Experience";
 import Project from "@/components/Project";
+import Contact from "@/components/Contact";
 import { ExperienceProps, ExperiencesProps, ProjectProps } from "@/types";
 import { getMessages } from "next-intl/server";
 import { AbstractIntlMessages } from "next-intl";
@@ -27,20 +28,12 @@ export default async function Home() {
 
     return (
         <>
-            <div id='about' className='nav-section'>
-                <p>
-                    A passionate software engineer currently studying Software Engineering and working at Blekinge Institute of Technology (BTH). My journey as a developer started when I was 12 years old, and I thrive in collaborative environments where I can contribute with my <strong>creativity</strong> and <strong>problem-solving</strong> skills. My goal is to use my knowledge to create innovative solutions that have a positive impact.
-                </p>
+            <div id='about' className='nav-section px-4 md:px-0'>
+                <p dangerouslySetInnerHTML={{ __html: messages.home?.about || "" }} />
             </div>
-            <div id='experience' className='nav-section'>
-                <Experience experiences={experiences || []} link={experiencesLink} title={experiencesTitle} />
-            </div>
-            <div id='projects' className='nav-section'>
-                <Project projects={projects || []} link={projectsLink} title={projectsTitle} />
-            </div>
-            <div id='contact' className='nav-section'>
-                <Link href='/contact'>Contact</Link>
-            </div>
+            <Experience experiences={experiences || []} link={experiencesLink} title={experiencesTitle} />
+            <Project projects={projects || []} link={projectsLink} title={projectsTitle} />
+            <Contact />
         </>
     );
 }

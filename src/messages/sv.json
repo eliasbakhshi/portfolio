@@ -3,66 +3,80 @@
         "home": "Hem",
         "experience": "Erfarenhet",
         "projects": "Projekt",
-        "contact": "Kontakt",
+        "contact": "Kaffe?",
         "about": "Om",
         "english": "EN",
         "swedish": "SV"
     },
     "pageInfo": {
-        "home": "Elias Bakhshi",
-        "homeDescription": "Elias Bakhshis personliga webbplats",
-        "projects": "Projekt",
+        "homeTitle": "Elias Bakhshi",
+        "homeDescription": "Elias Bakhshis personliga hemsida",
+        "projectsTitle": "Projekt",
         "projectsDescription": "En presentation av mina projekt"
     },
     "home": {
-        "experiences": [
+        "name": "Elias Bakhshi",
+        "title": "Elias Bakhshi",
+        "description": "Kreativ, målinriktad och passionerad utvecklare med känsla för att bygga dynamiska webbapplikationer.",
+        "experiencesLink": "Fullständig CV",
+        "projectsLink": "Projektarkiv",
+        "about": "En passionerad mjukvaruingenjör som för närvarande studerar mjukvaruteknik och arbetar på Blekinge Tekniska Högskola (BTH). Min resa som utvecklare började när jag var 12 år gammal, och jag trivs i samarbetande miljöer där jag kan bidra med min <strong>kreativitet</strong> och <strong>problemlösningsförmåga</strong>. Mitt mål är att använda min kunskap för att skapa innovativa lösningar som har en positiv inverkan.",
+        "experiencesList": [
             {
                 "company": "Inter-Data",
+                "companyURL": "https://www.inter-data.eu",
                 "iconPath": "/images/inter-data.jpeg",
                 "location": "Sverige",
                 "title": "Fullstackutvecklare",
                 "duration": "Aug 2019 - Apr 2022",
-                "description": "Arbetade som fullstackutvecklare med ansvar för både frontend och backend. Utvecklade och underhöll webbapplikationer samt samarbetade med teamet för att leverera högkvalitativa lösningar.",
-                "skills": []
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "skills": [
+                    "React"
+                ]
             },
             {
                 "company": "KIP",
+                "companyURL": "https://www.kip.se",
                 "iconPath": "/images/kip.jpg",
                 "location": "Sverige",
                 "title": "Fullstackutvecklare",
                 "duration": "Aug 2019 - Apr 2022",
-                "description": "Ansvarade för utveckling av webbtjänster och applikationer. Arbetade med moderna tekniker och bidrog till förbättring av befintliga system.",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 "skills": []
             },
             {
                 "company": "Valentin Experience",
+                "companyURL": "https://www.valentinexperience.se",
                 "iconPath": "/images/vx.jpeg",
                 "location": "Sverige",
                 "title": "Fullstackutvecklare",
                 "duration": "Aug 2019 - Apr 2022",
-                "description": "Utvecklade digitala lösningar och samarbetade med designers och andra utvecklare för att skapa användarvänliga produkter.",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 "skills": []
             },
             {
                 "company": "Tromb",
+                "companyURL": "https://www.tromb.se",
                 "iconPath": "/images/tromb.png",
                 "location": "Sverige",
                 "title": "Fullstackutvecklare",
                 "duration": "Aug 2019 - Apr 2022",
-                "description": "Deltog i hela utvecklingsprocessen från kravinsamling till leverans. Arbetade med både frontend och backend.",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 "skills": []
             },
             {
-                "company": "WebsiteService",
+                "company": "Website Service",
+                "companyURL": "https://www.websiteservice.se",
                 "iconPath": "/images/websiteservice.png",
                 "location": "Sverige",
                 "title": "Fullstackutvecklare",
                 "duration": "Aug 2019 - Apr 2022",
-                "description": "Utvecklade och underhöll kunders webbplatser och applikationer. Arbetade med olika teknologier för att möta kundernas behov.",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 "skills": []
             },
             {
                 "company": "Blekinge Tekniska Högskola",
+                "companyURL": "https://www.bth.se",
                 "iconPath": "/images/bth.jpg",
                 "location": "Sverige",
                 "title": [
@@ -75,11 +89,83 @@
                     "Jun 2021 - Dec 2021"
                 ],
                 "description": [
-                    "Arbetade som fullstackutvecklare med utveckling av interna system.",
-                    "Ansvarade för frontendutveckling och användargränssnitt."
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                 ],
-                "skills": []
+                "skills": [["React", "Node.js"], ["React", "Node.js", "Next.js"], ["React", "Node.js"]]
             }
-        ]
-    }
+        ],
+        "contactSection": {
+            "title": "Ta en kaffe",
+            "description": "Om du vill diskutera ett projekt, har en fråga eller bara vill säga hej, tveka inte att kontakta mig. Jag skulle gärna höra från dig!",
+            "form": {
+                "name": "Namn",
+                "email": "E-post",
+                "message": "Meddelande",
+                "submit": "Skicka meddelande",
+                "statusMessages": {
+                    "success": "Tack! Jag återkommer snart.",
+                    "error": "Oj! Något gick fel. Försök igen."
+                }
+            }
+        }
+    },
+    "projects": {
+        "title": "Projekt",
+        "description": "En presentation av mina projekt",
+        "tableColumns": {
+            "year": "År",
+            "title": "Projekt",
+            "madeAt": "Gjort hos",
+            "icon": "Ikon",
+            "link": "Länk",
+            "description": "Beskrivning",
+            "technologies": "Teknologier"
+        },
+        "projectsList": [
+            {
+                "link": "https://www.project.com",
+                "title": "Projekt",
+                "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
+                "technologies": ["React", "Node.js"],
+                "year": "2023",
+                "madeAt": "Gjort hos Företag"
+            },
+            {
+                "link": "https://www.project.com",
+                "iconPath": "/images/project.jpeg",
+                "title": "Projekt",
+                "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
+                "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
+                "year": "2022",
+                "madeAt": "Gjort hos Företag"
+            },
+            {
+                "link": "https://www.project.com",
+                "iconPath": "/images/project.jpeg",
+                "title": "Projekt",
+                "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
+                "technologies": ["React", "Node.js"],
+                "year": "2021",
+                "madeAt": "Gjort hos Företag"
+            },
+            {
+                "link": "https://www.project.com",
+                "iconPath": "/images/project.jpeg",
+                "title": "Projekt",
+                "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
+                "technologies": ["React", "Node.js"],
+                "year": "2020",
+                "madeAt": "Gjort hos Företag"
+            },
+            {
+                "link": "https://www.project.com",
+                "iconPath": "/images/project.jpeg",
+                "title": "Projekt",
+                "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
+                "technologies": ["React", "Node.js"],
+                "year": "2019",
+                "madeAt": "Gjort hos Företag"
+            }
+        ]}
 }

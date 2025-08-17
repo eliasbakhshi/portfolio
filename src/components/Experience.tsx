@@ -13,7 +13,7 @@ export default function Experience({ experiences, link, title }: { experiences: 
         return Array.isArray(experience.duration) && "totalDuration" in experience;
     };
     return (
-        <section className={styles.experience}>
+        <section id='experience' className={`nav-section  px-4 md:px-0 ${styles.experience}`}>
             <h5 className="mb-5">{title}</h5>
             <ul>
                 {experiences.map((experience, index) =>

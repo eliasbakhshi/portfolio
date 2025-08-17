@@ -14,6 +14,7 @@ $headers-small-paragraph: 12px;
 
 // Layout
 $icons-width: 60px;
+$icons-height: 45px;
 $sub-icons-width: 1rem;
 $radius: 5px;
 
@@ -37,6 +38,7 @@ $radius: 5px;
 
     // Layout
     --icons-width: #{$icons-width};
+    --icons-height: #{$icons-height};
     --sub-icons-width: #{$sub-icons-width};
     --radius: #{$radius};
 
@@ -71,6 +73,7 @@ $radius: 5px;
     --font-paragraph: var(--headers-paragraph);
     --font-small-paragraph: var(--headers-small-paragraph);
     --icons-width: var(--icons-width);
+    --icons-height: var(--icons-height);
     --sub-icons-width: var(--sub-icons-width);
 
 }

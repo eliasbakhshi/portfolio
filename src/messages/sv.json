@@ -3,7 +3,7 @@
         "home": "Hem",
         "experience": "Erfarenhet",
         "projects": "Projekt",
-        "contact": "Kaffe?",
+        "contact": "Kontakt",
         "about": "Om",
         "english": "EN",
         "swedish": "SV"
@@ -23,80 +23,81 @@
         "about": "En passionerad mjukvaruingenjör som för närvarande studerar mjukvaruteknik och arbetar på Blekinge Tekniska Högskola (BTH). Min resa som utvecklare började när jag var 12 år gammal, och jag trivs i samarbetande miljöer där jag kan bidra med min <strong>kreativitet</strong> och <strong>problemlösningsförmåga</strong>. Mitt mål är att använda min kunskap för att skapa innovativa lösningar som har en positiv inverkan.",
         "experiencesList": [
             {
+                "id": 1,
                 "company": "Inter-Data",
                 "companyURL": "https://www.inter-data.eu",
                 "iconPath": "/images/inter-data.jpeg",
-                "location": "Sverige",
+                "location": "Sverige, Hagfors",
                 "title": "Fullstackutvecklare",
                 "duration": "Aug 2019 - Apr 2022",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "skills": [
-                    "React"
-                ]
+                "description": "Jag utvecklade flera portaler i ett team, kopplade dem till ett automationssystem (n8n.io) och fokuserade på UX/UI-design.",
+                "skills": ["PHP", "JavaScript", "MySQL", "UX/UI Design", "Automation", "Teamarbete", "Portalutveckling", "Systemintegration"]
             },
             {
-                "company": "KIP",
-                "companyURL": "https://www.kip.se",
+                "id": 2,
+                "company": "Karlstad Innovation Park",
+                "companyURL": "https://www.karlstadinnovationpark.se",
                 "iconPath": "/images/kip.jpg",
-                "location": "Sverige",
-                "title": "Fullstackutvecklare",
-                "duration": "Aug 2019 - Apr 2022",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "skills": []
+                "location": "Sverige, Karlstad",
+                "title": "Innovatör",
+                "duration": "Feb 2022 - Mar 2022",
+                "description": "Ett innovationslabb där vi skapade idéer och lösningar för att utveckla och testa meningsfull fritid för unga på deltid. Vi strävade efter att stärka ungas framtidstro.",
+                "skills": ["Innovation", "Idéutveckling", "Projektledning", "Lösningsfokus", "Ungdomsengagemang", "Fritidsutveckling"]
             },
             {
+                "id": 3,
                 "company": "Valentin Experience",
                 "companyURL": "https://www.valentinexperience.se",
                 "iconPath": "/images/vx.jpeg",
                 "location": "Sverige",
                 "title": "Fullstackutvecklare",
-                "duration": "Aug 2019 - Apr 2022",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "skills": []
+                "duration": "Apr 2022 - Feb 2023",
+                "description": "Arbetade i projekt för Volvo och Göteborg & Co., med fokus på CI/CD, Agile (Scrum), AWS-konfiguration och UX/UI-design.",
+                "skills": ["CI/CD", "Agile", "Scrum", "AWS", "React", "Node.js", "UX/UI Design", "Molnkonfiguration", "Projektledning"]
             },
             {
+                "id": 4,
                 "company": "Tromb",
                 "companyURL": "https://www.tromb.se",
                 "iconPath": "/images/tromb.png",
                 "location": "Sverige",
                 "title": "Fullstackutvecklare",
-                "duration": "Aug 2019 - Apr 2022",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "skills": []
+                "duration": "Mar 2023 - Jul 2023",
+                "description": "Utvecklade och designade projekt med hjälp av CI/CD för automatisk distribution, Agile (Scrum) metoder för projektledning och ett starkt fokus på UX/UI-design.",
+                "skills": ["CI/CD", "Agile", "Scrum", "UX/UI Design", "React", "Next.js", "TypeScript", "Automatisk Distribution", "Projektledning"]
             },
             {
+                "id": 5,
                 "company": "Website Service",
                 "companyURL": "https://www.websiteservice.se",
                 "iconPath": "/images/websiteservice.png",
                 "location": "Sverige",
-                "title": "Fullstackutvecklare",
-                "duration": "Aug 2019 - Apr 2022",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "skills": []
+                "title": "Webbutvecklare & VD",
+                "duration": "Nov 2018 - Aug 2024",
+                "description": "Jag började som ung företagare, startade sedan ett eget företag med samma namn och arbetade som konsult åt andra företag vid sidan av mina jobb.",
+                "skills": ["Entreprenörskap", "Konsultation", "WordPress", "Webbutveckling", "SEO", "Företagsledning", "Kundrelationer"]
             },
             {
+                "id": 6,
                 "company": "Blekinge Tekniska Högskola",
                 "companyURL": "https://www.bth.se",
                 "iconPath": "/images/bth.jpg",
-                "location": "Sverige",
-                "title": [
-                    "Fullstackutvecklare",
-                    "Frontendutvecklare"
-                ],
-                "totalDuration": "Deltid | 10 mån",
-                "duration": [
-                    "Jan 2020 - Jul 2021",
-                    "Jun 2021 - Dec 2021"
-                ],
-                "description": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                ],
-                "skills": [["React", "Node.js"], ["React", "Node.js", "Next.js"], ["React", "Node.js"]]
+                "location": "Sverige, Karlskrona",
+                "title": ["Preppledare", "Studentambassadör", "Innovationsambassadör", "Studentmentor", "Lärarassistent"],
+                "totalDuration": "Deltid | Aug 2024 - Nuvarande",
+                "duration": ["Aug 2024 - Nuvarande", "Okt 2024 - Nuvarande", "Dec 2024 - Nuvarande", "Aug 2024 - Nuvarande", "Okt 2024 - Dec 2024"],
+                "description": ["Jobbar som stöd för nya studenter på BTH och tipsar om studier, sociala aktiviteter, träning, skapa kontaktytor, bostad med mera.", "Representerar BTH i olika studentmässor, kommer i kontakt med de som söker sin framtida utbildning.", "Arrangerar event och stöttar studenter som vill drömma stort och förverkliga sina idéer till företag eller produkt.", "Stöttar studenter som behöver extra hjälp med deras studier.", "Jag och mina kollegor stöttar studenter som ville lära sig programmeringsspråket C++."],
+                "skills": [
+                    ["Mentorskap", "Studentstöd", "Kommunikation", "Eventplanering"],
+                    ["PR", "Kommunikation", "Utbildningsvägledning", "Representation"],
+                    ["Innovation", "Eventplanering", "Idéutveckling", "Affärsutveckling"],
+                    ["Undervisning", "Studiestöd", "Pedagogik", "Studentassistans"],
+                    ["C++", "Lärarstöd", "Programmering", "Utbildning"]
+                ]
             }
         ],
         "contactSection": {
-            "title": "Ta en kaffe",
+            "title": "Ta en kaffe?",
             "description": "Om du vill diskutera ett projekt, har en fråga eller bara vill säga hej, tveka inte att kontakta mig. Jag skulle gärna höra från dig!",
             "form": {
                 "name": "Namn",
@@ -111,6 +112,7 @@
         }
     },
     "projects": {
+        "back": "Tillbaka",
         "title": "Projekt",
         "description": "En presentation av mina projekt",
         "tableColumns": {
@@ -124,14 +126,19 @@
         },
         "projectsList": [
             {
+                "id": 1,
+                "sample": true,
                 "link": "https://www.project.com",
-                "title": "Projekt",
+                "iconPath": "/images/test1.jpg",
+                "title": "Projekt 22",
                 "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
                 "technologies": ["React", "Node.js"],
                 "year": "2023",
                 "madeAt": "Gjort hos Företag"
             },
             {
+                "id": 2,
+                "sample": true,
                 "link": "https://www.project.com",
                 "iconPath": "/images/project.jpeg",
                 "title": "Projekt",
@@ -141,6 +148,52 @@
                 "madeAt": "Gjort hos Företag"
             },
             {
+                "id": 3,
+                "sample": true,
+                "link": "https://www.project.com",
+                "iconPath": "/images/project.jpeg",
+                "title": "Projekt",
+                "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
+                "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
+                "year": "2022",
+                "madeAt": "Gjort hos Företag"
+            },
+            {
+                "id": 4,
+                "sample": false,
+                "link": "https://www.project.com",
+                "iconPath": "/images/project.jpeg",
+                "title": "Projekt",
+                "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
+                "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
+                "year": "2022",
+                "madeAt": "Gjort hos Företag"
+            },
+            {
+                "id": 5,
+                "sample": false,
+                "link": "https://www.project.com",
+                "iconPath": "/images/project.jpeg",
+                "title": "Projekt",
+                "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
+                "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
+                "year": "2022",
+                "madeAt": "Gjort hos Företag"
+            },
+            {
+                "id": 6,
+                "sample": false,
+                "link": "https://www.project.com",
+                "iconPath": "/images/project.jpeg",
+                "title": "Projekt",
+                "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
+                "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
+                "year": "2022",
+                "madeAt": "Gjort hos Företag"
+            },
+            {
+                "id": 7,
+                "sample": false,
                 "link": "https://www.project.com",
                 "iconPath": "/images/project.jpeg",
                 "title": "Projekt",
@@ -150,6 +203,8 @@
                 "madeAt": "Gjort hos Företag"
             },
             {
+                "id": 8,
+                "sample": false,
                 "link": "https://www.project.com",
                 "iconPath": "/images/project.jpeg",
                 "title": "Projekt",
@@ -159,6 +214,8 @@
                 "madeAt": "Gjort hos Företag"
             },
             {
+                "id": 9,
+                "sample": false,
                 "link": "https://www.project.com",
                 "iconPath": "/images/project.jpeg",
                 "title": "Projekt",
@@ -167,5 +224,6 @@
                 "year": "2019",
                 "madeAt": "Gjort hos Företag"
             }
-        ]}
+        ]
+    }
 }

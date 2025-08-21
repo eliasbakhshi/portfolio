@@ -17,7 +17,7 @@ export default async function ProjectsLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale} className='scroll-smooth w-full' suppressHydrationWarning>
+        <html lang={locale} className='scroll-smooth' suppressHydrationWarning>
             <body>
                 <ThemeProvider>
                     <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>

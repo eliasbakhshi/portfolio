@@ -4,23 +4,29 @@ import { ExperienceProps, ExperiencesProps } from "@/types";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
-export default function Experience({ experiences, link, title }: { experiences: (ExperienceProps | ExperiencesProps)[]; link: string; title: string }) {
+export default function Experience({ experiences, link, title, noExperienceMessage }: { experiences: (ExperienceProps | ExperiencesProps)[]; link: string; title: string; noExperienceMessage: string }) {
     if (!experiences || experiences.length === 0) {
-        return <section className={styles.wrapper}>No experience experiences available.</section>;
+        return (
+            <section id='experience' className='nav-section px-4 md:px-0'>
+                <h5 className='mb-6'>{title}</h5>
+                <p className='text-secondary-faded'>{noExperienceMessage}</p>
+            </section>
+        );
     }
+
     // This is used to differentiate between single and multiple position experiences
     const isMultiExperience = (experience: ExperienceProps | ExperiencesProps): experience is ExperiencesProps => {
         return Array.isArray(experience.duration) && "totalDuration" in experience;
     };
     return (
         <section id='experience' className={`nav-section  px-4 md:px-0 ${styles.experience}`}>
-            <h5 className="mb-5">{title}</h5>
+            <h5 className='mb-6'>{title}</h5>
             <ul>
                 {experiences.map((experience, index) =>
                     isMultiExperience(experience) ? (
                         // Add experience with several positions
                         <li key={index} style={{ "--bullet-image": `url(${experience.iconPath})` } as React.CSSProperties}>
-                            <Link href={experience.companyURL}>
+                            <Link href={experience.companyURL} target='_blank' rel='noopener noreferrer'>
                                 <h6>
                                     {experience.company} <FiArrowUpRight className={styles.icon} />
                                 </h6>
@@ -41,7 +47,7 @@ export default function Experience({ experiences, link, title }: { experiences: 
                     ) : (
                         // Add experience with one position
                         <li key={index} style={{ "--bullet-image": `url(${experience.iconPath})` } as React.CSSProperties}>
-                            <Link href={experience.companyURL}>
+                            <Link href={experience.companyURL} target='_blank' rel='noopener noreferrer'>
                                 <h6>
                                     {experience.title} | {experience.company} <FiArrowUpRight className={styles.icon} />
                                 </h6>

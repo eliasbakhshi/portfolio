@@ -6,10 +6,7 @@ body {
     background-color: var(--primary-color);
 }
 
-
-
 #about {
-    color: var(--secondary-color-faded);
     strong {
         color: var(--secondary-color);
     }
@@ -19,18 +16,14 @@ body {
     padding-top: 4rem;
 }
 
-
-
-
-
 // layout haeder and fotter
 .custom-grid {
     display: grid;
     grid-template-columns: 1fr;
-        grid-template-areas:
-            "header"
-            "sidebar"
-            "main";
+    grid-template-areas:
+        "header"
+        "sidebar"
+        "main";
 }
 
 #mobile-menu {
@@ -39,7 +32,7 @@ body {
 }
 
 #menu {
-    display:none;
+    display: none;
     grid-area: header;
 }
 
@@ -52,7 +45,6 @@ body {
     grid-area: main;
     overflow-x: auto;
 }
-
 
 @media (width >= 768px) {
     #menu {
@@ -69,7 +61,7 @@ body {
         position: relative;
         padding-top: 6rem;
         width: 100%;
-        p{
+        p {
             width: 75%;
         }
     }
@@ -81,12 +73,12 @@ body {
 }
 @media (width >= 1024px) {
     .custom-grid {
-    grid-template-columns: 6fr 6fr;
-    grid-template-areas:
-        "menu right"
-        "left right";
-    min-height: 100vh;
-}
+        grid-template-columns: 6fr 6fr;
+        grid-template-areas:
+            "menu right"
+            "left right";
+        min-height: 100vh;
+    }
     #menu {
         grid-area: menu;
         position: fixed;
@@ -124,4 +116,23 @@ body {
     #left {
         width: calc(1536px / 2);
     }
+}
+
+// Popup animation
+@keyframes popup-scale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.popup-animate {
+    animation: popup-scale 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }

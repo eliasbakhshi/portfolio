@@ -3,7 +3,7 @@
         "home": "Home",
         "experience": "Experience",
         "projects": "Projects",
-        "contact": "Coffee?",
+        "contact": "Contact",
         "about": "About",
         "english": "EN",
         "swedish": "SV"
@@ -18,85 +18,97 @@
         "name": "Elias Bakhshi",
         "title": "Elias Bakhshi",
         "description": "Creative, target oriented and passionate developer with a knack for building dynamic web applications.<",
+        "about": "A passionate software engineer currently studying Software Engineering and working at Blekinge Institute of Technology (BTH). My journey as a developer started when I was 12 years old, and I thrive in collaborative environments where I can contribute with my <strong>creativity</strong> and <strong>problem-solving</strong> skills. My goal is to use my knowledge to create innovative solutions that have a positive impact.",
         "experiencesLink": "Full Resume",
         "projectsLink": "Project Archive",
-        "about": "A passionate software engineer currently studying Software Engineering and working at Blekinge Institute of Technology (BTH). My journey as a developer started when I was 12 years old, and I thrive in collaborative environments where I can contribute with my <strong>creativity</strong> and <strong>problem-solving</strong> skills. My goal is to use my knowledge to create innovative solutions that have a positive impact.",
         "experiencesList": [
             {
+                "id": 1,
+                "company": "Beebyte",
+                "companyURL": "https://www.beebyte.se",
+                "iconPath": "/images/beebyte.jpeg",
+                "location": "Sweden, Karlstad",
+                "title": "Web Developer",
+                "duration": "Oct 2019 – Jun 2020",
+                "description": "Customized WordPress plugins, integrated the company's monitoring system (Iris) with Slack, and redesigned the company's FAQ.",
+                "skills": ["WordPress", "PHP", "JavaScript", "HTML", "CSS"]
+            },
+            {
+                "id": 2,
                 "company": "Inter-Data",
                 "companyURL": "https://www.inter-data.eu",
                 "iconPath": "/images/inter-data.jpeg",
-                "location": "Sweden",
-                "title": "Fullstack Developer",
-                "duration": "Aug 2019 - Apr 2022",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "skills": [
-                    "React"
-                ]
+                "location": "Sweden, Hagfors",
+                "title": "Full Stack Developer",
+                "duration": "Aug 2019 – Apr 2022",
+                "description": "Developed multiple portals in a team, connecting them to an automation system (n8n.io) and focusing on UX/UI design.",
+                "skills": ["PHP", "Figma", "JavaScript", "Git", "DevOps", "MySQL", "Adobe Illustrator", "Adobe XD", "UX/UI Design", "Automation", "Team Collaboration"]
             },
             {
-                "company": "KIP",
-                "companyURL": "https://www.kip.se",
+                "id": 3,
+                "company": "Karlstad Innovation Park",
+                "companyURL": "https://www.karlstadinnovationpark.se",
                 "iconPath": "/images/kip.jpg",
-                "location": "Sweden",
-                "title": "Fullstack Developer",
-                "duration": "Aug 2019 - Apr 2022",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "skills": []
+                "location": "Sweden, Karlstad",
+                "title": "Change Maker",
+                "duration": "Feb 2022 – Mar 2022",
+                "description": "An innovation lab where we developed ideas and solutions to create meaningful leisure activities and inspire hope for the future among young people as a part-time job.",
+                "skills": ["Innovation", "Project Development", "Team Collaboration", "Idea Generation", "Solution Development", "Youth Engagement"]
             },
             {
+                "id": 4,
                 "company": "Valentin Experience",
                 "companyURL": "https://www.valentinexperience.se",
                 "iconPath": "/images/vx.jpeg",
                 "location": "Sweden",
-                "title": "Fullstack Developer",
-                "duration": "Aug 2019 - Apr 2022",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "skills": []
+                "title": "Full Stack Developer",
+                "duration": "Apr 2022 – Feb 2023",
+                "description": "Worked on projects for Volvo and Göteborg & Co., focusing on CI/CD, Agile (Scrum), AWS configuration, and UX/UI design.",
+                "skills": ["CI/CD", "Agile", "Scrum", "AWS", "UX/UI Design", "React", "Node.js", "Cloud Configuration", "Project Management"]
             },
             {
+                "id": 5,
                 "company": "Tromb",
                 "companyURL": "https://www.tromb.se",
                 "iconPath": "/images/tromb.png",
                 "location": "Sweden",
-                "title": "Fullstack Developer",
-                "duration": "Aug 2019 - Apr 2022",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "skills": []
+                "title": "Full Stack Developer",
+                "duration": "Mar 2023 – Jul 2023",
+                "description": "Developed and designed projects using CI/CD for automatic deployment, Agile (Scrum) methodologies for project management, and a strong focus on UX/UI design.",
+                "skills": ["CI/CD", "Agile", "Scrum", "UX/UI Design", "React", "Next.js", "TypeScript", "Automatic Deployment", "Project Management"]
             },
             {
+                "id": 6,
                 "company": "Website Service",
                 "companyURL": "https://www.websiteservice.se",
                 "iconPath": "/images/websiteservice.png",
                 "location": "Sweden",
-                "title": "Fullstack Developer",
-                "duration": "Aug 2019 - Apr 2022",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "skills": []
+                "title": "Web Developer & CEO",
+                "duration": "Nov 2018 – Aug 2024",
+                "description": "Started as a young entrepreneur, then launched my own company with the same name and worked as a consultant for other businesses as a side hustle.",
+                "skills": ["Entrepreneurship", "Consulting", "Web Development", "WordPress", "SEO", "Business Management", "Client Relations"]
             },
             {
+                "id": 7,
                 "company": "Blekinge Tekniska Högskola",
                 "companyURL": "https://www.bth.se",
                 "iconPath": "/images/bth.jpg",
-                "location": "Sweden",
-                "title": [
-                    "Fullstack Developer",
-                    "Frontend Developer"
-                ],
-                "totalDuration": "Deltid | 10 mån",
-                "duration": [
-                    "Jan 2020 - Jul 2021",
-                    "Jun 2021 - Dec 2021"
-                ],
-                "description": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                ],
-                "skills": [["React", "Node.js"], ["React", "Node.js", "Next.js"], ["React", "Node.js"]]
+                "location": "Sweden, Karlskrona",
+                "title": ["Prepp Leader", "Student Ambassador", "Innovation Ambassador", "Student Mentor", "Teacher's Assistant"],
+                "totalDuration": "Part-time | Aug 2024 – Present",
+                "duration": ["Aug 2024 – Present", "Oct 2024 – Present", "Dec 2024 – Feb 2025", "Aug 2024 – Present", "Oct 2024 – Dec 2024"],
+                "description": ["Provide support for new students at BTH and give tips on studies, social activities, training, creating contact areas, housing, etc.", "Represent BTH at various student fairs and get in touch with those who are looking for their future education.", "Organize events and support students in turning their ideas into businesses or products.", "Support students who need extra help with their studies.", "Support students who want to learn the programming language C++."],
+                "skills": [
+                    ["Mentoring", "Student Support", "Communication", "Event Planning"],
+                    ["Public Relations", "Communication", "Education Guidance", "Representation"],
+                    ["Innovation", "Event Planning", "Idea Development", "Business Development"],
+                    ["Teaching", "Academic Support", "Pedagogy", "Student Assistance"],
+                    ["C++", "Teaching Assistance", "Programming", "Education"]
+                ]
             }
         ],
         "contactSection": {
-            "title": "Take a Coffee",
+            "title": "Take a Coffee?",
             "description": "If you want to discuss a project, have a question, or just want to say hi, feel free to contact me. I would love to hear from you!",
             "form": {
                 "name": "Name",
@@ -111,6 +123,8 @@
         }
     },
     "projects": {
+        "back": "Back",
+        "noProjects": "No projects available at the moment.",
         "title": "Projects",
         "description": "A showcase of my projects",
         "tableColumns": {
@@ -124,48 +138,104 @@
         },
         "projectsList": [
             {
-                "link": "https://www.project.com",
-                "title": "Project",
-                "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
-                "technologies": ["React", "Node.js"],
-                "year": "2023",
-                "madeAt": "Made at Company"
+            "id": 1,
+            "sample": true,
+            "link": "https://www.project.com",
+            "iconPath": "/images/test1.jpg",
+            "title": "Project 22",
+            "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
+            "technologies": ["React", "Node.js"],
+            "year": "2023",
+            "madeAt": "Made at Company"
             },
             {
-                "link": "https://www.project.com",
-                "iconPath": "/images/project.jpeg",
-                "title": "Project",
-                "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
-                "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
-                "year": "2022",
-                "madeAt": "Made at Company"
+            "id": 2,
+            "sample": true,
+            "link": "https://www.project.com",
+            "iconPath": "/images/project.jpeg",
+            "title": "Project",
+            "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
+            "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
+            "year": "2022",
+            "madeAt": "Made at Company"
             },
             {
-                "link": "https://www.project.com",
-                "iconPath": "/images/project.jpeg",
-                "title": "Project",
-                "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
-                "technologies": ["React", "Node.js"],
-                "year": "2021",
-                "madeAt": "Made at Company"
+            "id": 3,
+            "sample": true,
+            "link": "https://www.project.com",
+            "iconPath": "/images/project.jpeg",
+            "title": "Project",
+            "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
+            "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
+            "year": "2022",
+            "madeAt": "Made at Company"
             },
             {
-                "link": "https://www.project.com",
-                "iconPath": "/images/project.jpeg",
-                "title": "Project",
-                "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
-                "technologies": ["React", "Node.js"],
-                "year": "2020",
-                "madeAt": "Made at Company"
+            "id": 4,
+            "sample": true,
+            "link": "https://www.project.com",
+            "iconPath": "/images/project.jpeg",
+            "title": "Project",
+            "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
+            "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
+            "year": "2022",
+            "madeAt": "Made at Company"
             },
             {
-                "link": "https://www.project.com",
-                "iconPath": "/images/project.jpeg",
-                "title": "Project",
-                "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
-                "technologies": ["React", "Node.js"],
-                "year": "2019",
-                "madeAt": "Made at Company"
+            "id": 5,
+            "sample": false,
+            "link": "https://www.project.com",
+            "iconPath": "/images/project.jpeg",
+            "title": "Project",
+            "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
+            "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
+            "year": "2022",
+            "madeAt": "Made at Company"
+            },
+            {
+            "id": 6,
+            "sample": false,
+            "link": "https://www.project.com",
+            "iconPath": "/images/project.jpeg",
+            "title": "Project",
+            "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
+            "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
+            "year": "2022",
+            "madeAt": "Made at Company"
+            },
+            {
+            "id": 7,
+            "sample": false,
+            "link": "https://www.project.com",
+            "iconPath": "/images/project.jpeg",
+            "title": "Project",
+            "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
+            "technologies": ["React", "Node.js"],
+            "year": "2021",
+            "madeAt": "Made at Company"
+            },
+            {
+            "id": 8,
+            "sample": false,
+            "link": "https://www.project.com",
+            "iconPath": "/images/project.jpeg",
+            "title": "Project",
+            "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
+            "technologies": ["React", "Node.js"],
+            "year": "2020",
+            "madeAt": "Made at Company"
+            },
+            {
+            "id": 9,
+            "sample": false,
+            "link": "https://www.project.com",
+            "iconPath": "/images/project.jpeg",
+            "title": "Project",
+            "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
+            "technologies": ["React", "Node.js"],
+            "year": "2019",
+            "madeAt": "Made at Company"
             }
-        ]}
+        ]
+    }
 }

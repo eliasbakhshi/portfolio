@@ -39,12 +39,12 @@ export default function Contact() {
 
     return (
         <section id='contact' className='nav-section pt-4 pb-6 px-4 md:px-0'>
-            <h5 className='mb-5'>{t("title")}</h5>
+            <h5 className='mb-6'>{t("title")}</h5>
             <p className='pb-4 text-secondary-faded'>{t("description")}</p>
             <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
-                <input type='text' name='name' required placeholder={t("form.name")} className='border rounded px-4 py-2' />
-                <input type='email' name='email' required placeholder={t("form.email")} className='border rounded px-4 py-2' />
-                <textarea name='message' required placeholder={t("form.message")} className='border rounded px-4 py-2 min-h-[120px]' />
+                <input type='text' name='name' required placeholder={t("form.name")} className='border border-secondary rounded px-4 py-2' />
+                <input type='email' name='email' required placeholder={t("form.email")} className='border border-secondary rounded px-4 py-2' />
+                <textarea name='message' required placeholder={t("form.message")} className='border border-secondary rounded px-4 py-2 min-h-[120px]' />
                 {status && <>{status}</>}
                 <button type='submit' className='bg-tertiary text-white rounded px-4 py-2 hover:bg-tertiary/80 transition'>
                     {t("form.submit")}

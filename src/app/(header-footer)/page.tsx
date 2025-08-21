@@ -29,10 +29,11 @@ export default async function Home() {
     return (
         <>
             <div id='about' className='nav-section px-4 md:px-0'>
-                <p dangerouslySetInnerHTML={{ __html: messages.home?.about || "" }} />
+                <h5 className='mb-6'>{messages.nav.about}</h5>
+                <p className="text-secondary-faded" dangerouslySetInnerHTML={{ __html: messages.home?.about || "" }} />
             </div>
-            <Experience experiences={experiences || []} link={experiencesLink} title={experiencesTitle} />
-            <Project projects={projects || []} link={projectsLink} title={projectsTitle} />
+            <Experience experiences={experiences || []} link={experiencesLink} title={experiencesTitle} noExperienceMessage={messages.experiences?.noExperiences} />
+            <Project projects={projects || []} link={projectsLink} title={projectsTitle} noProjectsMessage={messages.projects?.noProjects} />
             <Contact />
         </>
     );

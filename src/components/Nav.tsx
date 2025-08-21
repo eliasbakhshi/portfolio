@@ -16,9 +16,12 @@ export const NavLink = ({ href, children, isActive, onClick }: { href: string; c
         const element = document.getElementById(targetId);
 
         if (element) {
-            element.scrollIntoView({
+            const isMobileOrTablet = window.innerWidth < 1024;
+            const yOffset = isMobileOrTablet ? -32 : 0;
+            const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+            window.scrollTo({
+                top: y,
                 behavior: "smooth",
-                block: "start",
             });
             window.history.pushState({}, "", href);
         }
@@ -151,13 +154,12 @@ export default function Nav({ id = "" }: { id?: string }) {
         { href: "#contact", label: t("contact"), sectionId: "contact" },
     ];
 
-    // Hamburger menu for mobile
     return (
         <>
             {/* Hamburger for mobile */}
             <div
                 id="mobile-menu"
-                className='fixed top-0 z-50 flex md:hidden items-center justify-between py-4 w-[calc(100%-2rem)] bg-primary transition-colors duration-200 shadow-[0_10px_20px_-6px_rgba(255,255,255,0.1)]'
+                className='fixed top-0 z-50 flex md:hidden items-center justify-between py-4 w-[calc(100%-2rem)] bg-primary transition-colors duration-200 shadow-[0_8px_15px_-6px_rgba(255,255,255,0.1)]'
             >
                 <Link className='dark:inline-block hidden' href="/">
                     <Image src='/images/logo-white.png' alt='Elias Bakhshi' width={32} height={32} />
@@ -218,7 +220,10 @@ export default function Nav({ id = "" }: { id?: string }) {
                 </div>
             </div>
             {/* Desktop/tablet nav */}
-            <nav id={id} className={`gap-5 shadow-[0_10px_20px_-6px_rgba(255,255,255,0.1)] lg:shadow-none`}>
+            <nav
+                id={id}
+                className={`gap-5 shadow-[0_8px_15px_-4px_rgba(255,255,255,0.1)] lg:shadow-none transition-color duration-200 ease-in-out`}
+            >
                 {navItems.map((item) => (
                     <NavLink key={item.sectionId} href={item.href} isActive={activeSection === item.sectionId}>
                         {item.label}
@@ -226,11 +231,19 @@ export default function Nav({ id = "" }: { id?: string }) {
                 ))}
                 <ThemeToggle />
                 {locale === "en" ? (
-                    <button className={`cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary ${styles.languageButton}`} onClick={() => handleLocaleChange("sv")} aria-label={t("swedish")}>
+                    <button
+                        className={`cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary ${styles.languageButton}`}
+                        onClick={() => handleLocaleChange("sv")}
+                        aria-label={t("swedish")}
+                    >
                         🇸🇪
                     </button>
                 ) : (
-                    <button className={`cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary ${styles.languageButton}`} onClick={() => handleLocaleChange("en")} aria-label={t("english")}>
+                    <button
+                        className={`cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary ${styles.languageButton}`}
+                        onClick={() => handleLocaleChange("en")}
+                        aria-label={t("english")}
+                    >
                         🇬🇧
                     </button>
                 )}

@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import Link from "next/link"
+import Link from "next/link";
 
 export default async function RootLayout({
     children,
@@ -14,7 +14,6 @@ export default async function RootLayout({
 }>) {
     const locale = await getLocale();
     const messages = await getMessages();
-
 
     return (
         <html lang={locale} className='scroll-smooth' suppressHydrationWarning>
@@ -33,7 +32,7 @@ export default async function RootLayout({
                                             <FaLinkedin size='2em' className='color-secondary cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary' />
                                         </Link>
                                         <Link href='https://github.com/eliasbakhshi' target='_blank' rel='noopener noreferrer'>
-                                        <FaGithub size='2em' className='color-secondary cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary' />
+                                            <FaGithub size='2em' className='color-secondary cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary' />
                                         </Link>
                                     </div>
                                 </div>

@@ -1,4 +1,5 @@
 export type ExperienceProps = {
+    id: number;
     company: string;
     companyURL: string;
     iconPath: string;
@@ -8,14 +9,19 @@ export type ExperienceProps = {
     description: string;
     skills: string[];
 };
+export type RoleProps = {
+    title: string;
+    duration: string;
+    description: string;
+    skills: string[];
+};
+
 export type ExperiencesProps = {
+    id: number;
     company: string;
     companyURL: string;
     iconPath: string;
     location: string;
-    totalDuration: string;
-    title: string[];
-    duration: string[];
-    description: string[];
-    skills: string[][];
+    duration: string;
+    roles: RoleProps[];
 };

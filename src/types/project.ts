@@ -7,6 +7,6 @@ export type ProjectProps = {
     link?: string | URL;
     iconPath?: string;
     description?: string;
-    year?: string;
+    year: number;
     madeAt?: string;
 }

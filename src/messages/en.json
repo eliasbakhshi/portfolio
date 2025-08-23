@@ -16,10 +16,11 @@
     },
     "home": {
         "name": "Elias Bakhshi",
-        "title": "Elias Bakhshi",
-        "description": "Creative, target oriented and passionate developer with a knack for building dynamic web applications.<",
-        "about": "A passionate software engineer currently studying Software Engineering and working at Blekinge Institute of Technology (BTH). My journey as a developer started when I was 12 years old, and I thrive in collaborative environments where I can contribute with my <strong>creativity</strong> and <strong>problem-solving</strong> skills. My goal is to use my knowledge to create innovative solutions that have a positive impact.",
-        "experiencesLink": "Full Resume",
+        "title": "Full Stack Engineer",
+        "description": "Creative, target oriented and passionate engineer with a knack for building dynamic applications.",
+        "about": "A passionate software engineer currently working at Blekinge Institute of Technology (BTH). My journey as a developer started when I was 12 years old, and I thrive in collaborative environments where I can contribute with my <strong>creativity</strong> and <strong>problem-solving</strong> skills. My goal is to use my knowledge to create <strong>innovative</strong> solutions that have a positive impact.",
+        "experiencesLink": "/documents/Elias-Bakhshi-English.pdf",
+        "experiencesText": "Full Resume",
         "projectsLink": "Project Archive",
         "experiencesList": [
             {
@@ -42,7 +43,7 @@
                 "title": "Full Stack Developer",
                 "duration": "Aug 2019 – Apr 2022",
                 "description": "Developed multiple portals in a team, connecting them to an automation system (n8n.io) and focusing on UX/UI design.",
-                "skills": ["PHP", "Figma", "JavaScript", "Git", "DevOps", "MySQL", "Adobe Illustrator", "Adobe XD", "UX/UI Design", "Automation", "Team Collaboration"]
+                "skills": ["PHP", "Figma", "JavaScript", "Git", "DevOps", "MySQL", "Adobe Illustrator", "Adobe XD"]
             },
             {
                 "id": 3,
@@ -53,7 +54,7 @@
                 "title": "Change Maker",
                 "duration": "Feb 2022 – Mar 2022",
                 "description": "An innovation lab where we developed ideas and solutions to create meaningful leisure activities and inspire hope for the future among young people as a part-time job.",
-                "skills": ["Innovation", "Project Development", "Team Collaboration", "Idea Generation", "Solution Development", "Youth Engagement"]
+                "skills": ["Innovation", "Project Development", "Team Collaboration", "Idea Generation"]
             },
             {
                 "id": 4,
@@ -64,7 +65,7 @@
                 "title": "Full Stack Developer",
                 "duration": "Apr 2022 – Feb 2023",
                 "description": "Worked on projects for Volvo and Göteborg & Co., focusing on CI/CD, Agile (Scrum), AWS configuration, and UX/UI design.",
-                "skills": ["CI/CD", "Agile", "Scrum", "AWS", "UX/UI Design", "React", "Node.js", "Cloud Configuration", "Project Management"]
+                "skills": ["CI/CD", "Agile", "AWS", "UX/UI Design", "React", "Node.js", "Next.js", "MySQL"]
             },
             {
                 "id": 5,
@@ -75,7 +76,7 @@
                 "title": "Full Stack Developer",
                 "duration": "Mar 2023 – Jul 2023",
                 "description": "Developed and designed projects using CI/CD for automatic deployment, Agile (Scrum) methodologies for project management, and a strong focus on UX/UI design.",
-                "skills": ["CI/CD", "Agile", "Scrum", "UX/UI Design", "React", "Next.js", "TypeScript", "Automatic Deployment", "Project Management"]
+                "skills": ["DevOps", "Agile", "UX/UI Design", "PHP", "JavaScript", "MySQL"]
             },
             {
                 "id": 6,
@@ -86,7 +87,7 @@
                 "title": "Web Developer & CEO",
                 "duration": "Nov 2018 – Aug 2024",
                 "description": "Started as a young entrepreneur, then launched my own company with the same name and worked as a consultant for other businesses as a side hustle.",
-                "skills": ["Entrepreneurship", "Consulting", "Web Development", "WordPress", "SEO", "Business Management", "Client Relations"]
+                "skills": ["Entrepreneurship", "Consulting", "WordPress", "SEO", "JavaScript", "PHP", "HTML", "SCSS"]
             },
             {
                 "id": 7,
@@ -94,16 +95,38 @@
                 "companyURL": "https://www.bth.se",
                 "iconPath": "/images/bth.jpg",
                 "location": "Sweden, Karlskrona",
-                "title": ["Prepp Leader", "Student Ambassador", "Innovation Ambassador", "Student Mentor", "Teacher's Assistant"],
-                "totalDuration": "Part-time | Aug 2024 – Present",
-                "duration": ["Aug 2024 – Present", "Oct 2024 – Present", "Dec 2024 – Feb 2025", "Aug 2024 – Present", "Oct 2024 – Dec 2024"],
-                "description": ["Provide support for new students at BTH and give tips on studies, social activities, training, creating contact areas, housing, etc.", "Represent BTH at various student fairs and get in touch with those who are looking for their future education.", "Organize events and support students in turning their ideas into businesses or products.", "Support students who need extra help with their studies.", "Support students who want to learn the programming language C++."],
-                "skills": [
-                    ["Mentoring", "Student Support", "Communication", "Event Planning"],
-                    ["Public Relations", "Communication", "Education Guidance", "Representation"],
-                    ["Innovation", "Event Planning", "Idea Development", "Business Development"],
-                    ["Teaching", "Academic Support", "Pedagogy", "Student Assistance"],
-                    ["C++", "Teaching Assistance", "Programming", "Education"]
+                "duration": "Part-time | Aug 2024 – Present",
+                "roles": [
+                    {
+                        "title": "Prepp Leader",
+                        "duration": "Aug 2024 – Present",
+                        "description": "Provide support for new students at BTH and give tips on studies, social activities, training, creating contact areas, housing, etc.",
+                        "skills": ["Student Support", "Communication"]
+                    },
+                    {
+                        "title": "Student Ambassador",
+                        "duration": "Oct 2024 – Present",
+                        "description": "Represent BTH at various student fairs and get in touch with those who are looking for their future education.",
+                        "skills": ["Communication", "Education Guidance", "Representation"]
+                    },
+                    {
+                        "title": "Innovation Ambassador",
+                        "duration": "Dec 2024 – Feb 2025",
+                        "description": "Organize events and support students in turning their ideas into businesses or products.",
+                        "skills": ["Event Planning", "Idea Development", "Business Development"]
+                    },
+                    {
+                        "title": "Student Mentor",
+                        "duration": "Aug 2024 – Present",
+                        "description": "Support students who need extra help with their studies.",
+                        "skills": ["Teaching", "Academic Support", "Student Assistance"]
+                    },
+                    {
+                        "title": "Teacher's Assistant",
+                        "duration": "Oct 2024 – Dec 2024",
+                        "description": "Support students who want to learn the programming language C++.",
+                        "skills": ["C++", "Teaching Assistance", "Programming"]
+                    }
                 ]
             }
         ],
@@ -138,103 +161,59 @@
         },
         "projectsList": [
             {
-            "id": 1,
-            "sample": true,
-            "link": "https://www.project.com",
-            "iconPath": "/images/test1.jpg",
-            "title": "Project 22",
-            "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
-            "technologies": ["React", "Node.js"],
-            "year": "2023",
-            "madeAt": "Made at Company"
+                "id": 1,
+                "sample": true,
+                "link": "https://www.hemserviceomsorg.se",
+                "iconPath": "/images/hemserviceomsorg.png",
+                "title": "Hemservice Omsorg",
+                "description": "Hemservice Omsorg Örebro is a company in the cleaning industry. They offer cleaning services for both private individuals and businesses in Örebro and the surrounding area.",
+                "technologies": ["PHP", "JavaScript", "WordPress"],
+                "year": 2019,
+                "madeAt": "Website Service"
             },
             {
-            "id": 2,
-            "sample": true,
-            "link": "https://www.project.com",
-            "iconPath": "/images/project.jpeg",
-            "title": "Project",
-            "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
-            "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
-            "year": "2022",
-            "madeAt": "Made at Company"
+                "id": 2,
+                "sample": true,
+                "link": "https://www.norrlandsbil.se",
+                "iconPath": "/images/norrlandsbil.png",
+                "title": "Norrlands Bil",
+                "description": "Norrlands Bil is a car dealership in Sweden. They offer a wide range of new and used cars, as well as financing options.",
+                "technologies": ["WordPress", "DevOps", "MySQL", "JavaScript"],
+                "year": "2023",
+                "madeAt": "Tromb"
             },
             {
-            "id": 3,
-            "sample": true,
-            "link": "https://www.project.com",
-            "iconPath": "/images/project.jpeg",
-            "title": "Project",
-            "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
-            "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
-            "year": "2022",
-            "madeAt": "Made at Company"
+                "id": 3,
+                "sample": true,
+                "link": "https://fms.track2data.com/?mode=login",
+                "iconPath": "/images/fms-portal.png",
+                "title": "FMS Portal",
+                "description": "FMS is a fleet management system that helps businesses manage their vehicles and drivers.",
+                "technologies": ["PHP", "JavaScript", "MySQL", "DevOps", "Agile", "UX/UI Design"],
+                "year": "2020",
+                "madeAt": "Inter-Data"
             },
             {
-            "id": 4,
-            "sample": true,
-            "link": "https://www.project.com",
-            "iconPath": "/images/project.jpeg",
-            "title": "Project",
-            "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
-            "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
-            "year": "2022",
-            "madeAt": "Made at Company"
+                "id": 4,
+                "sample": true,
+                "link": "https://security.track2data.com/?mode=login",
+                "iconPath": "/images/security-portal.png",
+                "title": "Security Portal",
+                "description": "Security is a system that helps businesses manage their security and access control.",
+                "technologies": ["PHP", "JavaScript", "MySQL", "DevOps", "Agile", "UX/UI Design"],
+                "year": "2021",
+                "madeAt": "Inter-Data"
             },
             {
-            "id": 5,
-            "sample": false,
-            "link": "https://www.project.com",
-            "iconPath": "/images/project.jpeg",
-            "title": "Project",
-            "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
-            "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
-            "year": "2022",
-            "madeAt": "Made at Company"
-            },
-            {
-            "id": 6,
-            "sample": false,
-            "link": "https://www.project.com",
-            "iconPath": "/images/project.jpeg",
-            "title": "Project",
-            "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
-            "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
-            "year": "2022",
-            "madeAt": "Made at Company"
-            },
-            {
-            "id": 7,
-            "sample": false,
-            "link": "https://www.project.com",
-            "iconPath": "/images/project.jpeg",
-            "title": "Project",
-            "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
-            "technologies": ["React", "Node.js"],
-            "year": "2021",
-            "madeAt": "Made at Company"
-            },
-            {
-            "id": 8,
-            "sample": false,
-            "link": "https://www.project.com",
-            "iconPath": "/images/project.jpeg",
-            "title": "Project",
-            "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
-            "technologies": ["React", "Node.js"],
-            "year": "2020",
-            "madeAt": "Made at Company"
-            },
-            {
-            "id": 9,
-            "sample": false,
-            "link": "https://www.project.com",
-            "iconPath": "/images/project.jpeg",
-            "title": "Project",
-            "description": "Description of Project. Description of Project. Description of Project. Description of Project. ",
-            "technologies": ["React", "Node.js"],
-            "year": "2019",
-            "madeAt": "Made at Company"
+                "id": 5,
+                "sample": true,
+                "link": "https://goteborg2023.com",
+                "iconPath": "/images/gothenburg2023.png",
+                "title": "Gothenburg’s 400th anniversary",
+                "description": "GGothenburg’s 400th anniversary is a project that showcases the best of Gothenburg's culture and innovation.",
+                "technologies": ["PHP", "MySQL", "AWS", "CI/CD", "WordPress", "Agile", "UX/UI Design"],
+                "year": "2022",
+                "madeAt": "Valentin Experience"
             }
         ]
     }

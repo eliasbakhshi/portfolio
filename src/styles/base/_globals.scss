@@ -1,0 +1,138 @@
+// =============================================================================
+// Home Page
+// =============================================================================
+
+body {
+    background-color: var(--primary-color);
+}
+
+#about {
+    strong {
+        color: var(--secondary-color);
+    }
+}
+
+.nav-section {
+    padding-top: 4rem;
+}
+
+// layout haeder and fotter
+.custom-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "sidebar"
+        "main";
+}
+
+#mobile-menu {
+    width: 100%;
+    padding: 1rem;
+}
+
+#menu {
+    display: none;
+    grid-area: header;
+}
+
+#left {
+    grid-area: sidebar;
+    position: relative;
+    padding: 6rem 1rem 0 1rem;
+}
+#right {
+    grid-area: main;
+    overflow-x: auto;
+}
+
+@media (width >= 768px) {
+    #menu {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 1rem;
+        background: var(--primary-color);
+        position: fixed;
+        z-index: 50;
+    }
+    #left {
+        grid-area: sidebar;
+        position: relative;
+        padding-top: 6rem;
+        width: 100%;
+        p {
+            width: 75%;
+        }
+    }
+    #right {
+        grid-area: main;
+        overflow-x: auto;
+        padding: 0 1rem;
+    }
+}
+@media (width >= 1024px) {
+    .custom-grid {
+        grid-template-columns: 6fr 6fr;
+        grid-template-areas:
+            "menu right"
+            "left right";
+        min-height: 100vh;
+    }
+    #menu {
+        grid-area: menu;
+        position: fixed;
+        top: 0;
+        z-index: 50;
+        padding: 4rem 0 0 0;
+        width: calc((1024px / 2) - 1rem);
+    }
+    #left {
+        grid-area: left;
+        position: fixed;
+        padding: 10rem 0 0 0;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: calc((1024px / 2) - 1rem);
+    }
+    #right {
+        grid-area: right;
+        padding: 0;
+    }
+}
+@media (width >= 1280px) {
+    #menu {
+        width: calc(1280px / 2);
+    }
+    #left {
+        width: calc(1280px / 2);
+    }
+}
+@media (width >= 1536px) {
+    #menu {
+        width: calc(1536px / 2);
+    }
+    #left {
+        width: calc(1536px / 2);
+    }
+}
+
+// Popup animation
+@keyframes popup-scale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.popup-animate {
+    animation: popup-scale 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}

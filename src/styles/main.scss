@@ -1,0 +1,18 @@
+// =============================================================================
+// MAIN STYLESHEET
+// =============================================================================
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+
+@import "base/reset";
+
+// Tailwind CSS
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+// Base styles and variables
+@import "base/variables";
+@import "base/typography";
+@import "base/globals.scss";

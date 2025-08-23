@@ -1,0 +1,79 @@
+// Remove SCSS variables and use CSS custom properties instead
+
+// Colors - these will be defined in main.scss
+// Typography
+$primary-font: Poppins;
+$headers-h1: 48px;
+$headers-h2: 36px;
+$headers-h3: 30px;
+$headers-h4: 24px;
+$headers-h5: 20px;
+$headers-h6: 18px;
+$headers-paragraph: 16px;
+$headers-small-paragraph: 12px;
+
+// Layout
+$icons-width: 60px;
+$icons-height: 45px;
+$sub-icons-width: 1rem;
+$radius: 5px;
+
+// CSS Custom Properties Mixins for easy use
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #020b4a;
+    --secondary-color-faded: #6b7280;
+    --tertiary-color: #e09f3e;
+    --tertiary-color-faded: #e4c51469;
+
+    // Typography
+    --text-5xl: #{$headers-h1};
+    --text-4xl: #{$headers-h2};
+    --text-3xl: #{$headers-h3};
+    --text-2xl: #{$headers-h4};
+    --text-xl: #{$headers-h5};
+    --text-lg: #{$headers-h6};
+    --text-base: #{$headers-paragraph};
+    --text-xs: #{$headers-small-paragraph};
+
+    // Layout
+    --icons-width: #{$icons-width};
+    --icons-height: #{$icons-height};
+    --sub-icons-width: #{$sub-icons-width};
+    --radius: #{$radius};
+
+    // Font
+    --primary-font: 'Poppins', sans-serif;
+}
+
+// Dark theme
+.dark {
+    --primary-color: #020b4aff !important;
+    --secondary-color: #f0f0f0ff !important;
+    --secondary-color-faded: #9194aeff !important;
+    --tertiary-color: #e09f3eff !important;
+    --tertiary-color-faded: #503f46ff !important;
+}
+
+/* Make the variables available for Tailwind */
+@theme {
+    --color-primary: var(--primary-color);
+    --color-secondary: var(--secondary-color);
+    --color-secondary-faded: var(--secondary-color-faded);
+    --color-tertiary: var(--tertiary-color);
+    --color-tertiary-faded: var(--tertiary-color-faded);
+    --color-tertiary-dark: var(--tertiary-color-dark);
+    --font-poppins: var(--primary-font);
+    --font-h1: var(--headers-h1);
+    --font-h2: var(--headers-h2);
+    --font-h3: var(--headers-h3);
+    --font-h4: var(--headers-h4);
+    --font-h5: var(--headers-h5);
+    --font-h6: var(--headers-h6);
+    --font-paragraph: var(--headers-paragraph);
+    --font-small-paragraph: var(--headers-small-paragraph);
+    --icons-width: var(--icons-width);
+    --icons-height: var(--icons-height);
+    --sub-icons-width: var(--sub-icons-width);
+
+}

@@ -22,18 +22,19 @@ export default function Project({ projects, link, title, noProjectsMessage }: { 
                         <li className='flex flex-col md:flex-row gap-2 rounded-lg w-full text-secondary-faded transition group '>
                             <div
                                 className='relative
-                                                w-full
-                                                h-[calc(var(--icons-height)*5)]
-                                                md:w-[calc(var(--icons-width)*4)]
-                                                md:h-[calc(var(--icons-height)*3)]
-                                                lg:w-[calc(var(--icons-width)*2)]
-                                                lg:h-[calc(var(--icons-height)*1.5)]
-                                                flex-shrink-0
-                                                mr-4
-                                            '
-                                style={{ minWidth: "120px", minHeight: "65px" }}
+                                            w-full
+                                            h-[calc(var(--icons-height)*5)]
+                                            md:w-[calc(var(--icons-width)*4)]
+                                            md:h-[calc(var(--icons-height)*3)]
+                                            lg:w-[calc(var(--icons-width)*2)]
+                                            lg:h-[calc(var(--icons-height)*1.5)]
+                                            flex-shrink-0
+                                            mr-2
+                                            rounded-lg
+                                        '
+                                style={{ minWidth: "180px", minHeight: "100px" }}
                             >
-                                <Image src={project.iconPath ?? "/images/default.png"} alt={`${project.title} icon`} fill className='rounded-lg  transition object-contain' />
+                                <Image src={project.iconPath ?? "/images/default.png"} alt={`${project.title} icon`} fill className='rounded-lg transition object-contain' />
                             </div>
                             <article className='flex flex-col cursor-pointer text-secondary w-full'>
                                 <div className='flex items-center group-hover:text-tertiary transition title'>

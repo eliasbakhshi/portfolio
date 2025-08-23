@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Experience from "@/components/Experience";
 import Project from "@/components/Project";
 import Contact from "@/components/Contact";
@@ -8,12 +7,10 @@ import { AbstractIntlMessages } from "next-intl";
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
     const messages: AbstractIntlMessages = await getMessages({ locale });
-    const title = messages.home?.title || "Home";
-    const description = messages.home?.description;
 
     return {
-        title,
-        description,
+        title: messages.home?.name + " - " + messages.home?.title,
+        description: messages.home?.description
     };
 }
 
@@ -23,8 +20,11 @@ export default async function Home() {
     const projects = messages.projects?.projectsList as ProjectProps[];
     const experiencesTitle = messages.nav?.experience || "Experience";
     const projectsTitle = messages.nav?.projects || "Projects";
-    const experiencesLink = messages.home?.experiencesLink || "View Experiences";
+    const experiencesLink = messages.home?.experiencesLink || "/documents/Elias-Bakhshi.pdf";
+    const experiencesText = messages.home?.experiencesText || "Full Resume";
     const projectsLink = messages.home?.projectsLink || "View Projects";
+
+    projects.sort((a, b) => b.year - a.year);
 
     return (
         <>
@@ -32,7 +32,7 @@ export default async function Home() {
                 <h5 className='mb-6'>{messages.nav.about}</h5>
                 <p className="text-secondary-faded" dangerouslySetInnerHTML={{ __html: messages.home?.about || "" }} />
             </div>
-            <Experience experiences={experiences || []} link={experiencesLink} title={experiencesTitle} noExperienceMessage={messages.experiences?.noExperiences} />
+            <Experience title={experiencesTitle} experiences={experiences || []} linkText={experiencesText} link={experiencesLink} noExperienceMessage={messages.experiences?.noExperiences} />
             <Project projects={projects || []} link={projectsLink} title={projectsTitle} noProjectsMessage={messages.projects?.noProjects} />
             <Contact />
         </>

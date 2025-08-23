@@ -16,14 +16,26 @@
     },
     "home": {
         "name": "Elias Bakhshi",
-        "title": "Elias Bakhshi",
-        "description": "Kreativ, målinriktad och passionerad utvecklare med känsla för att bygga dynamiska webbapplikationer.",
-        "experiencesLink": "Fullständig CV",
+        "title": "Fullstackingenjör",
+        "description": "Kreativ, målinriktad och passionerad ingenjör med känsla för att bygga dynamiska webbapplikationer.",
+        "experiencesLink": "/documents/Elias-Bakhshi.pdf",
+        "experiencesText": "Fullständig CV",
         "projectsLink": "Projektarkiv",
-        "about": "En passionerad mjukvaruingenjör som för närvarande studerar mjukvaruteknik och arbetar på Blekinge Tekniska Högskola (BTH). Min resa som utvecklare började när jag var 12 år gammal, och jag trivs i samarbetande miljöer där jag kan bidra med min <strong>kreativitet</strong> och <strong>problemlösningsförmåga</strong>. Mitt mål är att använda min kunskap för att skapa innovativa lösningar som har en positiv inverkan.",
+        "about": "En passionerad mjukvaruingenjör som jobbar på Blekinge Tekniska Högskola (BTH). Min resa som utvecklare började när jag var 12 år gammal, och jag trivs i samarbetande miljöer där jag kan bidra med min <strong>kreativitet</strong> och <strong>problemlösningsförmåga</strong>. Mitt mål är att använda min kunskap för att skapa innovativa lösningar som har en positiv inverkan.",
         "experiencesList": [
             {
                 "id": 1,
+                "company": "Beebyte",
+                "companyURL": "https://www.beebyte.se",
+                "iconPath": "/images/beebyte.jpeg",
+                "location": "Sverige, Karlstad",
+                "title": "Webbutvecklare",
+                "duration": "Okt 2019 – Jun 2020",
+                "description": "Anpassade WordPress-plugins, integrerade företagets övervakningssystem (Iris) med Slack och designade om företagets FAQ.",
+                "skills": ["WordPress", "PHP", "JavaScript", "HTML", "CSS"]
+            },
+            {
+                "id": 2,
                 "company": "Inter-Data",
                 "companyURL": "https://www.inter-data.eu",
                 "iconPath": "/images/inter-data.jpeg",
@@ -31,10 +43,10 @@
                 "title": "Fullstackutvecklare",
                 "duration": "Aug 2019 - Apr 2022",
                 "description": "Jag utvecklade flera portaler i ett team, kopplade dem till ett automationssystem (n8n.io) och fokuserade på UX/UI-design.",
-                "skills": ["PHP", "JavaScript", "MySQL", "UX/UI Design", "Automation", "Teamarbete", "Portalutveckling", "Systemintegration"]
+                "skills": ["PHP", "Figma", "JavaScript", "Git", "DevOps", "MySQL", "Adobe Illustrator", "Adobe XD"]
             },
             {
-                "id": 2,
+                "id": 3,
                 "company": "Karlstad Innovation Park",
                 "companyURL": "https://www.karlstadinnovationpark.se",
                 "iconPath": "/images/kip.jpg",
@@ -42,10 +54,10 @@
                 "title": "Innovatör",
                 "duration": "Feb 2022 - Mar 2022",
                 "description": "Ett innovationslabb där vi skapade idéer och lösningar för att utveckla och testa meningsfull fritid för unga på deltid. Vi strävade efter att stärka ungas framtidstro.",
-                "skills": ["Innovation", "Idéutveckling", "Projektledning", "Lösningsfokus", "Ungdomsengagemang", "Fritidsutveckling"]
+                "skills": ["Innovation", "Projektutveckling", "Teamarbete", "Idéutveckling"]
             },
             {
-                "id": 3,
+                "id": 4,
                 "company": "Valentin Experience",
                 "companyURL": "https://www.valentinexperience.se",
                 "iconPath": "/images/vx.jpeg",
@@ -53,10 +65,10 @@
                 "title": "Fullstackutvecklare",
                 "duration": "Apr 2022 - Feb 2023",
                 "description": "Arbetade i projekt för Volvo och Göteborg & Co., med fokus på CI/CD, Agile (Scrum), AWS-konfiguration och UX/UI-design.",
-                "skills": ["CI/CD", "Agile", "Scrum", "AWS", "React", "Node.js", "UX/UI Design", "Molnkonfiguration", "Projektledning"]
+                "skills": ["CI/CD", "Agil", "AWS", "UX/UI Design", "React", "Node.js", "Next.js", "MySQL"]
             },
             {
-                "id": 4,
+                "id": 5,
                 "company": "Tromb",
                 "companyURL": "https://www.tromb.se",
                 "iconPath": "/images/tromb.png",
@@ -64,10 +76,10 @@
                 "title": "Fullstackutvecklare",
                 "duration": "Mar 2023 - Jul 2023",
                 "description": "Utvecklade och designade projekt med hjälp av CI/CD för automatisk distribution, Agile (Scrum) metoder för projektledning och ett starkt fokus på UX/UI-design.",
-                "skills": ["CI/CD", "Agile", "Scrum", "UX/UI Design", "React", "Next.js", "TypeScript", "Automatisk Distribution", "Projektledning"]
+                "skills": ["DevOps", "Agil", "UX/UI Design", "PHP", "JavaScript", "MySQL"]
             },
             {
-                "id": 5,
+                "id": 6,
                 "company": "Website Service",
                 "companyURL": "https://www.websiteservice.se",
                 "iconPath": "/images/websiteservice.png",
@@ -75,24 +87,46 @@
                 "title": "Webbutvecklare & VD",
                 "duration": "Nov 2018 - Aug 2024",
                 "description": "Jag började som ung företagare, startade sedan ett eget företag med samma namn och arbetade som konsult åt andra företag vid sidan av mina jobb.",
-                "skills": ["Entreprenörskap", "Konsultation", "WordPress", "Webbutveckling", "SEO", "Företagsledning", "Kundrelationer"]
+                "skills": ["Entreprenörskap", "Konsultation", "WordPress", "SEO", "JavaScript", "PHP", "HTML", "SCSS"]
             },
             {
-                "id": 6,
+                "id": 7,
                 "company": "Blekinge Tekniska Högskola",
                 "companyURL": "https://www.bth.se",
                 "iconPath": "/images/bth.jpg",
                 "location": "Sverige, Karlskrona",
-                "title": ["Preppledare", "Studentambassadör", "Innovationsambassadör", "Studentmentor", "Lärarassistent"],
-                "totalDuration": "Deltid | Aug 2024 - Nuvarande",
-                "duration": ["Aug 2024 - Nuvarande", "Okt 2024 - Nuvarande", "Dec 2024 - Nuvarande", "Aug 2024 - Nuvarande", "Okt 2024 - Dec 2024"],
-                "description": ["Jobbar som stöd för nya studenter på BTH och tipsar om studier, sociala aktiviteter, träning, skapa kontaktytor, bostad med mera.", "Representerar BTH i olika studentmässor, kommer i kontakt med de som söker sin framtida utbildning.", "Arrangerar event och stöttar studenter som vill drömma stort och förverkliga sina idéer till företag eller produkt.", "Stöttar studenter som behöver extra hjälp med deras studier.", "Jag och mina kollegor stöttar studenter som ville lära sig programmeringsspråket C++."],
-                "skills": [
-                    ["Mentorskap", "Studentstöd", "Kommunikation", "Eventplanering"],
-                    ["PR", "Kommunikation", "Utbildningsvägledning", "Representation"],
-                    ["Innovation", "Eventplanering", "Idéutveckling", "Affärsutveckling"],
-                    ["Undervisning", "Studiestöd", "Pedagogik", "Studentassistans"],
-                    ["C++", "Lärarstöd", "Programmering", "Utbildning"]
+                "duration": "Deltid | Aug 2024 - Nuvarande",
+                "roles": [
+                    {
+                        "title": "Preppledare",
+                        "duration": "Aug 2024 - Nuvarande",
+                        "description": "Jobbar som stöd för nya studenter på BTH och tipsar om studier, sociala aktiviteter, träning, skapa kontaktytor, bostad med mera.",
+                        "skills": ["Studentstöd", "Kommunikation"]
+                    },
+                    {
+                        "title": "Studentambassadör",
+                        "duration": "Okt 2024 - Nuvarande",
+                        "description": "Representerar BTH i olika studentmässor, kommer i kontakt med de som söker sin framtida utbildning.",
+                        "skills": ["Kommunikation", "Utbildningsvägledning", "Representation"]
+                    },
+                    {
+                        "title": "Innovationsambassadör",
+                        "duration": "Dec 2024 - Feb 2025",
+                        "description": "Arrangerar event och stöttar studenter som vill drömma stort och förverkliga sina idéer till företag eller produkt.",
+                        "skills": ["Eventplanering", "Idéutveckling", "Affärsutveckling"]
+                    },
+                    {
+                        "title": "Studentmentor",
+                        "duration": "Aug 2024 - Nuvarande",
+                        "description": "Stöttar studenter som behöver extra hjälp med deras studier.",
+                        "skills": ["Undervisning", "Studiestöd", "Studentassistans"]
+                    },
+                    {
+                        "title": "Lärarassistent",
+                        "duration": "Okt 2024 - Dec 2024",
+                        "description": "Jag och mina kollegor stöttar studenter som ville lära sig programmeringsspråket C++.",
+                        "skills": ["C++", "Lärarstöd", "Programmering"]
+                    }
                 ]
             }
         ],
@@ -128,101 +162,57 @@
             {
                 "id": 1,
                 "sample": true,
-                "link": "https://www.project.com",
-                "iconPath": "/images/test1.jpg",
-                "title": "Projekt 22",
-                "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
-                "technologies": ["React", "Node.js"],
-                "year": "2023",
-                "madeAt": "Gjort hos Företag"
+                "link": "https://www.hemserviceomsorg.se",
+                "iconPath": "/images/hemserviceomsorg.png",
+                "title": "Hemservice Omsorg",
+                "description": "Hemservice Omsorg Örebro är ett företag i städbranschen. De erbjuder städtjänster för både privatpersoner och företag i Örebro med omnejd.",
+                "technologies": ["PHP", "JavaScript", "Wordpress"],
+                "year": 2019,
+                "madeAt": "Website Service"
             },
             {
                 "id": 2,
                 "sample": true,
-                "link": "https://www.project.com",
-                "iconPath": "/images/project.jpeg",
-                "title": "Projekt",
-                "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
-                "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
-                "year": "2022",
-                "madeAt": "Gjort hos Företag"
+                "link": "https://www.norrlandsbil.se/",
+                "iconPath": "/images/norrlandsbil.png",
+                "title": "Norrlands Bil",
+                "description": "Norrlands Bil är en bilhandlare i Sverige. De erbjuder ett brett utbud av nya och begagnade bilar samt finansieringsalternativ.",
+                "technologies": ["WordPress", "DevOps", "MySQL", "JavaScript"],
+                "year": "2023",
+                "madeAt": "Tromb"
             },
             {
                 "id": 3,
                 "sample": true,
-                "link": "https://www.project.com",
-                "iconPath": "/images/project.jpeg",
-                "title": "Projekt",
-                "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
-                "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
-                "year": "2022",
-                "madeAt": "Gjort hos Företag"
+                "link": "https://fms.track2data.com/?mode=login",
+                "iconPath": "/images/fms-portal.png",
+                "title": "FMS Portal",
+                "description": "FMS är ett fleet management-system som hjälper företag att hantera sina fordon och förare.",
+                "technologies": ["PHP", "JavaScript", "MySQL", "DevOps", "Agil", "UX/UI Design"],
+                "year": "2020",
+                "madeAt": "Inter-Data"
             },
             {
                 "id": 4,
-                "sample": false,
-                "link": "https://www.project.com",
-                "iconPath": "/images/project.jpeg",
-                "title": "Projekt",
-                "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
-                "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
-                "year": "2022",
-                "madeAt": "Gjort hos Företag"
+                "sample": true,
+                "link": "https://security.track2data.com/?mode=login",
+                "iconPath": "/images/security-portal.png",
+                "title": "Security Portal",
+                "description": "Security är ett system som hjälper företag att hantera sin säkerhet och åtkomstkontroll.",
+                "technologies": ["PHP", "JavaScript", "MySQL", "DevOps", "Agil", "UX/UI Design"],
+                "year": "2021",
+                "madeAt": "Inter-Data"
             },
             {
                 "id": 5,
-                "sample": false,
-                "link": "https://www.project.com",
-                "iconPath": "/images/project.jpeg",
-                "title": "Projekt",
-                "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
-                "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
+                "sample": true,
+                "link": "https://goteborg2023.com",
+                "iconPath": "/images/gothenburg2023.png",
+                "title": "Göteborgs 400-årsjubileum",
+                "description": "Göteborgs 400-årsjubileum är ett projekt som lyfter fram Göteborgs kultur och innovation.",
+                "technologies": ["PHP", "MySQL", "AWS", "CI/CD", "WordPress", "Agile", "UX/UI Design"],
                 "year": "2022",
-                "madeAt": "Gjort hos Företag"
-            },
-            {
-                "id": 6,
-                "sample": false,
-                "link": "https://www.project.com",
-                "iconPath": "/images/project.jpeg",
-                "title": "Projekt",
-                "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
-                "technologies": ["React", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js"],
-                "year": "2022",
-                "madeAt": "Gjort hos Företag"
-            },
-            {
-                "id": 7,
-                "sample": false,
-                "link": "https://www.project.com",
-                "iconPath": "/images/project.jpeg",
-                "title": "Projekt",
-                "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
-                "technologies": ["React", "Node.js"],
-                "year": "2021",
-                "madeAt": "Gjort hos Företag"
-            },
-            {
-                "id": 8,
-                "sample": false,
-                "link": "https://www.project.com",
-                "iconPath": "/images/project.jpeg",
-                "title": "Projekt",
-                "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
-                "technologies": ["React", "Node.js"],
-                "year": "2020",
-                "madeAt": "Gjort hos Företag"
-            },
-            {
-                "id": 9,
-                "sample": false,
-                "link": "https://www.project.com",
-                "iconPath": "/images/project.jpeg",
-                "title": "Projekt",
-                "description": "Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet. Beskrivning av projektet.",
-                "technologies": ["React", "Node.js"],
-                "year": "2019",
-                "madeAt": "Gjort hos Företag"
+                "madeAt": "Valentin Experience"
             }
         ]
     }

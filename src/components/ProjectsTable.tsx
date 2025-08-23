@@ -11,6 +11,7 @@ export default function ProjectsTable({ projects, tableColumns }: { projects: Pr
     const [isMobile, setIsMobile] = useState(false);
     const [mouseX, setMouseX] = useState(0);
 
+
     useEffect(() => {
         const checkMobile = () => setIsMobile(window.innerWidth < 1024);
         checkMobile();
@@ -72,7 +73,7 @@ export default function ProjectsTable({ projects, tableColumns }: { projects: Pr
                         </td>
                         <td className='p-2 group/link dark:text-white text-gray-900'>
                             <div>
-                                <Link href={project.link || "#"} className='flex items-center gap-2'>
+                                <Link href={project.link || "#"} className='flex items-center gap-2' rel='noreferrer' target='_blank'>
                                     {project.link ? new URL(project.link).hostname.replace(/^www\./, "") : ""}
                                     <FiArrowUpRight className='transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1' />
                                 </Link>
@@ -104,11 +105,11 @@ export default function ProjectsTable({ projects, tableColumns }: { projects: Pr
                                                     transition-opacity transition-transform duration-300 ease-out
                                                     popup-animate'
                                         style={{
-                                            minWidth: "120px",
+                                            minWidth: "200px",
                                             left: `${left}px`,
                                         }}
                                     >
-                                        <Image src={project.iconPath} alt={project.title} width={120} height={80} className='rounded' />
+                                        <Image src={project.iconPath} alt={project.title} width={200} height={80} className='rounded' />
                                     </td>
                                 );
                             })()}

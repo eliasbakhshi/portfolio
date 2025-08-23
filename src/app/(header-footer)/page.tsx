@@ -5,12 +5,12 @@ import { ExperienceProps, ExperiencesProps, ProjectProps } from "@/types";
 import { getMessages } from "next-intl/server";
 import { AbstractIntlMessages } from "next-intl";
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
-    const messages: AbstractIntlMessages = await getMessages({ locale });
-
+export async function generateMetadata() {
+    const messages: AbstractIntlMessages = await getMessages();
+    const home = typeof messages.home === "object" && messages.home !== null ? messages.home : {};
     return {
-        title: messages.home?.name + " - " + messages.home?.title,
-        description: messages.home?.description
+        title: (home.name ? home.name : "") + " - " + (home.title ? home.title : ""),
+        description: home.description || ""
     };
 }
 

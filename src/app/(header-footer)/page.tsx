@@ -11,7 +11,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     return {
         title: messages.home?.name + " - " + messages.home?.title,
         description: messages.home?.description
-    };i
+    };
 }
 
 export default async function Home() {

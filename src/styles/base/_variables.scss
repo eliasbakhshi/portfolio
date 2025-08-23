@@ -1,5 +1,4 @@
 // Remove SCSS variables and use CSS custom properties instead
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 // Colors - these will be defined in main.scss
 // Typography
@@ -43,8 +42,6 @@ $radius: 5px;
     --sub-icons-width: #{$sub-icons-width};
     --radius: #{$radius};
 
-    // Font
-    --primary-font: 'Poppins', sans-serif;
 }
 
 // Dark theme

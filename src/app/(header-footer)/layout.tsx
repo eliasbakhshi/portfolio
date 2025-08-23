@@ -6,6 +6,14 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import Link from "next/link";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--primary-font",
+  display: "swap",
+});
 
 export default async function RootLayout({
     children,
@@ -16,7 +24,7 @@ export default async function RootLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale} className='scroll-smooth' suppressHydrationWarning>
+        <html lang={locale} className={`scroll-smooth ${poppins.variable}`} suppressHydrationWarning>
             <body>
                 <ThemeProvider>
                     <NextIntlClientProvider messages={messages}>

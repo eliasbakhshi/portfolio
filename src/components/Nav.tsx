@@ -74,6 +74,7 @@ export default function Nav({ id = "" }: { id?: string }) {
 
     // Update active section based on highest visibility percentage
     useEffect(() => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const visibleSections = Object.entries(sectionVisibility).filter(([_, percent]) => percent > 0);
 
         if (visibleSections.length > 0) {

@@ -166,7 +166,7 @@ export default function Nav({ id = "" }: { id?: string }) {
                     <Image src='/images/logo-white.png' alt='Elias Bakhshi' width={32} height={32} />
                 </Link>
                 <Link className='inline-block dark:hidden' href="/">
-                    <Image src='/images/logo-black.jpg' alt='Elias Bakhshi' width={32} height={32} />
+                    <Image src='/images/logo-black.png' alt='Elias Bakhshi' width={32} height={32} />
                 </Link>
                 <div className='flex items-center gap-2'>
                     <ThemeToggle />

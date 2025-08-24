@@ -19,7 +19,8 @@
         "title": "Full Stack Engineer",
         "description": "Creative, target oriented and passionate engineer with a knack for building dynamic web applications.",
         "about": "A passionate software engineer currently studying Software Engineering and working at Blekinge Institute of Technology (BTH). My journey as a developer started when I was 12 years old, and I thrive in collaborative environments where I can contribute with my <strong>creativity</strong> and <strong>problem-solving</strong> skills. My goal is to use my knowledge to create innovative solutions that have a positive impact.",
-        "experiencesLink": "Full Resume",
+        "experiencesName": "Full Resume",
+        "experiencesLink": "/documents/Elias_Bakhshi_English.pdf",
         "projectsLink": "Project Archive",
         "experiencesList": [
             {
@@ -81,7 +82,7 @@
                 "id": 6,
                 "company": "Website Service",
                 "companyURL": "https://www.websiteservice.se",
-                "iconPath": "/images/websiteservice.png",
+                "iconPath": "/images/websiteservice.jpg",
                 "location": "Sweden",
                 "title": "Web Developer & CEO",
                 "duration": "Nov 2018 – Aug 2024",

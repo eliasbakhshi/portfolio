@@ -9,10 +9,10 @@ import Link from "next/link";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--primary-font",
-  display: "swap",
+    subsets: ["latin"],
+    weight: ["400", "500", "600", "700"],
+    variable: "--primary-font",
+    display: "swap",
 });
 
 export default async function RootLayout({
@@ -44,7 +44,9 @@ export default async function RootLayout({
                                         </Link>
                                     </div>
                                 </div>
-                                <div id='right'>{children}</div>
+                                <div id='right'>
+                                    {children}
+                                </div>
                             </main>
                         </div>
                     </NextIntlClientProvider>

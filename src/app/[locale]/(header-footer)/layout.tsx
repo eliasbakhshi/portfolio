@@ -3,10 +3,13 @@ import "@/styles/main.scss";
 import Nav from "@/components/Nav";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { getLocale, getMessages } from "next-intl/server";
-import { NextIntlClientProvider } from "next-intl";
-import Link from "next/link";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { Poppins } from "next/font/google";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
+import { LayoutProps } from "@/types";
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -15,12 +18,14 @@ const poppins = Poppins({
     display: "swap",
 });
 
-export default async function RootLayout({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
-    const locale = await getLocale();
+export default async function RootLayout({ children, params }: LayoutProps) {
+    const { locale } = await params;
+    if (!hasLocale(routing.locales, locale)) {
+        notFound();
+    }
+    
+    setRequestLocale(locale);
+
     const messages = await getMessages();
 
     return (
@@ -44,9 +49,7 @@ export default async function RootLayout({
                                         </Link>
                                     </div>
                                 </div>
-                                <div id='right'>
-                                    {children}
-                                </div>
+                                <div id='right'>{children}</div>
                             </main>
                         </div>
                     </NextIntlClientProvider>

@@ -2,16 +2,20 @@ import Experience from "@/components/Experience";
 import Project from "@/components/Project";
 import Contact from "@/components/Contact";
 import { ExperienceProps, ExperiencesProps, ProjectProps } from "@/types";
-import { getMessages } from "next-intl/server";
-import { AbstractIntlMessages } from "next-intl";
+import { getMessages, getTranslations } from "next-intl/server";
 import Footer from "@/components/Footer";
+import { routing } from "@/i18n/routing";
 
-export async function generateMetadata() {
-    const messages: AbstractIntlMessages = await getMessages();
-    const home = typeof messages.home === "object" && messages.home !== null ? messages.home : {};
+export function generateStaticParams() {
+    return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: "home" });
     return {
-        title: (home.name ? home.name : "") + " - " + (home.title ? home.title : ""),
-        description: home.description || "",
+        title: (t("name") ? t("name") : "") + " - " + (t("title") ? t("title") : ""),
+        description: t("description") || "",
     };
 }
 

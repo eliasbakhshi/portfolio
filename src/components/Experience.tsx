@@ -4,7 +4,7 @@ import { ExperienceProps, ExperiencesProps } from "@/types";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
-export default function Experience({ title, experiences, link, linkText, noExperienceMessage }: { title: string; experiences: (ExperienceProps | ExperiencesProps)[]; link: string;  noExperienceMessage: string; linkText: string }) {
+export default function Experience({ title, experiences, link, linkText, noExperienceMessage }: { title: string; experiences: (ExperienceProps | ExperiencesProps)[]; link: string; noExperienceMessage: string; linkText: string }) {
     if (!experiences || experiences.length === 0) {
         return (
             <section id='experience' className='nav-section px-4 md:px-0'>
@@ -58,7 +58,7 @@ export default function Experience({ title, experiences, link, linkText, noExper
             </ul>
             {/* Add the resume link */}
             <div className={styles.readmore}>
-                <Link href={link} target="_blank" rel="noopener noreferrer">
+                <Link href={link} target='_blank' rel='noopener noreferrer'>
                     <h6>{linkText}</h6>
                 </Link>
                 <FiArrowUpRight className={styles.icon} />

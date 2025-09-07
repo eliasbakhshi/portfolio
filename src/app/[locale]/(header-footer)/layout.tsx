@@ -1,4 +1,3 @@
-// import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/main.scss";
 import Nav from "@/components/Nav";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
@@ -23,7 +22,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
     if (!hasLocale(routing.locales, locale)) {
         notFound();
     }
-    
+
     setRequestLocale(locale);
 
     const messages = await getMessages();

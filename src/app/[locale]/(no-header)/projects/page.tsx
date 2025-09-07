@@ -5,7 +5,6 @@ import ProjectsTable from "@/components/ProjectsTable";
 import { routing } from "@/i18n/routing";
 import { getMessages, getTranslations } from "next-intl/server";
 
-
 export function generateStaticParams() {
     return routing.locales.map((locale) => ({ locale }));
 }

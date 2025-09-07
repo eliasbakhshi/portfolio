@@ -14,7 +14,6 @@ const poppins = Poppins({
     display: "swap",
 });
 
-
 export default async function ProjectsLayout({ children, params }: LayoutProps) {
     const { locale } = await params;
     if (!hasLocale(routing.locales, locale)) {

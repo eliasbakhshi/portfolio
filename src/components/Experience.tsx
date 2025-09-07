@@ -1,4 +1,3 @@
-// import styles from "@/styles/_components.module.scss";
 import styles from "@/styles/components/experience.module.scss";
 import { ExperienceProps, ExperiencesProps } from "@/types";
 import Link from "next/link";

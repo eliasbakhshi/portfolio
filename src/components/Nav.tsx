@@ -79,12 +79,20 @@ export default function Nav({ id = "" }: { id?: string }) {
         const visibleSections = Object.entries(sectionVisibility).filter(([_, percent]) => percent > 0);
 
         if (visibleSections.length > 0) {
-            // Find section with highest visibility percentage
+            // Find the section with the highest visibility percentage
             const mostVisibleSection = visibleSections.reduce((prev, current) => (current[1] > prev[1] ? current : prev));
 
-            setActiveSection(mostVisibleSection[0]);
+            const newActiveSection = mostVisibleSection[0];
+
+            // Update the active section state
+            if (newActiveSection !== activeSection) {
+                setActiveSection(newActiveSection);
+
+                // Update the URL hash without reloading the page
+                window.history.replaceState(null, "", `#${newActiveSection}`);
+            }
         }
-    }, [sectionVisibility]);
+    }, [sectionVisibility, activeSection]);
 
     // Intersection Observer for tracking visibility percentages
     useEffect(() => {

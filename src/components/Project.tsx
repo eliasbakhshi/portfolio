@@ -34,7 +34,13 @@ export default function Project({ projects, link, title, noProjectsMessage }: { 
                                         '
                                     style={{ minWidth: "180px", minHeight: "100px" }}
                                 >
-                                    <Image src={project.iconPath ?? "/images/default.jpg"} alt={`${project.title} icon`} fill className='rounded-lg transition object-contain' />
+                                    <Image
+                                        src={project.iconPath ?? "/images/default.jpg"}
+                                        alt={`${project.title} icon`}
+                                        fill
+                                        sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw' // Add sizes prop
+                                        className='rounded-lg transition object-contain'
+                                    />
                                 </div>
                                 <article className='flex flex-col cursor-pointer text-secondary w-full'>
                                     <div className='flex items-center group-hover:text-tertiary transition title'>

@@ -11,10 +11,16 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
-    const t = await getTranslations({ locale, namespace: "home" });
+    const t = await getTranslations({ locale, namespace: "" });
     return {
-        title: (t("name") ? t("name") : "") + " - " + (t("title") ? t("title") : ""),
-        description: t("description") || "",
+        title: `${t("nav.projects") || "Projects"} - ${t("home.name") || "Elias Bakhshi"}`,
+        description: t("home.description") || "My projects",
+        openGraph: {
+            title: `${t("nav.projects") || "My Portfolio"} - ${t("home.title") || "Welcome"}`,
+            description: t("home.description") || "My projects",
+            url: process.env.SITE_URL || "http://localhost:3000",
+            type: "website",
+        },
     };
 }
 

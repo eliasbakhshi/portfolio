@@ -14,8 +14,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: "home" });
     return {
-        title: (t("name") ? t("name") : "") + " - " + (t("title") ? t("title") : ""),
-        description: t("description") || "",
+        title: `${t("name") || "My Portfolio"} - ${t("title") || "Welcome"}`,
+        description: t("description") || "Welcome to my portfolio website showcasing my projects and skills.",
+        openGraph: {
+            title: `${t("name") || "My Portfolio"} - ${t("title") || "Welcome"}`,
+            description: t("description") || "Welcome to my portfolio website showcasing my projects and skills.",
+            url: process.env.SITE_URL || "http://localhost:3000",
+            type: "website",
+        },
     };
 }
 

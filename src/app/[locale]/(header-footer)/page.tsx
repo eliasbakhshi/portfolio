@@ -2,15 +2,20 @@ import Experience from "@/components/Experience";
 import Project from "@/components/Project";
 import Contact from "@/components/Contact";
 import { ExperienceProps, ExperiencesProps, ProjectProps } from "@/types";
-import { getMessages } from "next-intl/server";
-import { AbstractIntlMessages } from "next-intl";
+import { getMessages, getTranslations } from "next-intl/server";
+import Footer from "@/components/Footer";
+import { routing } from "@/i18n/routing";
 
-export async function generateMetadata() {
-    const messages: AbstractIntlMessages = await getMessages();
-    const home = typeof messages.home === "object" && messages.home !== null ? messages.home : {};
+export function generateStaticParams() {
+    return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: "home" });
     return {
-        title: (home.name ? home.name : "") + " - " + (home.title ? home.title : ""),
-        description: home.description || ""
+        title: (t("name") ? t("name") : "") + " - " + (t("title") ? t("title") : ""),
+        description: t("description") || "",
     };
 }
 
@@ -25,16 +30,24 @@ export default async function Home() {
     const projectsLink = messages.home?.projectsLink || "View Projects";
 
     projects.sort((a, b) => b.year - a.year);
+    experiences.sort((a, b) => b.id - a.id);
+
+    const t = await getTranslations();
 
     return (
         <>
             <div id='about' className='nav-section px-4 md:px-0'>
-                <h5 className='mb-6'>{messages.nav.about}</h5>
-                <p className="text-secondary-faded" dangerouslySetInnerHTML={{ __html: messages.home?.about || "" }} />
+                <h5 className='mb-6'>{t("nav.about")}</h5>
+                <p className='text-secondary-faded'>
+                    {t.rich("home.about", {
+                        strong: (chunk) => <strong>{chunk}</strong>,
+                    })}
+                </p>
             </div>
             <Experience title={experiencesTitle} experiences={experiences || []} linkText={experiencesText} link={experiencesLink} noExperienceMessage={messages.experiences?.noExperiences} />
             <Project projects={projects || []} link={projectsLink} title={projectsTitle} noProjectsMessage={messages.projects?.noProjects} />
             <Contact />
+            <Footer />
         </>
     );
 }

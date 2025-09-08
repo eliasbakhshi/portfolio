@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { FiArrowUpRight } from "react-icons/fi";
 import { ProjectProps } from "@/types/project";
 
@@ -10,7 +10,6 @@ export default function ProjectsTable({ projects, tableColumns }: { projects: Pr
     const [popupIndex, setPopupIndex] = useState<number | null>(null);
     const [isMobile, setIsMobile] = useState(false);
     const [mouseX, setMouseX] = useState(0);
-
 
     useEffect(() => {
         const checkMobile = () => setIsMobile(window.innerWidth < 1024);

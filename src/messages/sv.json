@@ -16,7 +16,7 @@
     },
     "home": {
         "name": "Elias Bakhshi",
-        "title": "Fullstackingenjör",
+        "title": "Mjukvaruingenjör",
         "description": "Kreativ, målinriktad och passionerad ingenjör med känsla för att bygga dynamiska webbapplikationer.",
         "experiencesLink": "/documents/Elias_Bakhshi.pdf",
         "experiencesText": "Fullständig CV",
@@ -95,17 +95,17 @@
                 "companyURL": "https://www.bth.se",
                 "iconPath": "/images/bth.jpg",
                 "location": "Sverige, Karlskrona",
-                "duration": "Deltid | Aug 2024 - Nuvarande",
+                "duration": "Deltid | Aug 2024 - Nu",
                 "roles": [
                     {
                         "title": "Preppledare",
-                        "duration": "Aug 2024 - Nuvarande",
+                        "duration": "Aug 2024 - Nu",
                         "description": "Jobbar som stöd för nya studenter på BTH och tipsar om studier, sociala aktiviteter, träning, skapa kontaktytor, bostad med mera.",
                         "skills": ["Studentstöd", "Kommunikation"]
                     },
                     {
                         "title": "Studentambassadör",
-                        "duration": "Okt 2024 - Nuvarande",
+                        "duration": "Okt 2024 - Nu",
                         "description": "Representerar BTH i olika studentmässor, kommer i kontakt med de som söker sin framtida utbildning.",
                         "skills": ["Kommunikation", "Utbildningsvägledning", "Representation"]
                     },
@@ -117,13 +117,13 @@
                     },
                     {
                         "title": "Studentmentor",
-                        "duration": "Aug 2024 - Nuvarande",
+                        "duration": "Aug 2024 - Nu",
                         "description": "Stöttar studenter som behöver extra hjälp med deras studier.",
                         "skills": ["Undervisning", "Studiestöd", "Studentassistans"]
                     },
                     {
                         "title": "Lärarassistent",
-                        "duration": "Okt 2024 - Dec 2024",
+                        "duration": "Okt 2024 - Nu",
                         "description": "Jag och mina kollegor stöttar studenter som ville lära sig programmeringsspråket C++.",
                         "skills": ["C++", "Lärarstöd", "Programmering"]
                     }
@@ -143,7 +143,8 @@
                     "error": "Oj! Något gick fel. Försök igen."
                 }
             }
-        }
+        },
+    "footer": "Grovt designad i <figma>Figma</figma> och kodad i <vscode>Visual Studio Code</vscode>. Byggd med <nextjs>Next.js</nextjs> & <tailwind>Tailwind CSS</tailwind>, distribuerad på <vercel>Vercel</vercel>. © <year>{year}</year>"
     },
     "projects": {
         "back": "Tillbaka",

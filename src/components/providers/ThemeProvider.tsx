@@ -3,15 +3,12 @@
 
 import { ThemeProvider as NextThemeProvider } from "next-themes";
 import { ReactNode } from "react";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
-interface ThemeProviderProps {
-    children: ReactNode;
-}
-
-export function ThemeProvider({ children }: ThemeProviderProps) {
+export function ThemeProvider({ children }: { children: ReactNode }) {
     return (
         <NextThemeProvider attribute='class' defaultTheme='dark' enableSystem={true} disableTransitionOnChange={false}>
-            {children}
+            <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY || ""}>{children}</GoogleReCaptchaProvider>
         </NextThemeProvider>
     );
 }

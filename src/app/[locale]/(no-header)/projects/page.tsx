@@ -1,8 +1,22 @@
 import "@/styles/main.scss";
 import BackButton from "@/components/BackButton";
 import { ProjectProps } from "@/types/project";
-import { getMessages } from "next-intl/server";
 import ProjectsTable from "@/components/ProjectsTable";
+import { routing } from "@/i18n/routing";
+import { getMessages, getTranslations } from "next-intl/server";
+
+export function generateStaticParams() {
+    return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: "home" });
+    return {
+        title: (t("name") ? t("name") : "") + " - " + (t("title") ? t("title") : ""),
+        description: t("description") || "",
+    };
+}
 
 export default async function ProjectsPage() {
     const messages = await getMessages();

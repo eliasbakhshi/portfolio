@@ -16,7 +16,7 @@
     },
     "home": {
         "name": "Elias Bakhshi",
-        "title": "Full Stack Engineer",
+        "title": "Software Engineer",
         "description": "Creative, target oriented and passionate engineer with a knack for building dynamic web applications.",
         "about": "A passionate software engineer currently studying Software Engineering and working at Blekinge Institute of Technology (BTH). My journey as a developer started when I was 12 years old, and I thrive in collaborative environments where I can contribute with my <strong>creativity</strong> and <strong>problem-solving</strong> skills. My goal is to use my knowledge to create innovative solutions that have a positive impact.",
         "experiencesName": "Full Resume",
@@ -95,17 +95,17 @@
                 "companyURL": "https://www.bth.se",
                 "iconPath": "/images/bth.jpg",
                 "location": "Sweden, Karlskrona",
-                "duration": "Part-time | Aug 2024 – Present",
+                "duration": "Part-time | Aug 2024 – Now",
                 "roles": [
                     {
                         "title": "Prepp Leader",
-                        "duration": "Aug 2024 – Present",
+                        "duration": "Aug 2024 – Now",
                         "description": "Provide support for new students at BTH and give tips on studies, social activities, training, creating contact areas, housing, etc.",
                         "skills": ["Student Support", "Communication"]
                     },
                     {
                         "title": "Student Ambassador",
-                        "duration": "Oct 2024 – Present",
+                        "duration": "Oct 2024 – Now",
                         "description": "Represent BTH at various student fairs and get in touch with those who are looking for their future education.",
                         "skills": ["Communication", "Education Guidance", "Representation"]
                     },
@@ -117,13 +117,13 @@
                     },
                     {
                         "title": "Student Mentor",
-                        "duration": "Aug 2024 – Present",
+                        "duration": "Aug 2024 – Now",
                         "description": "Support students who need extra help with their studies.",
                         "skills": ["Teaching", "Academic Support", "Student Assistance"]
                     },
                     {
                         "title": "Teacher's Assistant",
-                        "duration": "Oct 2024 – Dec 2024",
+                        "duration": "Oct 2024 – Now",
                         "description": "Support students who want to learn the programming language C++.",
                         "skills": ["C++", "Teaching Assistance", "Programming"]
                     }
@@ -143,7 +143,8 @@
                     "error": "Oops! Something went wrong. Please try again."
                 }
             }
-        }
+        },
+    "footer": "Loosely designed in <figma>Figma</figma> and hand‑coded in <vscode>Visual Studio Code</vscode>. Built with <nextjs>Next.js</nextjs> & <tailwind>Tailwind CSS</tailwind>, deployed on <vercel>Vercel</vercel>. © <year>{year}</year>"
     },
     "projects": {
         "back": "Back",

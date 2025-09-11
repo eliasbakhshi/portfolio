@@ -35,7 +35,7 @@ export default function Footer(): JSX.Element {
 
     return (
         <footer>
-            <div className='container mx-auto py-4'>
+            <div className='container mx-auto py-4 nav-section px-4 md:px-0'>
                 <p className='text-sm text-secondary-faded'>{footer}</p>
             </div>
         </footer>

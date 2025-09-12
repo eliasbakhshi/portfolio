@@ -12,6 +12,8 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: "" });
+    const canonicalUrl = locale === "en" ? `${process.env.SITE_URL || "http://localhost:3000"}/projects` : `${process.env.SITE_URL || "http://localhost:3000"}/${locale}/projects`;
+
     return {
         title: `${t("nav.projects") || "Projects"} - ${t("home.name") || "Elias Bakhshi"}`,
         description: t("home.description") || "My projects",
@@ -20,6 +22,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
             description: t("home.description") || "My projects",
             url: process.env.SITE_URL || "http://localhost:3000",
             type: "website",
+        },
+        alternates: {
+            canonical: canonicalUrl,
         },
     };
 }

@@ -13,6 +13,8 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: "home" });
+    const canonicalUrl = locale === "en" ? `${process.env.SITE_URL || "http://localhost:3000"}/` : `${process.env.SITE_URL || "http://localhost:3000"}/${locale}`;
+
     return {
         title: `${t("name") || "My Portfolio"} - ${t("title") || "Welcome"}`,
         description: t("description") || "Welcome to my portfolio website showcasing my projects and skills.",
@@ -21,6 +23,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
             description: t("description") || "Welcome to my portfolio website showcasing my projects and skills.",
             url: process.env.SITE_URL || "http://localhost:3000",
             type: "website",
+        },
+        alternates: {
+            canonical: canonicalUrl,
         },
     };
 }

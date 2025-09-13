@@ -36,17 +36,6 @@
             },
             {
                 "id": 2,
-                "company": "Inter-Data",
-                "companyURL": "https://www.inter-data.eu",
-                "iconPath": "/images/inter-data.jpeg",
-                "location": "Sweden, Hagfors",
-                "title": "Full Stack Developer",
-                "duration": "Aug 2019 – Apr 2022",
-                "description": "Developed multiple portals in a team, connecting them to an automation system (n8n.io) and focusing on UX/UI design.",
-                "skills": ["PHP", "Figma", "JavaScript", "Git", "DevOps", "MySQL", "Adobe Illustrator", "Adobe XD"]
-            },
-            {
-                "id": 3,
                 "company": "Karlstad Innovation Park",
                 "companyURL": "https://www.karlstadinnovationpark.se",
                 "iconPath": "/images/kip.jpg",
@@ -55,6 +44,17 @@
                 "duration": "Feb 2022 – Mar 2022",
                 "description": "An innovation lab where we developed ideas and solutions to create meaningful leisure activities and inspire hope for the future among young people as a part-time job.",
                 "skills": ["Innovation", "Project Development", "Team Collaboration", "Idea Generation"]
+            },
+            {
+                "id": 3,
+                "company": "Inter-Data",
+                "companyURL": "https://www.inter-data.eu",
+                "iconPath": "/images/inter-data.jpeg",
+                "location": "Sweden, Hagfors",
+                "title": "Full Stack Developer",
+                "duration": "Aug 2019 – Apr 2022",
+                "description": "Developed multiple portals in a team, connecting them to an automation system (n8n.io) and focusing on UX/UI design.",
+                "skills": ["PHP", "Figma", "JavaScript", "Git", "DevOps", "MySQL", "Adobe Illustrator", "Adobe XD"]
             },
             {
                 "id": 4,

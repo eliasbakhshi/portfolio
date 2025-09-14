@@ -39,11 +39,12 @@ export async function POST(req: Request) {
         },
     });
 
+    console.log({ name, email, message });
     await transporter.sendMail({
-        from: email,
+        from: `Elias Bakhshi  <${process.env.GMAIL_APP_USER}>`,
         to: process.env.GMAIL_APP_USER,
         subject: `Coffee from ${name}`,
-        text: message,
+        text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
 
     return NextResponse.json({ ok: true });

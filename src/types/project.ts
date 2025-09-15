@@ -9,4 +9,5 @@ export type ProjectProps = {
     description?: string;
     year: number;
     madeAt?: string;
+    isShowing?: boolean;
 }

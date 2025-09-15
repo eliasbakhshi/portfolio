@@ -7,7 +7,7 @@ export type ExperienceProps = {
     title: string;
     duration: string;
     description: string;
-    isShown: boolean;
+    isShowing: boolean;
     skills: string[];
 };
 export type RoleProps = {
@@ -24,6 +24,6 @@ export type ExperiencesProps = {
     iconPath: string;
     location: string;
     duration: string;
-    isShown: boolean;
+    isShowing: boolean;
     roles: RoleProps[];
 };

@@ -31,7 +31,8 @@
                 "location": "Sweden, Karlstad",
                 "title": "Web Developer",
                 "duration": "Oct 2019 – Jun 2020",
-                "description": "Customized WordPress plugins, integrated the company's monitoring system (Iris) with Slack, and redesigned the company's FAQ.",
+                "isShowing": true,
+                "description": "Internship where I customized WordPress plugins, integrated iris monitoring with Slack, reducing the mean time to acknowledge (MTTA) of critical incidents from 10 minutes to one minute.",
                 "skills": ["WordPress", "PHP", "JavaScript", "HTML", "CSS"]
             },
             {
@@ -42,7 +43,8 @@
                 "location": "Sweden, Karlstad",
                 "title": "Change Maker",
                 "duration": "Feb 2022 – Mar 2022",
-                "description": "An innovation lab where we developed ideas and solutions to create meaningful leisure activities and inspire hope for the future among young people as a part-time job.",
+                "isShowing": true,
+                "description": "A time-limited innovation lab where we developed ideas and solutions to create meaningful leisure activities and inspire hope for the future among young people as a part-time job.",
                 "skills": ["Innovation", "Project Development", "Team Collaboration", "Idea Generation"]
             },
             {
@@ -53,6 +55,7 @@
                 "location": "Sweden, Hagfors",
                 "title": "Full Stack Developer",
                 "duration": "Aug 2019 – Apr 2022",
+                "isShowing": true,
                 "description": "Developed multiple portals in a team, connecting them to an automation system (n8n.io) and focusing on UX/UI design.",
                 "skills": ["PHP", "Figma", "JavaScript", "Git", "DevOps", "MySQL", "Adobe Illustrator", "Adobe XD"]
             },
@@ -64,6 +67,7 @@
                 "location": "Sweden",
                 "title": "Full Stack Developer",
                 "duration": "Apr 2022 – Feb 2023",
+                "isShowing": true,
                 "description": "Worked on projects for Volvo and Göteborg & Co., focusing on CI/CD, Agile (Scrum), AWS configuration, and UX/UI design.",
                 "skills": ["CI/CD", "Agile", "AWS", "UX/UI Design", "React", "Node.js", "Next.js", "MySQL"]
             },
@@ -75,7 +79,8 @@
                 "location": "Sweden",
                 "title": "Full Stack Developer",
                 "duration": "Mar 2023 – Jul 2023",
-                "description": "Developed and designed projects using CI/CD for automatic deployment, Agile (Scrum) methodologies for project management, and a strong focus on UX/UI design.",
+                "isShowing": true,
+                "description": "A consulting assignment focusing on developing CI/CD pipelines for automated deployment, dockerizing the existing projects for new developers, UX/UI design and Agile (Scrum)",
                 "skills": ["DevOps", "Agile", "UX/UI Design", "PHP", "JavaScript", "MySQL"]
             },
             {
@@ -86,6 +91,7 @@
                 "location": "Sweden",
                 "title": "Web Developer & CEO",
                 "duration": "Nov 2018 – Aug 2024",
+                "isShowing": true,
                 "description": "Started as a young entrepreneur, then launched my own company with the same name and worked as a consultant for other businesses as a side hustle.",
                 "skills": ["Entrepreneurship", "Consulting", "WordPress", "SEO", "JavaScript", "PHP", "HTML", "SCSS"]
             },
@@ -96,6 +102,7 @@
                 "iconPath": "/images/bth.jpg",
                 "location": "Sweden, Karlskrona",
                 "duration": "Part-time | Aug 2024 – Now",
+                "isShowing": true,
                 "roles": [
                     {
                         "title": "Prepp Leader",
@@ -124,7 +131,7 @@
                     {
                         "title": "Teacher's Assistant",
                         "duration": "Oct 2024 – Now",
-                        "description": "Support students who want to learn the programming language C++.",
+                        "description": "Mentored 80+ first-year students in C++ and Python fundamentals, improving their assignment scores as a part-time job.",
                         "skills": ["C++", "Teaching Assistance", "Programming"]
                     }
                 ]
@@ -170,7 +177,8 @@
                 "description": "Hemservice Omsorg Örebro is a company in the cleaning industry. They offer cleaning services for both private individuals and businesses in Örebro and the surrounding area.",
                 "technologies": ["PHP", "JavaScript", "WordPress"],
                 "year": 2019,
-                "madeAt": "Website Service"
+                "madeAt": "Website Service",
+                "isShowing": true
             },
             {
                 "id": 2,
@@ -181,7 +189,9 @@
                 "description": "Norrlands Bil is a car dealership in Sweden. They offer a wide range of new and used cars, as well as financing options.",
                 "technologies": ["WordPress", "DevOps", "MySQL", "JavaScript"],
                 "year": "2023",
-                "madeAt": "Tromb"
+                "madeAt": "Tromb",
+                "isShowing": true
+
             },
             {
                 "id": 3,
@@ -192,7 +202,8 @@
                 "description": "FMS is a fleet management system that helps businesses manage their vehicles and drivers.",
                 "technologies": ["PHP", "JavaScript", "MySQL", "DevOps", "Agile", "UX/UI Design"],
                 "year": "2020",
-                "madeAt": "Inter-Data"
+                "madeAt": "Inter-Data",
+                "isShowing": true
             },
             {
                 "id": 4,
@@ -203,7 +214,8 @@
                 "description": "Security is a system that helps businesses manage their security and access control.",
                 "technologies": ["PHP", "JavaScript", "MySQL", "DevOps", "Agile", "UX/UI Design"],
                 "year": "2021",
-                "madeAt": "Inter-Data"
+                "madeAt": "Inter-Data",
+                "isShowing": true
             },
             {
                 "id": 5,
@@ -214,7 +226,8 @@
                 "description": "GGothenburg’s 400th anniversary is a project that showcases the best of Gothenburg's culture and innovation.",
                 "technologies": ["PHP", "MySQL", "AWS", "CI/CD", "WordPress", "Agile", "UX/UI Design"],
                 "year": "2022",
-                "madeAt": "Valentin Experience"
+                "madeAt": "Valentin Experience",
+                "isShowing": true
             }
         ]
     }

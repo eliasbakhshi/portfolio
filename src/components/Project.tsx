@@ -17,7 +17,7 @@ export default function Project({ projects, link, title, noProjectsMessage }: { 
             <h5 className='mb-6'>{title}</h5>
             <ul className='flex flex-col gap-4 list-none p-0 m-0'>
                 {projects.map((project, index) =>
-                    project.sample && project.sample == true ? (
+                    project.sample && project.isShowing ? (
                         <Link href={project.link || "#"} target='_blank' rel='noopener noreferrer' key={index}>
                             <li className='flex flex-col md:flex-row gap-2 rounded-lg w-full text-secondary-faded transition group '>
                                 <div

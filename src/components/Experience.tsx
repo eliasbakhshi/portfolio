@@ -17,13 +17,15 @@ export default function Experience({ title, experiences, link, linkText, noExper
     const isMultiExperience = (experience: ExperienceProps | ExperiencesProps): experience is ExperiencesProps => {
         return "roles" in experience && Array.isArray(experience.roles);
     };
+
+    console.log(experiences);
     return (
         <section id='experience' className={`nav-section  px-4 md:px-0 ${styles.experience}`}>
             <h5 className='mb-6'>{title}</h5>
             <ul>
                 {experiences.map(
                     (experience, index) =>
-                        experience.isShown && (
+                        experience.isShowing && (
                             <li key={index} style={{ "--bullet-image": `url(${experience.iconPath})` } as React.CSSProperties}>
                                 <Link href={experience.companyURL} target='_blank' rel='noopener noreferrer'>
                                     {isMultiExperience(experience) ? (

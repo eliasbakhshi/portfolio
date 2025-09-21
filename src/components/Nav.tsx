@@ -37,7 +37,7 @@ export const NavLink = ({ href, children, isActive, onClick }: { href: string; c
 };
 
 export default function Nav({ id = "" }: { id?: string }) {
-    const [locale, setLocale] = useState("en");
+    const [locale, setLocale] = useState("en-US");
     const [activeSection, setActiveSection] = useState("");
     const [sections, setSections] = useState<string[]>([]);
     const [sectionVisibility, setSectionVisibility] = useState<{ [key: string]: number }>({});
@@ -213,7 +213,7 @@ export default function Nav({ id = "" }: { id?: string }) {
                         ))}
                     </nav>
                     <div className='mt-8'>
-                        {locale === "en" ? (
+                        {locale === "en-US" ? (
                             <button
                                 className='text-lg'
                                 onClick={() => {
@@ -227,7 +227,7 @@ export default function Nav({ id = "" }: { id?: string }) {
                             <button
                                 className='text-lg'
                                 onClick={() => {
-                                    handleLocaleChange("en");
+                                    handleLocaleChange("en-US");
                                     setMenuOpen(false);
                                 }}
                             >
@@ -245,12 +245,12 @@ export default function Nav({ id = "" }: { id?: string }) {
                     </NavLink>
                 ))}
                 <ThemeToggle />
-                {locale === "en" ? (
+                {locale === "en-US" ? (
                     <button className={`cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary ${styles.languageButton}`} onClick={() => handleLocaleChange("sv")} aria-label={t("swedish")}>
                         🇸🇪
                     </button>
                 ) : (
-                    <button className={`cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary ${styles.languageButton}`} onClick={() => handleLocaleChange("en")} aria-label={t("english")}>
+                    <button className={`cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary ${styles.languageButton}`} onClick={() => handleLocaleChange("en-US")} aria-label={t("english")}>
                         🇬🇧
                     </button>
                 )}

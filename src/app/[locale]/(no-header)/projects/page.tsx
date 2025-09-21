@@ -5,14 +5,17 @@ import ProjectsTable from "@/components/ProjectsTable";
 import { routing } from "@/i18n/routing";
 import { getMessages, getTranslations } from "next-intl/server";
 
+export const revalidate = 60;
 export function generateStaticParams() {
-    return routing.locales.map((locale) => ({ locale }));
+    return routing.locales.map((locale) => {
+        return locale === "en-US" ? {} : { locale };
+    });
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: "" });
-    const canonicalUrl = locale === "en" ? `${process.env.SITE_URL || "http://localhost:3000"}/projects` : `${process.env.SITE_URL || "http://localhost:3000"}/${locale}/projects`;
+    const canonicalUrl = locale === "en-US" ? `${process.env.SITE_URL || "http://localhost:3000"}/projects` : `${process.env.SITE_URL || "http://localhost:3000"}/${locale}/projects`;
 
     return {
         title: `${t("nav.projects") || "Projects"} - ${t("home.name") || "Elias Bakhshi"}`,

@@ -1,11 +1,13 @@
 import Experience from "@/components/Experience";
 import Project from "@/components/Project";
 import Contact from "@/components/Contact";
-import { ExperienceProps, ExperiencesProps, ProjectProps } from "@/types";
+import { Experiences, ProjectProps } from "@/types";
 import { getMessages, getTranslations } from "next-intl/server";
 import Footer from "@/components/Footer";
 import { routing } from "@/i18n/routing";
+import { getExperiences } from "@/contentful/queries";
 
+export const revalidate = 60;
 export function generateStaticParams() {
     return routing.locales.map((locale) => ({ locale }));
 }
@@ -13,7 +15,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: "home" });
-    const canonicalUrl = locale === "en" ? `${process.env.SITE_URL || "http://localhost:3000"}/` : `${process.env.SITE_URL || "http://localhost:3000"}/${locale}`;
+    const canonicalUrl = locale === "en-US" ? `${process.env.SITE_URL || "http://localhost:3000"}/` : `${process.env.SITE_URL || "http://localhost:3000"}/${locale}`;
 
     return {
         title: `${t("name") || "My Portfolio"} - ${t("title") || "Welcome"}`,
@@ -30,20 +32,26 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     };
 }
 
-export default async function Home() {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
     const messages = await getMessages();
-    const experiences = messages.home?.experiencesList as (ExperienceProps | ExperiencesProps)[];
-    const projects = messages.projects?.projectsList as ProjectProps[];
-    const experiencesTitle = messages.nav?.experience || "Experience";
-    const projectsTitle = messages.nav?.projects || "Projects";
-    const experiencesLink = messages.home?.experiencesLink || "/documents/Elias-Bakhshi.pdf";
-    const experiencesText = messages.home?.experiencesText || "Full Resume";
-    const projectsLink = messages.home?.projectsLink || "View Projects";
+    const experienceSection = await getExperiences(locale) as Experiences;
+    const experiences = experienceSection.experiencesList || [];
+    const experiencesTitle = messages.nav?.experience;
+    const resumeLink = experienceSection.resumeLink;
+    const resumeText = experienceSection.resumeText;
+    const projects = messages.projects?.projectsList as ProjectProps[] || [];
+    const projectsTitle = messages.nav?.projects;
+    // const projectsText = experienceSection.projectsText || "View Projects";
+    const projectsText =  "View Projects";
 
     projects.sort((a, b) => b.year - a.year);
-    experiences.sort((a, b) => b.id - a.id);
+    experiences.sort((a, b) => b.queue - a.queue);
 
     const t = await getTranslations();
+
+    const projects2 = await getExperiences(locale);
+    console.log(typeof projects2);
 
     return (
         <>
@@ -55,8 +63,8 @@ export default async function Home() {
                     })}
                 </p>
             </div>
-            <Experience title={experiencesTitle} experiences={experiences || []} linkText={experiencesText} link={experiencesLink} noExperienceMessage={messages.experiences?.noExperiences} />
-            <Project projects={projects || []} link={projectsLink} title={projectsTitle} noProjectsMessage={messages.projects?.noProjects} />
+            <Experience title={experiencesTitle} experiences={experiences} resumeText={resumeText} resumeLink={resumeLink} noExperienceMessage={messages.experiences?.noExperiences} />
+            <Project projects={projects} link={projectsText} title={projectsTitle} noProjectsMessage={messages.projects?.noProjects} />
             <Contact />
             <Footer />
         </>

@@ -19,8 +19,8 @@
         "title": "Mjukvaruingenjör",
         "description": "Kreativ, målinriktad och passionerad ingenjör med känsla för att bygga dynamiska webbapplikationer.",
         "experiencesLink": "/documents/Elias_Bakhshi.pdf",
-        "experiencesText": "Fullständig CV",
-        "projectsLink": "Projektarkiv",
+        "experiencesText": "Fullständigt CV",
+        "projectsText": "Projektarkiv",
         "about": "En passionerad mjukvaruingenjör som jobbar på Blekinge Tekniska Högskola (BTH). Min resa som utvecklare började när jag var 12 år gammal, och jag trivs i samarbetande miljöer där jag kan bidra med min <strong>kreativitet</strong> och <strong>problemlösningsförmåga</strong>. Mitt mål är att använda min kunskap för att skapa <strong>innovativa</strong> lösningar som har en positiv inverkan.",
         "experiencesList": [
             {
@@ -69,7 +69,7 @@
                 "duration": "Apr 2022 - Feb 2023",
                 "isShowing": true,
                 "description": "Arbetade i projekt för Volvo och Göteborg & Co., med fokus på CI/CD, Agile (Scrum), AWS-konfiguration och UX/UI-design.",
-                "skills": ["CI/CD", "Agil", "AWS", "UX/UI Design", "React", "Node.js", "Next.js", "MySQL"]
+                "skills": ["DevOps", "Agil", "AWS", "UX/UI Design", "React", "Node.js", "Next.js", "MySQL"]
             },
             {
                 "id": 5,

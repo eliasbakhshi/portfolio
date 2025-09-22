@@ -37,9 +37,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     const messages = await getMessages();
     const experienceSection = await getExperiences(locale) as Experiences;
     const experiences = experienceSection.experiencesList || [];
-    const experiencesTitle = messages.nav?.experience;
+    const experiencesTitle = experienceSection.title;
     const resumeLink = experienceSection.resumeLink;
     const resumeText = experienceSection.resumeText;
+    const presentText = experienceSection.presentText;
     const projects = messages.projects?.projectsList as ProjectProps[] || [];
     const projectsTitle = messages.nav?.projects;
     // const projectsText = experienceSection.projectsText || "View Projects";
@@ -49,9 +50,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     experiences.sort((a, b) => b.queue - a.queue);
 
     const t = await getTranslations();
-
-    const projects2 = await getExperiences(locale);
-    console.log(typeof projects2);
 
     return (
         <>
@@ -63,7 +61,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                     })}
                 </p>
             </div>
-            <Experience title={experiencesTitle} experiences={experiences} resumeText={resumeText} resumeLink={resumeLink} noExperienceMessage={messages.experiences?.noExperiences} />
+            <Experience title={experiencesTitle} experiences={experiences} resumeText={resumeText} resumeLink={resumeLink} noExperienceMessage={messages.experiences?.noExperiences} presentText={presentText} />
             <Project projects={projects} link={projectsText} title={projectsTitle} noProjectsMessage={messages.projects?.noProjects} />
             <Contact />
             <Footer />

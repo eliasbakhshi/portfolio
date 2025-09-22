@@ -1,45 +1,42 @@
 import contentfulClient from "./client";
-import { Experiences, ExperiencesProps, ExperienceProps, EntryExperiences, EntryExperience, TypeExperiences, TypeExperience, EntryExperienceWithRoles, TypeExperienceWithRoles, TypeRoleOfExperience, RoleProps } from "@/types";
-import { formatDateRange } from "@/utils/dateUtils"; // Import the utility function
+import { Experiences, ExperiencesProps, EntryExperiences, EntryExperience, AllExperiences, ExperienceProps, EntryExperienceWithRoles, TypeExperienceWithRoles, RoleProps } from "@/types";
 import { AssetFile } from "contentful";
 
 export async function getExperiences(locale: string): Promise<Experiences | null>  {
     const response = await contentfulClient.getEntries<EntryExperiences>({
-        content_type: "experiences", // Replace with your Contentful content type ID
+        content_type: "experiences",
         locale,
         include: 2,
     });
 
     if (response.items.length > 0) {
-        const fields = response.items[0].fields as TypeExperiences;
+        const fields = response.items[0].fields as AllExperiences;
 
         // Map the experiences list
         const experiencesList: (ExperienceProps | ExperiencesProps)[] =
             fields.experiencesList?.map((experienceList: EntryExperience | EntryExperienceWithRoles) => {
-                const experience = experienceList.fields as TypeExperience | TypeExperienceWithRoles;
-                const startDate = experience.startDate;
-                const endDate = experience.endDate ? experience.endDate : fields.presentText;
+                const experience = experienceList.fields as ExperienceProps | TypeExperienceWithRoles;
                 // Type guard for iconPath
                 let iconPathUrl: string | AssetFile = "";
                 if (experience.iconPath && typeof experience.iconPath !== "string" && experience.iconPath.fields?.file?.url) {
                     iconPathUrl = experience.iconPath.fields.file.url;
                 }
 
-                // This is used to differentiate between single and multiple position experiences
-                const isMultiExperience = (experience: TypeExperience | TypeExperienceWithRoles): experience is TypeExperienceWithRoles => {
+                // Check single and multiple position experiences
+                const isMultiExperience = (experience: ExperienceProps | TypeExperienceWithRoles): experience is TypeExperienceWithRoles => {
                     return "roles" in experience && Array.isArray(experience.roles);
                 };
 
-                // Check if the experience has roles (EntryExperienceWithRoles)
                 if (isMultiExperience(experience)) {
+                    console.log("roles", experience.roles);
                     const roles: RoleProps[] = experience.roles?.map((role) => {
-                        const roleFields = role.fields as TypeRoleOfExperience;
-                        const roleStartDate = roleFields.startDate;
-                        const roleEndDate = roleFields.endDate ? roleFields.endDate : fields.presentText;
+                        console.log("role", role);
+                        const roleFields = role.fields as RoleProps;
                         return {
                             title: roleFields.title,
                             description: roleFields.description,
-                            duration: formatDateRange(roleStartDate, roleEndDate),
+                            startDate: roleFields.startDate,
+                            endDate: roleFields.endDate,
                             skills: roleFields.skills ? roleFields.skills.map((skill) => skill) : [],
                         };
                     });
@@ -49,7 +46,8 @@ export async function getExperiences(locale: string): Promise<Experiences | null
                         companyURL: experience.companyURL,
                         iconPath: iconPathUrl,
                         location: experience.location,
-                        duration: formatDateRange(startDate, endDate),
+                        startDate: experience.startDate,
+                        endDate: experience.endDate,
                         isShowing: experience.isShowing,
                         employmentType: experience.employmentType,
                         roles: roles,
@@ -62,7 +60,8 @@ export async function getExperiences(locale: string): Promise<Experiences | null
                     iconPath: iconPathUrl,
                     location: experience.location,
                     title: experience.title,
-                    duration: formatDateRange(startDate, endDate),
+                    startDate: experience.startDate,
+                    endDate: experience.endDate,
                     isShowing: experience.isShowing,
                     description: experience.description,
                     employmentType: experience.employmentType,
@@ -71,14 +70,13 @@ export async function getExperiences(locale: string): Promise<Experiences | null
             }) || [];
 
         const experiences: Experiences = {
-            resumeText: fields.resumeText,
+            title: fields.title,
             resumeLink: fields.resumeLink,
+            resumeText: fields.resumeText,
             presentText: fields.presentText,
             noExperiences: fields.noExperiences,
             experiencesList,
         };
-
-        console.log("Extracted:", experiences);
         return experiences;
     }
     return null;

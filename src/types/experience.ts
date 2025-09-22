@@ -1,68 +1,46 @@
-import type { Asset, EntryFields, AssetFile, ChainModifiers, Entry } from "contentful";
+import type { Asset, EntryFields, ChainModifiers, Entry, EntrySkeletonType } from "contentful";
 
-export type ExperienceProps = {
+type ISODate = EntryFields.Date;
+type EmploymentType = "Contract" | "Deltid" | "Egenföretagare" | "Freelance" | "Frilans" | "Full-time" | "Heltid" | "Internship" | "Kontrakt" | "Part-time" | "Praktik" | "Self-employed";
+
+interface BaseExperience {
     queue: number;
     company: string;
     companyURL: string;
-    iconPath: string | AssetFile;
+    iconPath: string | Asset<ChainModifiers>;
     location: string;
-    title: string;
-    duration: string;
-    description: string;
     isShowing: boolean;
-    employmentType: string;
+    employmentType: EmploymentType;
+    startDate: ISODate;
+    endDate?: ISODate;
+}
+
+export interface RoleProps {
+    title: string;
+    description: string;
+    startDate: ISODate;
+    endDate?: ISODate;
     skills?: string[];
-};
-export type RoleProps = {
-    title: string;
-    duration: string;
-    description: string;
-    skills: string[];
-};
+}
 
-export type ExperiencesProps = {
-    queue: number;
-    company: string;
-    companyURL: string;
-    iconPath: string;
-    location: string;
-    duration: string;
-    isShowing: boolean;
+
+export type ExperienceProps = BaseExperience & RoleProps;
+
+export interface ExperiencesProps extends BaseExperience {
     roles: RoleProps[];
-};
+}
 
-export type Experiences = {
+export interface Experiences {
+    title: string;
     resumeText: string;
     resumeLink: string;
     presentText: string;
     noExperiences: string;
     experiencesList: (ExperienceProps | ExperiencesProps)[];
-};
+}
 
-// ----------------------------------------+++++++++++++++++++++++++++++++++
-
-export interface TypeExperience {
-    company: string;
-    queue: EntryFields.Integer;
-    companyURL: string;
-    iconPath: string | Asset<ChainModifiers>;
-    location: string;
+export interface AllExperiences {
     title: string;
-    isShowing: EntryFields.Boolean;
-    description: EntryFields.Text;
-    skills?: string[];
-    employmentType: string;
-    startDate: EntryFields.Date;
-    endDate?: EntryFields.Date;
-}
-
-export interface EntryExperience {
-    fields: TypeExperience;
-    contentTypeId: "experience";
-}
-
-export interface TypeExperiences {
-    entryTitle: string;
     resumeText: string;
     resumeLink: string;
     presentText: string;
@@ -70,37 +48,11 @@ export interface TypeExperiences {
     experiencesList: (EntryExperience | EntryExperienceWithRoles)[];
 }
 
-export interface EntryExperiences {
-    fields: TypeExperiences;
-    contentTypeId: "experiences";
-}
-
-export interface TypeRoleOfExperience {
-    title: string;
-    description: EntryFields.Text;
-    skills?: string[];
-    startDate: EntryFields.Date;
-    endDate?: EntryFields.Date;
-}
-
-export interface TypeExperienceWithRoles {
-    queue: EntryFields.Integer;
-    company: string;
-    companyURL: string;
-    iconPath: Asset;
-    location: string;
-    employmentType: "Contract" | "Deltid" | "Egenföretagare" | "Freelance" | "Frilans" | "Full-time" | "Heltid" | "Internship" | "Kontrakt" | "Part-time" | "Praktik" | "Self-employed";
-    isShowing: EntryFields.Boolean;
-    startDate: EntryFields.Date;
-    endDate?: EntryFields.Date;
+export interface TypeExperienceWithRoles extends BaseExperience {
     roles: Entry<EntryRoleOfExperience>[];
 }
 
-export interface EntryExperienceWithRoles {
-    fields: TypeExperienceWithRoles;
-    contentTypeId: "experienceWithRoles";
-}
-export interface EntryRoleOfExperience {
-    fields: TypeRoleOfExperience;
-    contentTypeId: "roleOfExperience";
-}
+export type EntryExperience = EntrySkeletonType<ExperienceProps, "experience">;
+export type EntryExperiences = EntrySkeletonType<AllExperiences, "experiences">;
+export type EntryExperienceWithRoles = EntrySkeletonType<ExperiencesProps, "experienceWithRoles">;
+export type EntryRoleOfExperience = EntrySkeletonType<RoleProps, "roleOfExperience">;

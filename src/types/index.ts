@@ -1,6 +1,6 @@
 export * from './experience';
 export * from './project';
-export * from './contentful';
+export * from './contact';
 
 /* Global Props */
 export type LayoutProps = {

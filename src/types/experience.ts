@@ -23,14 +23,13 @@ export interface RoleProps {
     skills?: string[];
 }
 
-
 export type ExperienceProps = BaseExperience & RoleProps;
 
 export interface ExperiencesProps extends BaseExperience {
     roles: RoleProps[];
 }
 
-export interface Experiences {
+export interface BaseExperiences {
     title: string;
     resumeText: string;
     resumeLink: string;
@@ -39,12 +38,7 @@ export interface Experiences {
     experiencesList: (ExperienceProps | ExperiencesProps)[];
 }
 
-export interface AllExperiences {
-    title: string;
-    resumeText: string;
-    resumeLink: string;
-    presentText: string;
-    noExperiences: string;
+export interface AllExperiences extends Omit<BaseExperiences, "experiencesList"> {
     experiencesList: (EntryExperience | EntryExperienceWithRoles)[];
 }
 

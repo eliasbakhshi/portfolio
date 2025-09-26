@@ -1,11 +1,11 @@
 import Experience from "@/components/Experience";
 import Project from "@/components/Project";
 import Contact from "@/components/Contact";
-import { Experiences, ProjectProps } from "@/types";
+import { BaseExperiences, AllProjectsProps, TypeContact } from "@/types";
 import { getMessages, getTranslations } from "next-intl/server";
 import Footer from "@/components/Footer";
 import { routing } from "@/i18n/routing";
-import { getExperiences } from "@/contentful/queries";
+import { getContact, getExperiences, getProjects } from "@/contentful/queries";
 
 export const revalidate = 60;
 export function generateStaticParams() {
@@ -35,19 +35,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     const messages = await getMessages();
-    const experienceSection = await getExperiences(locale) as Experiences;
+    const experienceSection = (await getExperiences(locale)) as BaseExperiences;
+    const projectSection = (await getProjects(locale)) as AllProjectsProps;
+    const contactSection = (await getContact(locale)) as TypeContact;
     const experiences = experienceSection.experiencesList || [];
-    const experiencesTitle = experienceSection.title;
-    const resumeLink = experienceSection.resumeLink;
-    const resumeText = experienceSection.resumeText;
-    const presentText = experienceSection.presentText;
-    const projects = messages.projects?.projectsList as ProjectProps[] || [];
-    const projectsTitle = messages.nav?.projects;
-    // const projectsText = experienceSection.projectsText || "View Projects";
-    const projectsText =  "View Projects";
+    const projects = projectSection.projectsList || [];
 
     projects.sort((a, b) => b.year - a.year);
     experiences.sort((a, b) => b.queue - a.queue);
+
+    console.log("Contact Data:", contactSection);
 
     const t = await getTranslations();
 
@@ -61,9 +58,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                     })}
                 </p>
             </div>
-            <Experience title={experiencesTitle} experiences={experiences} resumeText={resumeText} resumeLink={resumeLink} noExperienceMessage={messages.experiences?.noExperiences} presentText={presentText} />
-            <Project projects={projects} link={projectsText} title={projectsTitle} noProjectsMessage={messages.projects?.noProjects} />
-            <Contact />
+            <Experience title={experienceSection.title} experiences={experiences} resumeText={experienceSection.resumeText} resumeLink={experienceSection.resumeLink} noExperienceMessage={messages.experiences?.noExperiences} presentText={experienceSection.presentText} />
+            <Project projects={projects} link={projectSection.projectsText} title={projectSection.title} noProjectsMessage={projectSection.noProjects} />
+            <Contact text={contactSection} />
             <Footer />
         </>
     );

@@ -10,3 +10,14 @@ export function formatDateRange(startDate: string, endDate: string): string {
     const end = !isNaN(Date.parse(endDate)) ? formatter.format(new Date(endDate)) : endDate;
     return `${start} – ${end}`;
 }
+
+
+/**
+ * Extracts the year from a date string and returns it as a number.
+ * @param dateStr - The date in ISO format (e.g., "2022-02-01").
+ * @returns The year as a number.
+ */
+export function getYearFromDate(dateStr: string): number {
+    const date = new Date(dateStr);
+    return date.getFullYear();
+}

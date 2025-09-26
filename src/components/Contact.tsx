@@ -3,16 +3,19 @@ import React, { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import Spinner from "./Spinner";
+import { TypeContact } from "@/types/contact";
 
-export default function Contact() {
+export default function Contact({ text }: { text: TypeContact }) {
     const [status, setStatus] = useState<React.ReactNode>("");
     const [loading, setLoading] = useState(false);
     const t = useTranslations("home.contactSection");
     const { executeRecaptcha } = useGoogleReCaptcha();
 
+    console.log("Contact Component Text:", text);
+
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        setStatus("")
+        setStatus("");
         setLoading(true);
         const form = e.currentTarget;
         const data = {
@@ -26,7 +29,7 @@ export default function Contact() {
             setLoading(false);
             setStatus(
                 <div className='p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-secondary dark:text-red-400' role='alert'>
-                    {t("form.statusMessages.error")}
+                    {text.errorMessage}
                 </div>
             );
             return;
@@ -45,7 +48,7 @@ export default function Contact() {
             setLoading(false);
             setStatus(
                 <div className='p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-secondary dark:text-white-400' role='alert'>
-                    {t("form.statusMessages.success")}
+                    {text.successMessage}
                 </div>
             );
             form.reset();
@@ -53,7 +56,7 @@ export default function Contact() {
             setLoading(false);
             setStatus(
                 <div className='p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-secondary dark:text-red-400' role='alert'>
-                    {t("form.statusMessages.error")}
+                    {text.errorMessage}
                 </div>
             );
         }
@@ -61,15 +64,15 @@ export default function Contact() {
 
     return (
         <section id='contact' className='nav-section pt-4 pb-6 px-4 md:px-0'>
-            <h5 className='mb-6'>{t("title")}</h5>
-            <p className='pb-4 text-secondary-faded'>{t("description")}</p>
+            <h5 className='mb-6'>{text.title}</h5>
+            <p className='pb-4 text-secondary-faded'>{text.description}</p>
             <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
-                <input type='text' name='name' required placeholder={t("form.name")} className='border border-secondary rounded px-4 py-2' />
-                <input type='email' name='email' required placeholder={t("form.email")} className='border border-secondary rounded px-4 py-2' />
-                <textarea name='message' required placeholder={t("form.message")} className='border border-secondary rounded px-4 py-2 min-h-[120px]' />
+                <input type='text' name='name' required placeholder={text.name} className='border border-secondary rounded px-4 py-2'  />
+                <input type='email' name='email' required placeholder={text.email} className='border border-secondary rounded px-4 py-2' />
+                <textarea name='message' required placeholder={text.message} className='border border-secondary rounded px-4 py-2 min-h-[120px]' />
                 {status && <>{status}</>}
                 <button type='submit' disabled={loading} className='bg-tertiary text-white rounded px-4 py-2 hover:bg-tertiary/80 transition'>
-                    {t("form.submit")}
+                    {text.submit}
                     {loading && <Spinner w={4} h={4} className='ml-2' />}
                 </button>
             </form>

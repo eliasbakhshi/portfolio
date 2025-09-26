@@ -223,7 +223,7 @@
                 "link": "https://goteborg2023.com",
                 "iconPath": "/images/gothenburg2023.png",
                 "title": "Gothenburg’s 400th anniversary",
-                "description": "GGothenburg’s 400th anniversary is a project that showcases the best of Gothenburg's culture and innovation.",
+                "description": "Gothenburg’s 400th anniversary is a project that showcases the best of Gothenburg's culture and innovation.",
                 "technologies": ["PHP", "MySQL", "AWS", "CI/CD", "WordPress", "Agile", "UX/UI Design"],
                 "year": "2022",
                 "madeAt": "Valentin Experience",

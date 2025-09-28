@@ -1,5 +1,5 @@
 import contentfulClient from "./client";
-import { BaseExperiences, ExperiencesProps, EntryExperiences, EntryExperience, AllExperiences, ExperienceProps, EntryExperienceWithRoles, TypeExperienceWithRoles, RoleProps, AllProjectsProps, EntryAllProjects, AllProjectsEntry, BaseProjectProps, EntryProject, EntryProjectProps, EntryContact, TypeContact, EntryAbout, TypeAbout, TypeNavMenu, EntryNavMenu, TypeNavTab, EntryNav } from "@/types";
+import { BaseExperiences, ExperiencesProps, EntryExperiences, EntryExperience, AllExperiences, ExperienceProps, EntryExperienceWithRoles, TypeExperienceWithRoles, RoleProps, AllProjectsProps, EntryAllProjects, AllProjectsEntry, BaseProjectProps, EntryProject, EntryProjectProps, EntryContact, TypeContact, EntryAbout, TypeAbout, TypeNavMenu, EntryNavMenu, TypeNavTab, EntryNav, TypeFooter, EntryFooter } from "@/types";
 import { AssetFile } from "contentful";
 import { getYearFromDate } from "@/utils/dateUtils";
 
@@ -122,7 +122,6 @@ export async function getContact(locale: string): Promise<TypeContact | null> {
     const response = await contentfulClient.getEntries<EntryContact>({
         content_type: "contact",
         locale,
-        include: 2,
     });
     if (response.items.length > 0) {
         return response.items[0].fields as TypeContact;
@@ -133,7 +132,6 @@ export async function getAbout(locale: string): Promise<TypeAbout | null> {
     const response = await contentfulClient.getEntries<EntryAbout>({
         content_type: "about",
         locale,
-        include: 2,
     });
     if (response.items.length > 0) {
         return response.items[0].fields as TypeAbout;
@@ -166,6 +164,27 @@ export async function getNav(locale: string): Promise<TypeNavMenu | null> {
             anotherLanguage: fields.anotherLanguage,
             navTabs: navTabs,
         } as TypeNavMenu;
+    }
+    return null;
+}
+
+export async function getFooter(locale: string): Promise<TypeFooter | null> {
+    const response = await contentfulClient.getEntries<EntryFooter>({
+        content_type: "footer",
+        locale,
+    });
+    if (response.items.length > 0) {
+        return response.items[0].fields as TypeFooter;
+    }
+    return null;
+}
+export async function getPageInfo(locale: string): Promise<TypePageInfo | null> {
+    const response = await contentfulClient.getEntries<EntryPageInfo>({
+        content_type: "pageInfo",
+        locale,
+    });
+    if (response.items.length > 0) {
+        return response.items[0].fields as TypePageInfo;
     }
     return null;
 }

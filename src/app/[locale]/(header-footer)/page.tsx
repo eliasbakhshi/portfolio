@@ -1,10 +1,10 @@
 import Experience from "@/components/Experience";
 import Project from "@/components/Project";
 import Contact from "@/components/Contact";
-import { BaseExperiences, AllProjectsProps, TypeContact, TypeAbout } from "@/types";
+import { BaseExperiences, AllProjectsProps, TypeContact, TypeAbout, TypeFooter } from "@/types";
 import Footer from "@/components/Footer";
 import { routing } from "@/i18n/routing";
-import { getAbout, getContact, getExperiences, getProjects } from "@/contentful/queries";
+import { getAbout, getContact, getExperiences, getProjects, getFooter } from "@/contentful/queries";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 export const revalidate = 60;
@@ -38,12 +38,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     const projectSection = (await getProjects(locale)) as AllProjectsProps;
     const contactSection = (await getContact(locale)) as TypeContact;
     const aboutSection = (await getAbout(locale)) as TypeAbout;
+    const footerSection = (await getFooter(locale)) as TypeFooter;
     const experiences = experienceSection.experiencesList || [];
     const projects = projectSection.projectsList || [];
 
     projects.sort((a, b) => b.year - a.year);
     experiences.sort((a, b) => b.queue - a.queue);
-
+    console.log(footerSection.footerText)
     return (
         <>
             <div id='about' className='nav-section px-4 md:px-0'>
@@ -53,7 +54,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <Experience title={experienceSection.title} experiences={experiences} resumeText={experienceSection.resumeText} resumeLink={experienceSection.resumeLink} noExperienceMessage={experienceSection.noExperiences} presentText={experienceSection.presentText} />
             <Project projects={projects} link={projectSection.projectsText} title={projectSection.title} noProjectsMessage={projectSection.noProjects} />
             <Contact text={contactSection} />
-            <Footer />
+            <Footer text={documentToReactComponents(footerSection.footerText)} />
         </>
     );
 }

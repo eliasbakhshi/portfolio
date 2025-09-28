@@ -4,6 +4,9 @@ import { ProjectProps } from "@/types/project";
 import ProjectsTable from "@/components/ProjectsTable";
 import { routing } from "@/i18n/routing";
 import { getMessages, getTranslations } from "next-intl/server";
+import { getAbout, getNav } from "@/contentful/queries";
+import { LayoutProps, TypeAbout, TypeNavMenu } from "@/types";
+
 
 export const revalidate = 60;
 export function generateStaticParams() {
@@ -14,15 +17,17 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
+        const aboutSection = (await getAbout(locale)) as TypeAbout;
+
     const t = await getTranslations({ locale, namespace: "" });
     const canonicalUrl = locale === "en-US" ? `${process.env.SITE_URL || "http://localhost:3000"}/projects` : `${process.env.SITE_URL || "http://localhost:3000"}/${locale}/projects`;
 
     return {
-        title: `${t("nav.projects") || "Projects"} - ${t("home.name") || "Elias Bakhshi"}`,
-        description: t("home.description") || "My projects",
+        title: `${aboutSection.projects || "Projects"} - ${aboutSection?.name || "Elias Bakhshi"}`,
+        description: aboutSection?.description || "My projects",
         openGraph: {
-            title: `${t("nav.projects") || "My Portfolio"} - ${t("home.title") || "Welcome"}`,
-            description: t("home.description") || "My projects",
+            title: `${aboutSection?.nav?.projects || "My Portfolio"} - ${aboutSection?.title || "Welcome"}`,
+            description: aboutSection?.description || "My projects",
             url: process.env.SITE_URL || "http://localhost:3000",
             type: "website",
         },

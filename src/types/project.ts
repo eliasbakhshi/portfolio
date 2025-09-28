@@ -4,7 +4,7 @@ export interface BaseProjectProps {
     queue: number;
     title: string;
     description: string;
-    iconPath: string | Asset<ChainModifiers>;
+    iconPath: string;
     link: string;
     year: number;
     madeAt: string;
@@ -13,8 +13,10 @@ export interface BaseProjectProps {
     technologies: string[];
 }
 
-export interface EntryProjectProps extends Omit<BaseProjectProps, "year"> {
+export interface EntryProjectProps extends Omit<BaseProjectProps, "year" | "iconPath"> {
     year: EntryFields.Date;
+    iconPath: Asset<ChainModifiers>;
+
 }
 
 export interface BaseAllProjects {

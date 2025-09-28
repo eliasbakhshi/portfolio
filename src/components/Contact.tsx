@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { useTranslations } from "next-intl";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import Spinner from "./Spinner";
 import { TypeContact } from "@/types/contact";
@@ -8,10 +7,7 @@ import { TypeContact } from "@/types/contact";
 export default function Contact({ text }: { text: TypeContact }) {
     const [status, setStatus] = useState<React.ReactNode>("");
     const [loading, setLoading] = useState(false);
-    const t = useTranslations("home.contactSection");
     const { executeRecaptcha } = useGoogleReCaptcha();
-
-    console.log("Contact Component Text:", text);
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();

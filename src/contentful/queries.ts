@@ -1,10 +1,9 @@
 import contentfulClient from "./client";
-import { BaseExperiences, ExperiencesProps, EntryExperiences, EntryExperience, AllExperiences, ExperienceProps, EntryExperienceWithRoles, TypeExperienceWithRoles, RoleProps,  AllProjectsProps, EntryAllProjects, AllProjectsEntry, BaseProjectProps, EntryProject, EntryProjectProps, EntryContact, TypeContact } from "@/types";
+import { BaseExperiences, ExperiencesProps, EntryExperiences, EntryExperience, AllExperiences, ExperienceProps, EntryExperienceWithRoles, TypeExperienceWithRoles, RoleProps, AllProjectsProps, EntryAllProjects, AllProjectsEntry, BaseProjectProps, EntryProject, EntryProjectProps, EntryContact, TypeContact, EntryAbout, TypeAbout, TypeNavMenu, EntryNavMenu, TypeNavTab, EntryNav } from "@/types";
 import { AssetFile } from "contentful";
 import { getYearFromDate } from "@/utils/dateUtils";
-import { getAbsoluteImageUrl } from "@/utils/imageUtils";
 
-export async function getExperiences(locale: string): Promise<BaseExperiences | null>  {
+export async function getExperiences(locale: string): Promise<BaseExperiences | null> {
     const response = await contentfulClient.getEntries<EntryExperiences>({
         content_type: "experiences",
         locale,
@@ -44,7 +43,7 @@ export async function getExperiences(locale: string): Promise<BaseExperiences | 
                         queue: experience.queue,
                         company: experience.company,
                         companyURL: experience.companyURL,
-                        iconPath: getAbsoluteImageUrl(String(iconPathUrl)),
+                        iconPath: iconPathUrl,
                         location: experience.location,
                         startDate: experience.startDate,
                         endDate: experience.endDate,
@@ -57,7 +56,7 @@ export async function getExperiences(locale: string): Promise<BaseExperiences | 
                     queue: experience.queue,
                     company: experience.company,
                     companyURL: experience.companyURL,
-                    iconPath: getAbsoluteImageUrl(String(iconPathUrl)),
+                    iconPath: iconPathUrl,
                     location: experience.location,
                     title: experience.title,
                     startDate: experience.startDate,
@@ -81,7 +80,7 @@ export async function getExperiences(locale: string): Promise<BaseExperiences | 
     }
     return null;
 }
-export async function getProjects(locale: string): Promise<AllProjectsProps | null>  {
+export async function getProjects(locale: string): Promise<AllProjectsProps | null> {
     const response = await contentfulClient.getEntries<EntryAllProjects>({
         content_type: "projects",
         locale,
@@ -93,23 +92,19 @@ export async function getProjects(locale: string): Promise<AllProjectsProps | nu
         const projectsList: BaseProjectProps[] =
             fields.projectsList?.map((projectList: EntryProject) => {
                 const project = projectList.fields as EntryProjectProps;
-                // Type guard for iconPath
-                let iconPathUrl: string | AssetFile = "";
-                if (project.iconPath && typeof project.iconPath !== "string" && project.iconPath.fields?.file?.url) {
-                    iconPathUrl = project.iconPath.fields.file.url;
-                }
+                const iconPathUrl = project.iconPath?.fields?.file?.url ? `https:${project.iconPath.fields.file.url}` : "";
                 return {
                     queue: project.queue,
                     title: project.title,
                     description: project.description,
-                    iconPath: getAbsoluteImageUrl(String(iconPathUrl)),
+                    iconPath: iconPathUrl,
                     link: project.link,
                     year: getYearFromDate(project.year),
                     madeAt: project.madeAt,
                     sample: project.sample,
                     isShowing: project.isShowing,
                     technologies: project.technologies,
-                } as BaseProjectProps
+                } as BaseProjectProps;
             }) || [];
         const projects = {
             title: fields.title,
@@ -123,7 +118,7 @@ export async function getProjects(locale: string): Promise<AllProjectsProps | nu
     }
     return null;
 }
-export async function getContact(locale: string): Promise<TypeContact | null>  {
+export async function getContact(locale: string): Promise<TypeContact | null> {
     const response = await contentfulClient.getEntries<EntryContact>({
         content_type: "contact",
         locale,
@@ -131,6 +126,46 @@ export async function getContact(locale: string): Promise<TypeContact | null>  {
     });
     if (response.items.length > 0) {
         return response.items[0].fields as TypeContact;
+    }
+    return null;
+}
+export async function getAbout(locale: string): Promise<TypeAbout | null> {
+    const response = await contentfulClient.getEntries<EntryAbout>({
+        content_type: "about",
+        locale,
+        include: 2,
+    });
+    if (response.items.length > 0) {
+        return response.items[0].fields as TypeAbout;
+    }
+    return null;
+}
+export async function getNav(locale: string): Promise<TypeNavMenu | null> {
+    const response = await contentfulClient.getEntries<EntryNavMenu>({
+        content_type: "nav",
+        locale,
+        include: 2,
+    });
+    if (response.items.length > 0) {
+        const fields: EntryNav = response.items[0].fields;
+        const navTabs: TypeNavTab[] = fields.navTabs?.map((tab) => {
+            const tabFields = tab.fields;
+            return {
+                label: tabFields.label,
+                sectionId: tabFields.sectionId,
+                href: tabFields.href,
+            } as TypeNavTab;
+        });
+        const blackLogoUrl = fields.blackLogo?.fields?.file?.url ? `https:${fields.blackLogo.fields.file.url}` : "";
+
+        const whiteLogoUrl = fields.whiteLogo?.fields?.file?.url ? `https:${fields.whiteLogo.fields.file.url}` : "";
+        return {
+            entryTitle: fields.entryTitle,
+            blackLogo: blackLogoUrl,
+            whiteLogo: whiteLogoUrl,
+            anotherLanguage: fields.anotherLanguage,
+            navTabs: navTabs,
+        } as TypeNavMenu;
     }
     return null;
 }

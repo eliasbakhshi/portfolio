@@ -1,6 +1,5 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/components/nav.module.scss";
@@ -9,6 +8,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { TypeNavMenu } from "@/types";
 
 export const NavLink = ({ href, children, isActive, onClick }: { href: string; children: React.ReactNode; isActive: boolean; onClick?: () => void }) => {
     const handleClick = (e: React.MouseEvent) => {
@@ -36,7 +36,7 @@ export const NavLink = ({ href, children, isActive, onClick }: { href: string; c
     );
 };
 
-export default function Nav({ id = "" }: { id?: string }) {
+export default function Nav({ id = "",  nav }: { id: string; nav: TypeNavMenu }) {
     const [locale, setLocale] = useState("en-US");
     const [activeSection, setActiveSection] = useState("");
     const [sections, setSections] = useState<string[]>([]);
@@ -165,25 +165,15 @@ export default function Nav({ id = "" }: { id?: string }) {
         router.push(newPath || "/");
     };
 
-    const t = useTranslations("nav");
-
-    // Define nav items with their corresponding section IDs
-    const navItems = [
-        { href: "#about", label: t("about"), sectionId: "about" },
-        { href: "#experience", label: t("experience"), sectionId: "experience" },
-        { href: "#projects", label: t("projects"), sectionId: "projects" },
-        { href: "#contact", label: t("contact"), sectionId: "contact" },
-    ];
-
     return (
         <>
             {/* Hamburger for mobile */}
             <div id='mobile-menu' className='fixed top-0 z-50 flex md:hidden items-center justify-between py-4 w-[calc(100%-2rem)] bg-primary transition-colors duration-200 shadow-[0_8px_15px_-6px_rgba(255,255,255,0.1)]'>
                 <Link className='dark:inline-block hidden' href='/'>
-                    <Image src='/images/logo-white.png' alt='Elias Bakhshi' width={32} height={32} />
+                    <Image src={nav.whiteLogo} alt='Elias Bakhshi' width={32} height={32} />
                 </Link>
                 <Link className='inline-block dark:hidden' href='/'>
-                    <Image src='/images/logo-black.png' alt='Elias Bakhshi' width={32} height={32} />
+                    <Image src={nav.blackLogo} alt='Elias Bakhshi' width={32} height={32} />
                 </Link>
                 <div className='flex items-center gap-2'>
                     <ThemeToggle />
@@ -206,7 +196,7 @@ export default function Nav({ id = "" }: { id?: string }) {
                         <FiX size={32} />
                     </button>
                     <nav className='flex flex-col gap-6 mt-12'>
-                        {navItems.map((item) => (
+                        {nav.navTabs.map((item) => (
                             <NavLink key={item.sectionId} href={item.href} isActive={activeSection === item.sectionId} onClick={() => setMenuOpen(false)}>
                                 {item.label}
                             </NavLink>
@@ -221,7 +211,7 @@ export default function Nav({ id = "" }: { id?: string }) {
                                     setMenuOpen(false);
                                 }}
                             >
-                                🇸🇪 Svenska
+                                🇸🇪 {nav.anotherLanguage}
                             </button>
                         ) : (
                             <button
@@ -231,7 +221,7 @@ export default function Nav({ id = "" }: { id?: string }) {
                                     setMenuOpen(false);
                                 }}
                             >
-                                🇬🇧 English
+                                🇬🇧 {nav.anotherLanguage}
                             </button>
                         )}
                     </div>
@@ -239,18 +229,18 @@ export default function Nav({ id = "" }: { id?: string }) {
             </div>
             {/* Desktop/tablet nav */}
             <nav id={id} className={`gap-5 shadow-[0_8px_15px_-4px_rgba(255,255,255,0.1)] lg:shadow-none transition-color duration-200 ease-in-out`}>
-                {navItems.map((item) => (
+                {nav.navTabs.map((item) => (
                     <NavLink key={item.sectionId} href={item.href} isActive={activeSection === item.sectionId}>
                         {item.label}
                     </NavLink>
                 ))}
                 <ThemeToggle />
                 {locale === "en-US" ? (
-                    <button className={`cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary ${styles.languageButton}`} onClick={() => handleLocaleChange("sv")} aria-label={t("swedish")}>
+                    <button className={`cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary ${styles.languageButton}`} onClick={() => handleLocaleChange("sv")} aria-label={nav.anotherLanguage}>
                         🇸🇪
                     </button>
                 ) : (
-                    <button className={`cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary ${styles.languageButton}`} onClick={() => handleLocaleChange("en-US")} aria-label={t("english")}>
+                    <button className={`cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary ${styles.languageButton}`} onClick={() => handleLocaleChange("en-US")} aria-label={nav.anotherLanguage}>
                         🇬🇧
                     </button>
                 )}

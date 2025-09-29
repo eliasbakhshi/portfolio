@@ -1,6 +1,5 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/components/nav.module.scss";
@@ -8,7 +7,10 @@ import ThemeToggle from "@/components/ThemeToggle";
 import { FiMenu, FiX } from "react-icons/fi";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
+ import { TypeNavMenu } from "@/types";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { handleLocaleChange } from "@/utils/localeUtils";
+
 
 export const NavLink = ({ href, children, isActive, onClick }: { href: string; children: React.ReactNode; isActive: boolean; onClick?: () => void }) => {
     const handleClick = (e: React.MouseEvent) => {
@@ -36,8 +38,8 @@ export const NavLink = ({ href, children, isActive, onClick }: { href: string; c
     );
 };
 
-export default function Nav({ id = "" }: { id?: string }) {
-    const [locale, setLocale] = useState("en");
+export default function Nav({ id = "", nav }: { id: string; nav: TypeNavMenu }) {
+    const [locale, setLocale] = useState("en-US");
     const [activeSection, setActiveSection] = useState("");
     const [sections, setSections] = useState<string[]>([]);
     const [sectionVisibility, setSectionVisibility] = useState<{ [key: string]: number }>({});
@@ -148,42 +150,15 @@ export default function Nav({ id = "" }: { id?: string }) {
         };
     }, [sections]);
 
-    const handleLocaleChange = (newLocale: string) => {
-        const currentPath = window.location.pathname + window.location.search;
-        const hash = window.location.hash;
-
-        const pathSegments = currentPath.split("/").filter(Boolean);
-
-        // Remove the existing locale prefix if present
-        if (routing.locales.includes(pathSegments[0] as (typeof routing.locales)[number])) {
-            pathSegments.shift();
-        }
-
-        const newPath = newLocale === routing.defaultLocale ? `/${pathSegments.join("/")}${hash}` : `/${newLocale}/${pathSegments.join("/")}${hash}`;
-
-        document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Lax`;
-        router.push(newPath || "/");
-    };
-
-    const t = useTranslations("nav");
-
-    // Define nav items with their corresponding section IDs
-    const navItems = [
-        { href: "#about", label: t("about"), sectionId: "about" },
-        { href: "#experience", label: t("experience"), sectionId: "experience" },
-        { href: "#projects", label: t("projects"), sectionId: "projects" },
-        { href: "#contact", label: t("contact"), sectionId: "contact" },
-    ];
-
     return (
         <>
             {/* Hamburger for mobile */}
             <div id='mobile-menu' className='fixed top-0 z-50 flex md:hidden items-center justify-between py-4 w-[calc(100%-2rem)] bg-primary transition-colors duration-200 shadow-[0_8px_15px_-6px_rgba(255,255,255,0.1)]'>
                 <Link className='dark:inline-block hidden' href='/'>
-                    <Image src='/images/logo-white.png' alt='Elias Bakhshi' width={32} height={32} />
+                    <Image src={nav.whiteLogo} alt='Elias Bakhshi' width={32} height={32} />
                 </Link>
                 <Link className='inline-block dark:hidden' href='/'>
-                    <Image src='/images/logo-black.png' alt='Elias Bakhshi' width={32} height={32} />
+                    <Image src={nav.blackLogo} alt='Elias Bakhshi' width={32} height={32} />
                 </Link>
                 <div className='flex items-center gap-2'>
                     <ThemeToggle />
@@ -206,14 +181,14 @@ export default function Nav({ id = "" }: { id?: string }) {
                         <FiX size={32} />
                     </button>
                     <nav className='flex flex-col gap-6 mt-12'>
-                        {navItems.map((item) => (
+                        {nav.navTabs.map((item) => (
                             <NavLink key={item.sectionId} href={item.href} isActive={activeSection === item.sectionId} onClick={() => setMenuOpen(false)}>
                                 {item.label}
                             </NavLink>
                         ))}
                     </nav>
                     <div className='mt-8'>
-                        {locale === "en" ? (
+                        {locale === "en-US" ? (
                             <button
                                 className='text-lg'
                                 onClick={() => {
@@ -221,17 +196,17 @@ export default function Nav({ id = "" }: { id?: string }) {
                                     setMenuOpen(false);
                                 }}
                             >
-                                🇸🇪 Svenska
+                                🇸🇪 {nav.anotherLanguage}
                             </button>
                         ) : (
                             <button
                                 className='text-lg'
                                 onClick={() => {
-                                    handleLocaleChange("en");
+                                    handleLocaleChange("en-US");
                                     setMenuOpen(false);
                                 }}
                             >
-                                🇬🇧 English
+                                🇬🇧 {nav.anotherLanguage}
                             </button>
                         )}
                     </div>
@@ -239,21 +214,13 @@ export default function Nav({ id = "" }: { id?: string }) {
             </div>
             {/* Desktop/tablet nav */}
             <nav id={id} className={`gap-5 shadow-[0_8px_15px_-4px_rgba(255,255,255,0.1)] lg:shadow-none transition-color duration-200 ease-in-out`}>
-                {navItems.map((item) => (
+                {nav.navTabs.map((item) => (
                     <NavLink key={item.sectionId} href={item.href} isActive={activeSection === item.sectionId}>
                         {item.label}
                     </NavLink>
                 ))}
                 <ThemeToggle />
-                {locale === "en" ? (
-                    <button className={`cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary ${styles.languageButton}`} onClick={() => handleLocaleChange("sv")} aria-label={t("swedish")}>
-                        🇸🇪
-                    </button>
-                ) : (
-                    <button className={`cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary ${styles.languageButton}`} onClick={() => handleLocaleChange("en")} aria-label={t("english")}>
-                        🇬🇧
-                    </button>
-                )}
+                <LanguageSwitcher locale={locale} />
             </nav>
         </>
     );

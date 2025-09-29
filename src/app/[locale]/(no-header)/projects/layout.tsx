@@ -1,8 +1,7 @@
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 import { Poppins } from "next/font/google";
-import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { LayoutProps } from "@/types";
@@ -22,13 +21,11 @@ export default async function ProjectsLayout({ children, params }: LayoutProps) 
 
     setRequestLocale(locale);
 
-    const messages = await getMessages();
-
     return (
         <html lang={locale} className={`scroll-smooth ${poppins.variable}`} suppressHydrationWarning>
             <body>
                 <ThemeProvider>
-                    <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+                    <NextIntlClientProvider >{children}</NextIntlClientProvider>
                 </ThemeProvider>
             </body>
         </html>

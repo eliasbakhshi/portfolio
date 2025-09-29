@@ -1,0 +1,6 @@
+{
+    "exportDir": "src/contentful/data",
+    "contentFile": "contentful-export.json",
+    "includeDrafts": false,
+    "downloadAssets": true
+}

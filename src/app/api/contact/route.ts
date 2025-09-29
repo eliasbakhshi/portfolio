@@ -39,7 +39,6 @@ export async function POST(req: Request) {
         },
     });
 
-    console.log({ name, email, message });
     await transporter.sendMail({
         from: `Elias Bakhshi  <${process.env.GMAIL_APP_USER}>`,
         to: process.env.GMAIL_APP_USER,

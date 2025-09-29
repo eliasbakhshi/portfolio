@@ -1,8 +1,9 @@
-import type { EntryFields, EntrySkeletonType } from "contentful";
+import type { EntrySkeletonType } from "contentful";
 
 export interface TypePageInfo {
     title: string;
-    description: EntryFields.Symbol;
+    description: string;
+    pageName: string;
 }
 
-export type EntryAllPageInfos = EntrySkeletonType<TypePageInfo, "pageInfo">;
+export type EntryPageInfo = EntrySkeletonType<TypePageInfo, "pageInfo">;

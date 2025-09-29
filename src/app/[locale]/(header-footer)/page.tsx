@@ -1,10 +1,10 @@
 import Experience from "@/components/Experience";
 import Project from "@/components/Project";
 import Contact from "@/components/Contact";
-import { BaseExperiences, AllProjectsProps, TypeContact, TypeAbout, TypeFooter } from "@/types";
+import { BaseExperiences, AllProjectsProps, TypeContact, TypeAbout, TypeFooter, TypePageInfo } from "@/types";
 import Footer from "@/components/Footer";
 import { routing } from "@/i18n/routing";
-import { getAbout, getContact, getExperiences, getProjects, getFooter } from "@/contentful/queries";
+import { getAbout, getContact, getExperiences, getProjects, getFooter, getPageInfo } from "@/contentful/queries";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 export const revalidate = 60;
@@ -14,15 +14,16 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
-    const aboutSection = (await getAbout(locale)) as TypeAbout;
+    const pageinfos = (await getPageInfo(locale)) as TypePageInfo[];
+    const pageinfo = pageinfos.find((p) => p.pageName === "home");
     const canonicalUrl = locale === "en-US" ? `${process.env.SITE_URL || "http://localhost:3000"}/` : `${process.env.SITE_URL || "http://localhost:3000"}/${locale}`;
 
     return {
-        title: `${aboutSection.name || "My Portfolio"} - ${aboutSection.title || "Welcome"}`,
-        description: aboutSection.description || "Welcome to my portfolio website showcasing my projects and skills.",
+        title: `${pageinfo?.title || "My Portfolio"} - "Elias Bakhshi"`,
+        description: pageinfo?.description || "Welcome to my portfolio website showcasing my projects and skills.",
         openGraph: {
-            title: `${aboutSection.name || "My Portfolio"} - ${aboutSection.title || "Welcome"}`,
-            description: aboutSection.description || "Welcome to my portfolio website showcasing my projects and skills.",
+        title: `${pageinfo?.title || "My Portfolio"} - "Elias Bakhshi"`,
+            description: pageinfo?.description || "Welcome to my portfolio website showcasing my projects and skills.",
             url: process.env.SITE_URL || "http://localhost:3000",
             type: "website",
         },
@@ -44,7 +45,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
     projects.sort((a, b) => b.year - a.year);
     experiences.sort((a, b) => b.queue - a.queue);
-    console.log(footerSection.footerText)
+
     return (
         <>
             <div id='about' className='nav-section px-4 md:px-0'>

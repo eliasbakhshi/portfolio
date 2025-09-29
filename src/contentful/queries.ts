@@ -1,5 +1,5 @@
 import contentfulClient from "./client";
-import { BaseExperiences, ExperiencesProps, EntryExperiences, EntryExperience, AllExperiences, ExperienceProps, EntryExperienceWithRoles, TypeExperienceWithRoles, RoleProps, AllProjectsProps, EntryAllProjects, AllProjectsEntry, BaseProjectProps, EntryProject, EntryProjectProps, EntryContact, TypeContact, EntryAbout, TypeAbout, TypeNavMenu, EntryNavMenu, TypeNavTab, EntryNav, TypeFooter, EntryFooter } from "@/types";
+import { BaseExperiences, ExperiencesProps, EntryExperiences, EntryExperience, AllExperiences, ExperienceProps, EntryExperienceWithRoles, TypeExperienceWithRoles, RoleProps, AllProjectsProps, EntryAllProjects, AllProjectsEntry, BaseProjectProps, EntryProject, EntryProjectProps, EntryContact, TypeContact, EntryAbout, TypeAbout, TypeNavMenu, EntryNavMenu, TypeNavTab, EntryNav, TypeFooter, EntryFooter, TypePageInfo, EntryPageInfo, TypeTableColumns, EntryTableColumns, TypeOrientations, EntryOrientations } from "@/types";
 import { AssetFile } from "contentful";
 import { getYearFromDate } from "@/utils/dateUtils";
 
@@ -68,9 +68,10 @@ export async function getExperiences(locale: string): Promise<BaseExperiences | 
                 } as ExperienceProps;
             }) || [];
 
+            const resumeLink = fields.resumeLink?.fields?.file?.url ? `https:${fields.resumeLink.fields.file.url}` : "";
         const experiences: BaseExperiences = {
             title: fields.title,
-            resumeLink: fields.resumeLink,
+            resumeLink: resumeLink,
             resumeText: fields.resumeText,
             presentText: fields.presentText,
             noExperiences: fields.noExperiences,
@@ -80,6 +81,7 @@ export async function getExperiences(locale: string): Promise<BaseExperiences | 
     }
     return null;
 }
+
 export async function getProjects(locale: string): Promise<AllProjectsProps | null> {
     const response = await contentfulClient.getEntries<EntryAllProjects>({
         content_type: "projects",
@@ -118,6 +120,7 @@ export async function getProjects(locale: string): Promise<AllProjectsProps | nu
     }
     return null;
 }
+
 export async function getContact(locale: string): Promise<TypeContact | null> {
     const response = await contentfulClient.getEntries<EntryContact>({
         content_type: "contact",
@@ -128,6 +131,7 @@ export async function getContact(locale: string): Promise<TypeContact | null> {
     }
     return null;
 }
+
 export async function getAbout(locale: string): Promise<TypeAbout | null> {
     const response = await contentfulClient.getEntries<EntryAbout>({
         content_type: "about",
@@ -138,6 +142,7 @@ export async function getAbout(locale: string): Promise<TypeAbout | null> {
     }
     return null;
 }
+
 export async function getNav(locale: string): Promise<TypeNavMenu | null> {
     const response = await contentfulClient.getEntries<EntryNavMenu>({
         content_type: "nav",
@@ -178,13 +183,39 @@ export async function getFooter(locale: string): Promise<TypeFooter | null> {
     }
     return null;
 }
-export async function getPageInfo(locale: string): Promise<TypePageInfo | null> {
+
+export async function getPageInfo(locale: string): Promise<TypePageInfo[] | null> {
     const response = await contentfulClient.getEntries<EntryPageInfo>({
         content_type: "pageInfo",
         locale,
     });
+
     if (response.items.length > 0) {
-        return response.items[0].fields as TypePageInfo;
+        return response.items.map((item) => item.fields as TypePageInfo);
+    }
+    return null;
+}
+
+export async function getTableColumns(locale: string): Promise<TypeTableColumns | null> {
+    const response = await contentfulClient.getEntries<EntryTableColumns>({
+        content_type: "tableColumns",
+        locale,
+    });
+
+    if (response.items.length > 0) {
+        return response.items[0].fields as TypeTableColumns;
+    }
+    return null;
+}
+
+export async function getOrientations(locale: string): Promise<TypeOrientations | null> {
+    const response = await contentfulClient.getEntries<EntryOrientations>({
+        content_type: "orientations",
+        locale,
+    });
+
+    if (response.items.length > 0) {
+        return response.items[0].fields as TypeOrientations;
     }
     return null;
 }

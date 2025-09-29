@@ -7,8 +7,10 @@ import ThemeToggle from "@/components/ThemeToggle";
 import { FiMenu, FiX } from "react-icons/fi";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
-import { TypeNavMenu } from "@/types";
+ import { TypeNavMenu } from "@/types";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { handleLocaleChange } from "@/utils/localeUtils";
+
 
 export const NavLink = ({ href, children, isActive, onClick }: { href: string; children: React.ReactNode; isActive: boolean; onClick?: () => void }) => {
     const handleClick = (e: React.MouseEvent) => {
@@ -36,7 +38,7 @@ export const NavLink = ({ href, children, isActive, onClick }: { href: string; c
     );
 };
 
-export default function Nav({ id = "",  nav }: { id: string; nav: TypeNavMenu }) {
+export default function Nav({ id = "", nav }: { id: string; nav: TypeNavMenu }) {
     const [locale, setLocale] = useState("en-US");
     const [activeSection, setActiveSection] = useState("");
     const [sections, setSections] = useState<string[]>([]);
@@ -148,23 +150,6 @@ export default function Nav({ id = "",  nav }: { id: string; nav: TypeNavMenu })
         };
     }, [sections]);
 
-    const handleLocaleChange = (newLocale: string) => {
-        const currentPath = window.location.pathname + window.location.search;
-        const hash = window.location.hash;
-
-        const pathSegments = currentPath.split("/").filter(Boolean);
-
-        // Remove the existing locale prefix if present
-        if (routing.locales.includes(pathSegments[0] as (typeof routing.locales)[number])) {
-            pathSegments.shift();
-        }
-
-        const newPath = newLocale === routing.defaultLocale ? `/${pathSegments.join("/")}${hash}` : `/${newLocale}/${pathSegments.join("/")}${hash}`;
-
-        document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Lax`;
-        router.push(newPath || "/");
-    };
-
     return (
         <>
             {/* Hamburger for mobile */}
@@ -235,15 +220,7 @@ export default function Nav({ id = "",  nav }: { id: string; nav: TypeNavMenu })
                     </NavLink>
                 ))}
                 <ThemeToggle />
-                {locale === "en-US" ? (
-                    <button className={`cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary ${styles.languageButton}`} onClick={() => handleLocaleChange("sv")} aria-label={nav.anotherLanguage}>
-                        🇸🇪
-                    </button>
-                ) : (
-                    <button className={`cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary ${styles.languageButton}`} onClick={() => handleLocaleChange("en-US")} aria-label={nav.anotherLanguage}>
-                        🇬🇧
-                    </button>
-                )}
+                <LanguageSwitcher locale={locale} />
             </nav>
         </>
     );

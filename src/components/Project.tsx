@@ -1,9 +1,9 @@
-import { ProjectProps } from "@/types";
+import { BaseProjectProps } from "@/types";
 import { FiArrowUpRight } from "react-icons/fi";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 
-export default function Project({ projects, link, title, noProjectsMessage }: { projects: ProjectProps[]; link: string; title: string; noProjectsMessage: string }) {
+export default function Project({ projects, link, title, noProjectsMessage }: { projects: BaseProjectProps[]; link: string; title: string; noProjectsMessage: string }) {
     if (!projects || projects.length === 0) {
         return (
             <section id='projects' className='nav-section px-4 md:px-0'>

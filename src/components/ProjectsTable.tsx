@@ -3,9 +3,9 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { FiArrowUpRight } from "react-icons/fi";
-import { ProjectProps } from "@/types/project";
+import { BaseProjectProps, TypeTableColumns } from "@/types";
 
-export default function ProjectsTable({ projects, tableColumns }: { projects: ProjectProps[]; tableColumns: ProjectProps }) {
+export default function ProjectsTable({ projects, tableColumns }: { projects: BaseProjectProps[]; tableColumns: TypeTableColumns }) {
     const tableRef = useRef<HTMLTableElement>(null);
     const [popupIndex, setPopupIndex] = useState<number | null>(null);
     const [isMobile, setIsMobile] = useState(false);

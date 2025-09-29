@@ -5,6 +5,8 @@ export * from './about';
 export * from './nav';
 export * from './footer';
 export * from './pageInfo';
+export * from './tableColumns';
+export * from './orientations';
 
 /* Global Props */
 export type LayoutProps = {

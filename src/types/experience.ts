@@ -38,8 +38,10 @@ export interface BaseExperiences {
     experiencesList: (ExperienceProps | ExperiencesProps)[];
 }
 
-export interface AllExperiences extends Omit<BaseExperiences, "experiencesList"> {
+export interface AllExperiences extends Omit<BaseExperiences, "experiencesList" | "resumeLink"> {
+    resumeLink: Asset<ChainModifiers>;
     experiencesList: (EntryExperience | EntryExperienceWithRoles)[];
+
 }
 
 export interface TypeExperienceWithRoles extends BaseExperience {

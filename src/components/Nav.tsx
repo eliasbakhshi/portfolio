@@ -190,23 +190,23 @@ export default function Nav({ id = "", nav }: { id: string; nav: TypeNavMenu }) 
                     <div className='mt-8'>
                         {locale === "en-US" ? (
                             <button
-                                className='text-lg'
+                                className='text-lg flex gap-3'
                                 onClick={() => {
                                     handleLocaleChange("sv");
                                     setMenuOpen(false);
                                 }}
                             >
-                                🇸🇪 {nav.anotherLanguage}
+                            <Image src="/images/se.svg" alt="Swedish Flag" width={24} height={24} /> {nav.anotherLanguage}
                             </button>
                         ) : (
                             <button
-                                className='text-lg'
+                                className='text-lg flex gap-3'
                                 onClick={() => {
                                     handleLocaleChange("en-US");
                                     setMenuOpen(false);
                                 }}
                             >
-                                🇬🇧 {nav.anotherLanguage}
+                                <Image src="/images/us.svg" alt="US Flag" width={24} height={24} /> {nav.anotherLanguage}
                             </button>
                         )}
                     </div>

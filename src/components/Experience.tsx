@@ -37,7 +37,7 @@ export default function Experience({ title, experiences, resumeLink, resumeText,
                                             <h6>
                                                 {experience.company} <FiArrowUpRight className={styles.icon} />
                                             </h6>
-                                            <p className={styles.duration}>{experienceDuration}</p>
+                                            <p className={styles.duration}>{experienceDuration} | {experience.employmentType}</p>
                                             <ul className={styles.subSessions}>
                                                 {experience.roles.map((role, i) => {
                                                     const roleEndDate = role.endDate ? role.endDate : presentText;
@@ -58,7 +58,7 @@ export default function Experience({ title, experiences, resumeLink, resumeText,
                                             <h6>
                                                 {experience.title} | {experience.company} <FiArrowUpRight className={styles.icon} />
                                             </h6>
-                                            <p className={styles.duration}>{experienceDuration}</p>
+                                            <p className={styles.duration}>{experienceDuration}  | {experience.employmentType}</p>
                                             <p className={styles.description}>{experience.description}</p>
                                             <div className={styles.skills}>{experience.skills && Array.isArray(experience.skills) && experience.skills.map((skill, i) => <span key={i}>{skill}</span>)}</div>
                                         </>

@@ -1,0 +1,8 @@
+.about {
+    > p {
+        color:var(--secondary-color-faded);
+        > b {
+            color: var(--secondary-color);
+        }
+    }
+}

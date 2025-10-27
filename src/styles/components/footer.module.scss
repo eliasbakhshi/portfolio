@@ -1,0 +1,12 @@
+.footer {
+    > div {
+        > p {
+            > a {
+                color: var(--secondary-color);
+                &:hover {
+                    color: var(--tertiary-color);
+                }
+            }
+        }
+    }
+}

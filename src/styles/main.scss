@@ -10,4 +10,5 @@
 @use "base/typography";
 @use "base/globals.scss";
 @custom-variant dark (&:where(.dark, .dark *));
+@custom-variant hover (&:hover);
 

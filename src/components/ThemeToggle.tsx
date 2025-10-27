@@ -45,7 +45,7 @@ export default function ThemeToggle() {
     return (
         <button
             onClick={toggleTheme}
-            className='p-2 cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary'
+            className='p-2 cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary hover-effect'
             aria-label={`Switch to ${resolvedTheme === "light" ? "dark" : "light"} mode`}
         >
             {resolvedTheme === "light" ? <FiMoon size={18} /> : <FiSun size={18} />}

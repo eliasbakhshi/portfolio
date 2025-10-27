@@ -40,12 +40,12 @@ export default async function RootLayout({ children, params }: LayoutProps) {
                                     <h1 className='text-h1 font-bold text-secondary py-1'>{aboutSection.name}</h1>
                                     <h5 className='text-h5 text-secondary'>{aboutSection.title}</h5>
                                     <p className='py-5 lg:w-[75%] text-paragraph text-secondary-faded leading-relaxed'>{aboutSection.description}</p>
-                                    <div className='flex gap-6 items-center mt-auto h-20 social-icons'>
+                                    <div className='flex gap-6 items-center mt-auto h-20 '>
                                         <Link href='https://www.linkedin.com/in/eliasbakhshi' target='_blank' rel='noopener noreferrer'>
-                                            <FaLinkedin size='2em' className='color-secondary cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary' />
+                                            <FaLinkedin size='2em' className='color-secondary cursor-pointer hover-effect' />
                                         </Link>
                                         <Link href='https://github.com/eliasbakhshi' target='_blank' rel='noopener noreferrer'>
-                                            <FaGithub size='2em' className='color-secondary cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-[2px] hover:text-tertiary' />
+                                            <FaGithub size='2em' className='color-secondary cursor-pointer hover-effect' />
                                         </Link>
                                     </div>
                                 </div>

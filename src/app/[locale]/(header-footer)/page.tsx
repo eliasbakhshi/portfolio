@@ -1,3 +1,4 @@
+import styles from "@/styles/components/about.module.scss";
 import Experience from "@/components/Experience";
 import Project from "@/components/Project";
 import Contact from "@/components/Contact";
@@ -6,6 +7,7 @@ import Footer from "@/components/Footer";
 import { routing } from "@/i18n/routing";
 import { getAbout, getContact, getExperiences, getProjects, getFooter, getPageInfo } from "@/contentful/queries";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
 
 export const revalidate = 60;
 export function generateStaticParams() {
@@ -48,7 +50,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
     return (
         <>
-            <div id='about' className='nav-section px-4 md:px-0'>
+            <div id='about' className={`nav-section px-4 md:px-0 ${styles.about}`}>
                 <h5 className='mb-6'>{aboutSection.entryTitle}</h5>
                 {aboutSection?.about && documentToReactComponents(aboutSection.about)}
             </div>

@@ -23,7 +23,7 @@ export default async function ProjectsLayout({ children, params }: LayoutProps) 
 
     return (
         <html lang={locale} className={`scroll-smooth ${poppins.variable}`} suppressHydrationWarning>
-            <body>
+            <body suppressHydrationWarning>
                 <ThemeProvider>
                     <NextIntlClientProvider >{children}</NextIntlClientProvider>
                 </ThemeProvider>

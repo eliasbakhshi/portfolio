@@ -19,10 +19,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const canonicalUrl = locale === "en-US" ? `${process.env.SITE_URL || "http://localhost:3000"}/` : `${process.env.SITE_URL || "http://localhost:3000"}/${locale}`;
 
     return {
-        title: `${pageinfo?.title || "My Portfolio"} - "Elias Bakhshi"`,
+        title: `${pageinfo?.title || "My Portfolio"} - Elias Bakhshi`,
         description: pageinfo?.description || "Welcome to my portfolio website showcasing my projects and skills.",
         openGraph: {
-        title: `${pageinfo?.title || "My Portfolio"} - "Elias Bakhshi"`,
+        title: `${pageinfo?.title || "My Portfolio"} - Elias Bakhshi`,
             description: pageinfo?.description || "Welcome to my portfolio website showcasing my projects and skills.",
             url: process.env.SITE_URL || "http://localhost:3000",
             type: "website",

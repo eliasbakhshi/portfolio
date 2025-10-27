@@ -136,12 +136,3 @@ body {
 .popup-animate {
     animation: popup-scale 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
-
-
-.hover-effect {
-    &:hover {
-        color: var(--tertiary-color);
-        transform: translateY(-2px);
-        transition: transform 200ms ease-in-out;
-    }
-}

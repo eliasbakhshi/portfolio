@@ -1,4 +1,4 @@
-"using client";
+"use client";
 import { routing } from "@/i18n/routing";
 // import { useRouter } from "@/i18n/navigation";
 
@@ -20,6 +20,5 @@ export function handleLocaleChange(newLocale: string): void {
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Lax`;
     window.history.replaceState(null, "", newPath);
     window.location.reload();
-        // router.push(newPath || "/");
-
+    // router.push(newPath || "/");
 }

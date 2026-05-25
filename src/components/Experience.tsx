@@ -46,9 +46,9 @@ export default function Experience({ title, experiences, resumeLink, resumeText,
                                                         <li key={i}>
                                                             <h6>{role.title}</h6>
                                                             <p className={styles.duration}>{roleDuration}</p>
-                                                            <p className={styles.description}>{role.description}</p>
-                                                        <div className={styles.skills}>{role.skills && role.skills.map((skill, j) => <span key={`${i}-${j}`}>{skill}</span>)}</div>
-                                                    </li>
+                                                            <p className={styles.description} dangerouslySetInnerHTML={{ __html: role.description }} />
+                                                            <div className={styles.skills}>{role.skills && role.skills.map((skill, j) => <span key={`${i}-${j}`}>{skill}</span>)}</div>
+                                                        </li>
                                                     )
                                                 })}
                                             </ul>
@@ -59,7 +59,7 @@ export default function Experience({ title, experiences, resumeLink, resumeText,
                                                 {experience.title} | {experience.company} <FiArrowUpRight className={styles.icon} />
                                             </h6>
                                             <p className={styles.duration}>{experienceDuration}  | {experience.employmentType}</p>
-                                            <p className={styles.description}>{experience.description}</p>
+                                            <p className={styles.description} dangerouslySetInnerHTML={{ __html: experience.description }} />
                                             <div className={styles.skills}>{experience.skills && Array.isArray(experience.skills) && experience.skills.map((skill, i) => <span key={i}>{skill}</span>)}</div>
                                         </>
                                     )}
